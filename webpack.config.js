@@ -1,39 +1,158 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const TerserPlugin = require('terser-webpack-plugin');
 const SvgSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const zlib = require('zlib');
 
-const path = require('path');
+module.exports = env => {
+  const isProduction = env.mode === 'production';
 
-module.exports = {
-  plugins: [
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
-    new MiniCssExtractPlugin({ filename: 'styles.css' }),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+  const webpackConfig = {
+    mode: env.mode,
+    devtool: isProduction ? false : 'inline-source-map',
+    resolve: {
+      alias: {
+        'resources#': './public',
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
+    },
+    entry: './public/index.js',
+
+    output: {
+      path: path.resolve(__dirname, 'build'),
+      filename: 'bundle.js',
+      clean: true,
+    },
+
+    devServer: {
+      open: true,
+      port: 9000,
+    },
+
+    plugins: [
+      new HtmlWebpackPlugin({ template: './public/index.html' }),
+      new MiniCssExtractPlugin({ filename: 'styles.css' }),
+      //   new SvgSpritemapPlugin('./src' + '/svg/*.svg', {
+      //     output: {
+      //       filename: 'sprite.svg',
+      //       svgo: false,
+      //     },
+      //     sprite: {
+      //       prefix: false,
+      //       generate: {
+      //         title: false,
+      //       },
+      //     },
+      //   }),
     ],
-  },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          use: ['babel-loader'],
+        },
+        {
+          test: /\.(sc|c)ss$/,
+          use: isProduction
+            ? ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+            : ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        {
+          test: '/public/css/common.scss',
+          use: isProduction
+            ? [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'postcss-loader',
+                'sass-loader',
+              ]
+            : [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        },
+        {
+          test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+          type: 'asset/public',
+        },
+        {
+          test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+          type: 'asset/inline',
+        },
+        {
+          test: /\.hbs$/,
+          use: 'handlebars-loader',
+        },
+      ],
+    },
+  };
 
-  devServer: {
-    open: true,
-    port: 9000,
-  },
+  if (isProduction) {
+    webpackConfig.plugins.push(
+      new CompressionPlugin({
+        // filename: '[path][base].gz',
+        algorithm: 'gzip', // Значение по-умолчанию. Оставил для наглядности
+        compressionOptions: {
+          level: 9, // Значение по-умолчанию. Максимальный уровень
+        },
+      })
+    );
 
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-  },
+    webpackConfig.plugins.push(
+      new CompressionPlugin({
+        algorithm: 'brotliCompress',
+        compressionOptions: {
+          params: {
+            [zlib.constants.BROTLI_PARAM_QUALITY]:
+              zlib.constants.BROTLI_MAX_QUALITY,
+          },
+        },
+      })
+    );
+
+    webpackConfig.optimization = {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            format: {
+              comments: false,
+            },
+          },
+          extractComments: false,
+        }),
+      ],
+      splitChunks: {
+        cacheGroups: {
+          defaultVendors: {
+            filename: '[name].async-module.js',
+          },
+        },
+      },
+    };
+  }
+
+  //   if (env.watch) {
+  //     const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+  //     webpackConfig.plugins.push(
+  //       new BrowserSyncPlugin(
+  //         {
+  //           host: 'localhost',
+  //           //   proxy: `http://${host}:8888`,
+  //           proxy: 'localhost:8888',
+  //           open: 'external',
+  //           port: 4000,
+  //           files: [
+  //             '/**/*.html',
+  //             './build' + '/**/*.js',
+  //             './build' + '/**/*.css',
+  //           ],
+  //         },
+  //         {
+  //           reload: false,
+  //         }
+  //       )
+  //     );
+  //   }
+
+  return webpackConfig;
 };

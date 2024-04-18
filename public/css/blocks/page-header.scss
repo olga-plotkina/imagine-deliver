@@ -1,0 +1,19 @@
+.page-header {
+  button {
+    border-radius: 32px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'dm_sans9pt_regular';
+    font-weight: 700;
+  }
+
+  @include for-tablet-up {
+    > div {
+      display: flex;
+    }
+
+    > button {
+      display: none;
+    }
+  }
+}
