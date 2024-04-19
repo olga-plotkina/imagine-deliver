@@ -1,0 +1,59 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 14vw;
+
+  h1 {
+    font-size: 12.75vw;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 700;
+    max-width: 90.25vw;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 8vw;
+  }
+
+  img {
+    width: 100vw;
+    margin-bottom: 12vw;
+    // height: 54.9vw;
+  }
+
+  p {
+    max-width: 86vw;
+    text-align: center;
+    font-size: 6.5vw;
+    font-weight: 700;
+    line-height: 1.23;
+    letter-spacing: -0.035em;
+    margin-bottom: 8vw;
+  }
+}
+
+@include for-tablet-up {
+  .hero {
+    padding-bottom: 8.3vw;
+
+    h1 {
+      font-size: 6.25vw;
+      max-width: 69.4vw;
+      line-height: 1.04;
+      margin-bottom: 2.22vw;
+    }
+
+    img {
+      width: 85.4vw;
+      margin-bottom: 5.56vw;
+      //   height: 54.9vw;
+    }
+
+    p {
+      max-width: 60vw;
+      font-size: 3.13vw;
+      line-height: 1.2;
+      margin-bottom: 2.22vw;
+    }
+  }
+}

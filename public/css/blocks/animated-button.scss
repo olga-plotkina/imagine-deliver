@@ -1,0 +1,106 @@
+.animated-button {
+  position: relative;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  border: $border-mobile-width solid #162e2e66;
+  width: 36vw;
+  border-radius: 12vw;
+  height: 12vw;
+
+  a {
+    display: block;
+    cursor: pointer;
+    font-size: 4.25vw;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    width: 100%;
+  }
+
+  .page-header & {
+    display: none;
+  }
+  .features & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.animated-button:not(:last-child) {
+  margin-bottom: 10vw;
+}
+
+.animated-button__primary {
+  color: inherit;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: top 0.5s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.animated-button__slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $background-yellow;
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+  background-color: $dark-text-color;
+}
+.animated-button:hover .animated-button__primary {
+  top: -100%;
+  opacity: 0;
+}
+.animated-button:hover .animated-button__slide {
+  bottom: 50%;
+  transform: translateY(50%);
+  padding-top: 1.8vw;
+}
+@include for-tablet-up {
+  .animated-button {
+    border: $border-desktop-width solid #162e2e66;
+    width: 8vw;
+    border-radius: 3.33vw;
+    height: 3.33vw;
+
+    .features & {
+      margin-left: unset;
+      margin-right: auto;
+      padding-left: 2.22vw;
+      padding-right: 2.22vw;
+      width: 11.6vw;
+      font-weight: 500;
+    }
+
+    a {
+      font-size: 1.25vw;
+    }
+
+    .page-header & {
+      min-width: 9.4vw;
+      padding-left: 1.67vw;
+      padding-right: 1.67vw;
+
+      display: block;
+      border-radius: 2.22vw;
+      font-family: $primary-font-family;
+      font-weight: 700;
+      color: inherit;
+      border: $border-desktop-width solid #162e2e66;
+      background-color: transparent;
+      font-size: 0.97vw;
+    }
+  }
+
+  .animated-button:not(:last-child) {
+    margin-bottom: 3.33vw;
+  }
+}

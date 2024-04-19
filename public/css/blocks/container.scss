@@ -1,0 +1,50 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3.75vw;
+  padding-right: 3.75vw;
+
+  @include for-phone-up {
+    width: 480px;
+  }
+
+  @include for-wide-phone-up {
+    width: 600px;
+  }
+  @include for-tablet-up {
+    width: 768px;
+    padding-left: 4.3vw;
+    padding-right: 4.3vw;
+  }
+  @include for-wide-tablet-up {
+    width: 900px;
+  }
+  @include for-desktop-up {
+    width: 1200px;
+  }
+
+  @include for-wide-desktop-up {
+    width: 1400px;
+  }
+}
+.container--header {
+  padding-left: 13.25vw;
+  padding-right: 13.25vw;
+
+  @include for-tablet-up {
+    padding-left: 10.17vw;
+    padding-right: 15.5vw;
+    width: 600px;
+  }
+  @include for-wide-tablet-up {
+    width: 768px;
+  }
+
+  @include for-desktop-up {
+    width: 1000px;
+  }
+
+  @include for-wide-desktop-up {
+    width: 1200px;
+  }
+}

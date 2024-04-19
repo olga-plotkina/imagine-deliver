@@ -1,19 +1,27 @@
 .page-header {
-  button {
-    border-radius: 32px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-family: 'dm_sans9pt_regular';
-    font-weight: 700;
-  }
+  padding-top: 8vw;
+  padding-bottom: 8vw;
+  margin-bottom: 16vw;
 
-  @include for-tablet-up {
+  img {
+    width: 37.25vw;
+    height: 7.75vw;
+  }
+}
+@include for-tablet-up {
+  .page-header {
+    padding-top: 2.22vw;
+    padding-bottom: unset;
+    margin-bottom: 8.3vw;
+
+    img {
+      width: 10.65vw;
+      height: 2.15vw;
+    }
     > div {
       display: flex;
-    }
-
-    > button {
-      display: none;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }

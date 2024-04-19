@@ -1,3 +1,31 @@
+$container-micro-mob: 300;
+$container-small-mob: 400;
+$container-mob: 480;
+$container-wide-mob: 600;
+$container-tablet: 768;
+$container-wide-tablet: 900;
+$container-desktop: 1200;
+$container-wide-desktop: 1400;
+
+$container-tablet-h: 600;
+$container-wide-tablet-h: 768;
+$container-desktop-h: 1000;
+$container-wide-desktop-h: 1200;
+
+$border-mobile-width: 0.25vw;
+$border-desktop-width: 0.069vw;
+
+@function calculate-vw($px, $container-width) {
+  $result: round(math.div($px, $container-width) * 100);
+  @return #{$result}vw;
+}
+// Mixin to apply vw units to properties based on viewport size
+@mixin vw($property, $value, $container-width) {
+  #{$property}: ((calculate-vw($value, $container-width)));
+}
+
+// Mixins for screen sizes
+
 @mixin for-phone-only {
   @media (max-width: 767px) {
     @content;
