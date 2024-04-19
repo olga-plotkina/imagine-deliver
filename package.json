@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --mode=development",
-    "prod": "webpack --mode=production"
+    "prod": "webpack --mode=production",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -41,6 +42,7 @@
     "webpackbar": "^6.0.1"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "normalize.css": "^8.0.1",
     "photoswipe": "^5.4.3",
     "swiper": "^11.1.1",
