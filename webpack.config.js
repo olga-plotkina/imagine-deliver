@@ -71,8 +71,9 @@ module.exports = env => {
             : [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
         },
         {
-          test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-          type: 'asset/resource',
+          test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+          // More information here https://webpack.js.org/guides/asset-modules/
+          type: 'asset',
         },
         {
           test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
