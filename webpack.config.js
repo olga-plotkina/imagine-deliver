@@ -15,7 +15,7 @@ module.exports = env => {
     devtool: isProduction ? false : 'inline-source-map',
     resolve: {
       alias: {
-        'resources#': './public',
+        'resources#': 'public',
       },
     },
     entry: './public/index.js',
@@ -60,7 +60,7 @@ module.exports = env => {
             : ['style-loader', 'css-loader', 'sass-loader'],
         },
         {
-          test: '/public/css/common.scss',
+          test: /public\/css\/common\.scss/,
           use: isProduction
             ? [
                 MiniCssExtractPlugin.loader,
@@ -72,7 +72,7 @@ module.exports = env => {
         },
         {
           test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-          type: 'asset/public',
+          type: 'asset/resource',
         },
         {
           test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
@@ -97,17 +97,17 @@ module.exports = env => {
       })
     );
 
-    webpackConfig.plugins.push(
-      new CompressionPlugin({
-        algorithm: 'brotliCompress',
-        compressionOptions: {
-          params: {
-            [zlib.constants.BROTLI_PARAM_QUALITY]:
-              zlib.constants.BROTLI_MAX_QUALITY,
-          },
-        },
-      })
-    );
+    // webpackConfig.plugins.push(
+    //   new CompressionPlugin({
+    //     algorithm: 'brotliCompress',
+    //     compressionOptions: {
+    //       params: {
+    //         [zlib.constants.BROTLI_PARAM_QUALITY]:
+    //           zlib.constants.BROTLI_MAX_QUALITY,
+    //       },
+    //     },
+    //   })
+    // );
 
     webpackConfig.optimization = {
       minimize: true,
