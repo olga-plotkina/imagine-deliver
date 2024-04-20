@@ -1,0 +1,154 @@
+.cases {
+  position: relative;
+}
+
+.cases__item {
+  background-color: $background-yellow;
+  height: 71.11vw;
+
+  padding-bottom: 20.5vw;
+  border-top: 0.5px solid $dark-text-color;
+  padding-top: 8vw;
+
+  width: 100%;
+}
+.cases__item.covering {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: cover 1.5s forwards;
+}
+@keyframes cover {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.cases__item-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8vw;
+
+  width: 76.75vw;
+  height: 86.25vw;
+}
+.cases__item-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.25vw;
+  font-weight: 500;
+  letter-spacing: -0.013em;
+  line-height: 1.31;
+  margin-bottom: 8vw;
+
+  > div:first-child {
+    > span:first-child {
+      margin-right: 8vw;
+    }
+  }
+  > div:last-child {
+    margin-left: 17.01vw;
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+.cases__item-company {
+  text-align: center;
+  font-size: 5.5vw;
+  line-height: 1.27;
+  font-weight: 500;
+  letter-spacing: -0.0038em;
+  margin-bottom: 6vw;
+}
+.cases__item-lid {
+  max-width: 86.25vw;
+  text-align: center;
+  font-family: $secondary-font-family;
+  font-size: 12.5vw;
+  transform: scaleY(1.3);
+
+  line-height: 0.9;
+  margin-bottom: 8vw;
+}
+.animated-button.cases__item-link {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12vw;
+}
+.cases__item-description {
+  font-size: 4.25vw;
+  font-weight: 400;
+  text-align: center;
+}
+@include for-tablet-up {
+  .cases__item {
+    padding-bottom: 5vw;
+    // padding-bottom: 8.89vw;
+    padding-top: 2.78vw;
+  }
+  .cases__item-image {
+    display: block;
+    margin-bottom: unset;
+    // img {
+    //   width: 44.44vw;
+    //   height: 49.93vw;
+    // }
+  }
+
+  .cases__item-top {
+    font-size: 0.97vw;
+    margin-bottom: 5vw;
+    justify-content: left;
+
+    > div:first-child {
+      > span:first-child {
+        margin-right: 4.44vw;
+      }
+    }
+  }
+  .cases__item-content {
+    display: flex;
+    align-items: center;
+  }
+  .cases__item-content {
+    text-align: left;
+  }
+  .cases__item-image {
+    max-width: 44.44vw;
+    height: unset;
+    width: unset;
+
+    order: 2;
+    margin-left: 10vw;
+    img {
+      width: 100%;
+    }
+  }
+  .cases__item-company {
+    font-size: 1.6vw;
+    line-height: 1.39;
+    text-align: left;
+  }
+  .cases__item-lid {
+    max-width: 36.67vw;
+    text-align: left;
+
+    font-size: 5vw;
+    line-height: 0.93;
+  }
+  .cases__item-description {
+    font-size: 1.25vw;
+    text-align: left;
+  }
+  .animated-button.cases__item-link {
+    margin-left: unset;
+  }
+}

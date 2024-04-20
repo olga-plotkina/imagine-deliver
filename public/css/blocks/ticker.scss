@@ -1,12 +1,17 @@
 .ticker {
   overflow: hidden;
   width: 100%;
-  padding-top: 10.5vw;
-  padding-bottom: 10.5vw;
+  height: 24vw;
+  // padding-top: 10.5vw;
+  // padding-bottom: 10.5vw;
   margin-bottom: 12vw;
+  position: relative;
 }
 
 .ticker__content {
+  position: absolute;
+  top: 10vw;
+
   display: flex;
   gap: 4vw;
   align-items: center;
@@ -36,11 +41,14 @@
 }
 @include for-tablet-up {
   .ticker {
-    padding-top: 2.4vw;
-    padding-bottom: 2.4vw;
-    margin-bottom: 11.11vw;
+    // padding-top: 2.4vw;
+    // padding-bottom: 2.4vw;
+    height: 6.67vw;
+
+    margin-bottom: 10vw;
   }
   .ticker__content {
+    top: 2.8vw;
     font-size: 1.25vw;
     gap: 1.11vw;
   }
