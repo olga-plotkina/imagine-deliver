@@ -54,13 +54,7 @@ module.exports = env => {
           use: ['babel-loader'],
         },
         {
-          test: /\.(sc|c)ss$/,
-          use: isProduction
-            ? ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-            : ['style-loader', 'css-loader', 'sass-loader'],
-        },
-        {
-          test: /public\/css\/common\.scss/,
+          test: /public\/css\/common\.scss$/,
           use: isProduction
             ? [
                 MiniCssExtractPlugin.loader,
@@ -71,8 +65,14 @@ module.exports = env => {
             : [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
         },
         {
-          test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-          // More information here https://webpack.js.org/guides/asset-modules/
+          test: /\.(sc|c)ss$/,
+          exclude: /public\/css\/common\.scss$/,
+          use: isProduction
+            ? ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+            : ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        {
+          test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
           type: 'asset/resource',
         },
         {
