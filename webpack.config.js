@@ -6,6 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const SvgSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const zlib = require('zlib');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = env => {
   const isProduction = env.mode === 'production';
@@ -32,8 +33,14 @@ module.exports = env => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin({ template: './public/index.html' }),
+      // new HtmlWebpackPlugin({ template: './public/index.html' }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
+      new CopyPlugin({
+        patterns: [
+          { from: 'public/*.html', to: '[name].[ext]' },
+          { from: 'public/images', to: 'images' },
+        ],
+      }),
       //   new SvgSpritemapPlugin('./src' + '/svg/*.svg', {
       //     output: {
       //       filename: 'sprite.svg',
