@@ -1,10 +1,10 @@
-.cases {
-  position: relative;
-}
+// .cases {
+//   position: relative;
+// }
 
 .cases__item {
   background-color: $background-yellow;
-  height: 71.11vw;
+  // height: 71.11vw;
 
   padding-bottom: 20.5vw;
   border-top: 0.5px solid $dark-text-color;
@@ -13,11 +13,11 @@
   width: 100%;
 }
 .cases__item.covering {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  animation: cover 1.5s forwards;
+  // animation: cover 1.5s forwards;
 }
 @keyframes cover {
   from {

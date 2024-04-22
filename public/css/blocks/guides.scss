@@ -1,0 +1,48 @@
+.guides {
+  padding-top: 8vw;
+  padding-bottom: 19.5vw;
+
+  .animated-button {
+    margin-bottom: 10vw;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    width: 86.25vw;
+    height: 86.25vw;
+  }
+  h3 {
+    letter-spacing: -0.045em;
+    text-align: center;
+    font-size: 12.75vw;
+    font-weight: 700;
+    letter-spacing: -0.026vw;
+    line-height: 1;
+    margin-bottom: 8vw;
+  }
+}
+
+@include for-tablet-up {
+  .guides {
+    padding-top: 11.67vw;
+    padding-bottom: 19.5vw;
+
+    .animated-button {
+      margin-bottom: 3.33vw;
+    }
+
+    img {
+      width: 36.53vw;
+      height: 36.53vw;
+    }
+    h3 {
+      font-size: 6.25vw;
+      line-height: 1.04;
+      margin-bottom: 2.78vw;
+      max-width: 72vw;
+    }
+  }
+}

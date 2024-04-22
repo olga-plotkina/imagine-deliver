@@ -23,6 +23,15 @@
   white-space: nowrap;
   animation: ticker 17s linear infinite;
 }
+.ticker--air-date {
+  font-family: $secondary-font-family;
+  height: 24vw;
+
+  .ticker__content {
+    font-size: 15vw;
+    top: 4vw;
+  }
+}
 
 @keyframes ticker {
   from {
@@ -51,5 +60,13 @@
     top: 2.8vw;
     font-size: 1.25vw;
     gap: 1.11vw;
+  }
+  .ticker--air-date {
+    height: 10.97vw;
+
+    .ticker__content {
+      font-size: 10vw;
+      top: 1vw;
+    }
   }
 }

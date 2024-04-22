@@ -99,29 +99,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let coveringIndex = -1;
 
-  window.addEventListener('scroll', function () {
-    const items = document.querySelectorAll('.cases__item');
-    const windowHeight = window.innerHeight;
+  // window.addEventListener('scroll', function () {
+  //   const items = document.querySelectorAll('.cases__item');
+  //   const windowHeight = window.innerHeight;
 
-    // Check if the top of each item touches the top of the viewport
-    const itemRects = Array.from(items).map(item =>
-      item.getBoundingClientRect()
-    );
-    const itemTops = itemRects.map(rect => rect.top <= 0);
+  //   // Check if the top of each item touches the top of the viewport
+  //   const itemRects = Array.from(items).map(item =>
+  //     item.getBoundingClientRect()
+  //   );
+  //   const itemTops = itemRects.map(rect => rect.top <= 0);
 
-    // Start covering animation when the second item touches the top
-    if (itemTops[1]) {
-      coveringIndex = 1;
-    }
+  //   // Start covering animation when the second item touches the top
+  //   if (itemTops[1]) {
+  //     coveringIndex = 1;
+  //   }
 
-    // Add 'covering' class to the next item to be covered
-    if (
-      coveringIndex >= 0 &&
-      coveringIndex < items.length - 1 &&
-      itemTops[coveringIndex + 1]
-    ) {
-      items[coveringIndex + 1].classList.add('covering');
-      coveringIndex++;
-    }
-  });
+  //   // Add 'covering' class to the next item to be covered
+  //   if (
+  //     coveringIndex >= 0 &&
+  //     coveringIndex < items.length - 1 &&
+  //     itemTops[coveringIndex + 1]
+  //   ) {
+  //     items[coveringIndex + 1].classList.add('covering');
+  //     coveringIndex++;
+  //   }
+  // });
 });

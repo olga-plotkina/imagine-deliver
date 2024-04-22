@@ -1,0 +1,47 @@
+.insights {
+  padding-bottom: 24vw;
+  h3 {
+    text-transform: uppercase;
+    font-family: $secondary-font-family;
+    font-size: 12vw;
+    margin-bottom: 10vw;
+  }
+  img {
+    margin-bottom: 4vw;
+    width: 86.25vw;
+  }
+}
+.insights__title-wrapper {
+  .animated-button {
+    display: none;
+  }
+}
+@include for-tablet-up {
+  .insights {
+    padding-bottom: 13.33vw;
+
+    h3 {
+      font-size: 4.9vw;
+      margin-bottom: 4.44vw;
+    }
+
+    img {
+      margin-bottom: 1.67vw;
+    }
+  }
+  .insights__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .animated-button {
+      display: block;
+    }
+  }
+  .insights__wrapper {
+    width: 100%;
+    display: flex;
+    gap: 2.22vw;
+  }
+  .insights__item {
+    width: calc(33% - 2.22vw);
+  }
+}

@@ -1,0 +1,64 @@
+.contact {
+  padding-bottom: 12vw;
+  form {
+    width: 100%;
+  }
+  p {
+    font-size: 6.5vw;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10vw;
+  }
+  input {
+    border-radius: 8px;
+    border: 0.5px solid rgba(22, 46, 46, 0.25);
+    background: rgba(22, 46, 46, 0.04);
+    // height: 10vw;
+    width: 90%;
+    padding: 4.5vw 4vw;
+    margin-bottom: 8vw;
+  }
+  .animated-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    left: 11vw;
+  }
+}
+
+@include for-tablet-up {
+  .contact {
+    padding-bottom: 8.33vw;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      font-size: 3.125vw;
+      max-width: 60vw;
+      margin-bottom: 3.33vw;
+    }
+
+    input {
+      width: 21.66vw;
+      padding: 1.25vw 1.11vw;
+      margin-bottom: unset;
+
+      //   height: 3.33vw;
+    }
+    button {
+      left: 1.7vw;
+    }
+    form {
+      display: flex;
+      width: unset;
+      gap: 2.22vw;
+    }
+  }
+}
