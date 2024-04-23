@@ -100,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //cases animation
 
   const items = document.querySelectorAll('.cases__item');
+  console.log(items);
+  const guidesSection = document.querySelector('.guides .container');
 
   document.addEventListener('wheel', () => {
     const viewportHeight = window.innerHeight;
@@ -111,6 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
           if (items[i - 1]) {
             items[i - 1].classList.remove('fixed');
           }
+        } else {
+          items[i].classList.add('fixed');
+          // if (items[i + 1]) {
+          //   items[i + 1].style.position = 'absolute';
+          // }
         }
       }
     } else {

@@ -19,18 +19,24 @@
 .cases__item:not(:first-child) {
   border-top: 0.5px solid $dark-text-color;
 }
-.cases__item.absolute {
-  position: absolute;
+.cases__item.cases__item--guides {
+  border-top: none;
+  height: unset;
 }
+
 .cases__item:nth-child(2) {
   top: 120vh;
   position: absolute;
-
   z-index: 4;
 }
-.cases__item:last-child {
+.cases__item:nth-child(3) {
   top: 240vh;
   z-index: 3;
+  position: absolute;
+}
+.cases__item:last-child {
+  top: 350vh;
+  z-index: 5;
   position: absolute;
 }
 .cases__item.fixed {
