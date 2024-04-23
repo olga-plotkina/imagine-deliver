@@ -97,31 +97,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  let coveringIndex = -1;
+  //cases animation
 
-  // window.addEventListener('scroll', function () {
-  //   const items = document.querySelectorAll('.cases__item');
-  //   const windowHeight = window.innerHeight;
+  const items = document.querySelectorAll('.cases__item');
 
-  //   // Check if the top of each item touches the top of the viewport
-  //   const itemRects = Array.from(items).map(item =>
-  //     item.getBoundingClientRect()
-  //   );
-  //   const itemTops = itemRects.map(rect => rect.top <= 0);
+  document.addEventListener('wheel', () => {
+    const viewportHeight = window.innerHeight;
 
-  //   // Start covering animation when the second item touches the top
-  //   if (itemTops[1]) {
-  //     coveringIndex = 1;
-  //   }
+    if (event.deltaY < 0) {
+      for (let i = 0; i < items.length; i++) {
+        const topOffset = items[i].getBoundingClientRect().top;
+        if (topOffset >= viewportHeight) {
+          if (items[i - 1]) {
+            items[i - 1].classList.remove('fixed');
+          }
+        }
+      }
+    } else {
+      for (let i = 0; i < items.length; i++) {
+        const topOffset = items[i].getBoundingClientRect().top;
 
-  //   // Add 'covering' class to the next item to be covered
-  //   if (
-  //     coveringIndex >= 0 &&
-  //     coveringIndex < items.length - 1 &&
-  //     itemTops[coveringIndex + 1]
-  //   ) {
-  //     items[coveringIndex + 1].classList.add('covering');
-  //     coveringIndex++;
-  //   }
-  // });
+        if (topOffset <= 0) {
+          if (i < items.length - 1) {
+            items[i].classList.add('fixed');
+          } else {
+            items.forEach(item => {
+              item.classList.remove('fixed');
+              item.style.position = 'static';
+            });
+          }
+        }
+      }
+    }
+  });
 });
