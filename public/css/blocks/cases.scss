@@ -21,23 +21,39 @@
 }
 .cases__item.cases__item--guides {
   border-top: none;
-  height: unset;
+}
+// .cases__item:first-child {
+//   position: absolute;
+//   top: 0;
+//   z-index: 1;
+// }
+.cases__item.static {
+  position: static;
+}
+.cases__item.absolute {
+  position: absolute;
+}
+.cases__item.absolute-top {
+  top: 0;
+  position: absolute;
+}
+.cases__item.absolute-bottom {
+  position: absolute;
+  top: 140vh;
 }
 
 .cases__item:nth-child(2) {
   top: 120vh;
-  position: absolute;
-  z-index: 4;
+  z-index: 3;
 }
 .cases__item:nth-child(3) {
   top: 240vh;
-  z-index: 3;
-  position: absolute;
+  z-index: 4;
 }
-.cases__item:last-child {
+.cases__item--guides {
+  height: auto;
   top: 350vh;
   z-index: 5;
-  position: absolute;
 }
 .cases__item.fixed {
   z-index: 2;

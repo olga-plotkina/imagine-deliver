@@ -100,8 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //cases animation
 
   const items = document.querySelectorAll('.cases__item');
-  console.log(items);
-  const guidesSection = document.querySelector('.guides .container');
 
   document.addEventListener('wheel', () => {
     const viewportHeight = window.innerHeight;
@@ -112,29 +110,52 @@ document.addEventListener('DOMContentLoaded', () => {
         if (topOffset >= viewportHeight) {
           if (items[i - 1]) {
             items[i - 1].classList.remove('fixed');
+            items[i - 1].classList.add('absolute-top');
           }
         } else {
-          items[i].classList.add('fixed');
-          // if (items[i + 1]) {
-          //   items[i + 1].style.position = 'absolute';
-          // }
+          if (i < items.length - 1) {
+            items[i].classList.add('fixed');
+            items[i].classList.remove('static');
+          } else {
+            items[i].classList.add('absolute-bottom');
+            items[i].classList.remove('static');
+          }
         }
       }
     } else {
       for (let i = 0; i < items.length; i++) {
         const topOffset = items[i].getBoundingClientRect().top;
+        const bottomOffset = items[i].getBoundingClientRect().bottom;
 
-        if (topOffset <= 0) {
+        if (topOffset <= 0 && bottomOffset >= window.innerHeight) {
           if (i < items.length - 1) {
             items[i].classList.add('fixed');
+            items[i].classList.remove('absolute');
           } else {
             items.forEach(item => {
+              item.classList.add('static');
+              item.classList.remove('absolute-top');
+              item.classList.remove('absolute-bottom');
               item.classList.remove('fixed');
-              item.style.position = 'static';
+
+              item.classList.remove('absolute');
             });
           }
         }
       }
     }
+  });
+
+  const burgerButton = document.querySelector('.burger-button');
+  const closeIcon = document.querySelector('.burger-button__close');
+  const burgerMenu = document.querySelector('.burger-menu');
+
+  burgerButton.addEventListener('click', function () {
+    console.log('hi');
+    burgerMenu.classList.toggle('open');
+  });
+
+  closeIcon.addEventListener('click', function () {
+    burgerMenu.classList.remove('open');
   });
 });
