@@ -1,6 +1,6 @@
 .burger-menu {
   display: flex;
-  position: fixed;
+  position: absolute;
   top: -100%;
   left: 0;
   width: 100%;
@@ -55,29 +55,6 @@
     gap: 16px;
   }
 }
-.burger-button {
-  z-index: 10;
-  cursor: pointer;
-  position: sticky;
-  top: 24px;
-  right: 16px;
-  background-color: $dark-text-color;
-  border: 1px solid transparent;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.logo {
-  display: block;
-  position: sticky;
-  left: 16px;
-  top: 24px;
-  width: 37px;
-  height: 37px;
-}
 
 @include for-tablet-up {
   .burger-menu {
@@ -105,16 +82,5 @@
     a {
       font-size: 13px;
     }
-  }
-
-  .burger-button {
-    left: 99vw;
-    top: 2.22vw;
-  }
-  .logo {
-    width: 48px;
-    height: 48px;
-    left: 24px;
-    top: 2.22vw;
   }
 }

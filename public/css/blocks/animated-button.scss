@@ -104,4 +104,8 @@
   .animated-button:not(:last-child) {
     margin-bottom: 3.33vw;
   }
+
+  .page-header .animated-button:not(:last-child) {
+    margin-bottom: 0;
+  }
 }

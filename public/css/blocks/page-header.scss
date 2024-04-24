@@ -1,4 +1,5 @@
 .page-header {
+  position: relative;
   padding-top: 8vw;
   padding-bottom: 8vw;
   margin-bottom: 16vw;
@@ -7,10 +8,27 @@
     width: 37.25vw;
     height: 7.75vw;
   }
+
+  .page-header__logo {
+    display: block;
+    width: 9.25vw;
+    height: 8vw;
+  }
+}
+.burger-button {
+  cursor: pointer;
+  background-color: $dark-text-color;
+  border: 1px solid transparent;
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @include for-tablet-up {
   .page-header {
-    padding-top: 2.22vw;
+    padding-top: 1.67vw;
     padding-bottom: unset;
     margin-bottom: 8.3vw;
 
@@ -23,5 +41,14 @@
       justify-content: space-between;
       align-items: center;
     }
+    .page-header__logo {
+      width: 2.57vw;
+      height: 2.3vw;
+    }
+  }
+  .burger-button {
+    width: 3.33vw;
+    height: 3.33vw;
+    margin-left: 1.67vw;
   }
 }

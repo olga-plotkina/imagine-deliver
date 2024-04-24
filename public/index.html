@@ -13,60 +13,66 @@
     />
   </head>
   <body>
-    <img class="logo" src="./images/img/unicorn-header-logo.png" />
-    <button type="button" class="burger-button">
-      <svg
-        class="burger-button__button"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M22 9H2"
-          stroke="#FBF7EC"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-        <path
-          d="M22 15H2"
-          stroke="#FBF7EC"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-      </svg>
-      <svg
-        class="burger-button__close visually-hidden"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19.1424 19.1421L5.00024 5"
-          stroke="#162E2E"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-        <path
-          d="M19.1424 4.85787L5.00024 19"
-          stroke="#162E2E"
-          stroke-width="1.5"
-          stroke-linecap="round"
-        />
-      </svg>
-    </button>
-
     <header class="page-header">
-      <div class="container container--header">
-        <img src="./images/img/lettermark-header-logo.png" />
-        <div class="animated-button">
-          <a class="animated-button__primary" href="/">Let’s connect</a>
-          <a class="animated-button__slide" href="/"
-            ><span>Let’s connect</span></a
-          >
+      <div class="container--header">
+        <div>
+          <img
+            class="page-header__logo"
+            src="./images/img/unicorn-header-logo.png"
+          />
+          <img src="./images/img/lettermark-header-logo.png" />
+        </div>
+        <div>
+          <div class="animated-button">
+            <a class="animated-button__primary" href="/">Let’s connect</a>
+            <a class="animated-button__slide" href="/"
+              ><span>Let’s connect</span></a
+            >
+          </div>
+          <button type="button" class="burger-button">
+            <svg
+              class="burger-button__button"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 9H2"
+                stroke="#FBF7EC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M22 15H2"
+                stroke="#FBF7EC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <svg
+              class="burger-button__close visually-hidden"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.1424 19.1421L5.00024 5"
+                stroke="#162E2E"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M19.1424 4.85787L5.00024 19"
+                stroke="#162E2E"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </header>
@@ -664,7 +670,7 @@
       </section>
     </main>
     <footer>
-      <div class="container">
+      <div>
         <div class="footer__top">
           <div class="footer__logo-wrapper">
             <img src="./images/img/unicorn-white.svg" />
