@@ -32,6 +32,11 @@
     font-weight: 400;
   }
 }
+
+.features__container {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
 .features__mobile-swipers {
   margin-bottom: 8vw;
 
@@ -78,8 +83,10 @@
 
 @include for-tablet-up {
   .features {
-    .container {
+    .features__container {
       display: flex;
+      padding-left: 4.5vw;
+      padding-right: 4.5vw;
     }
     h2 {
       font-size: 1.25vw;

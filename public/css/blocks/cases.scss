@@ -12,7 +12,9 @@
 
   width: 100%;
 
-  .container {
+  .cases__container {
+    padding-left: 6vw;
+    padding-right: 6vw;
     background-color: $background-yellow;
   }
 }
@@ -34,6 +36,7 @@
   position: absolute;
 }
 .cases__item.absolute-top {
+  z-index: 2;
   top: 0;
   position: absolute;
 }
@@ -60,7 +63,7 @@
   position: fixed;
   top: 0;
 }
-.cases .container {
+.cases .cases__container {
   background-color: $background-yellow;
 }
 
@@ -148,6 +151,10 @@
   text-align: center;
 }
 @include for-tablet-up {
+  .cases__container {
+    padding-left: 4.5vw;
+    padding-right: 4.5vw;
+  }
   .cases__item {
     padding-bottom: 5vw;
     // padding-bottom: 8.89vw;
