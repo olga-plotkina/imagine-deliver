@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerMenu = document.querySelector('.burger-menu');
 
   burgerButton.addEventListener('click', function () {
-    console.log('hi');
+    burgerButton.classList.toggle('open');
     burgerMenu.classList.toggle('open');
   });
 

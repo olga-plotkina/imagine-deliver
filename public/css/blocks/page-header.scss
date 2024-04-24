@@ -23,7 +23,7 @@
   position: fixed;
   top: 4vw;
   right: 4vw;
-  z-index: 6;
+  z-index: 12;
   cursor: pointer;
   background-color: $dark-text-color;
   border: 1px solid transparent;
@@ -33,6 +33,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg:last-child {
+    display: none;
+  }
+}
+.burger-button.open {
+  background-color: $background-yellow;
+  position: absolute;
+  z-index: 50;
+
+  svg:first-child {
+    display: none;
+  }
+  svg:last-child {
+    display: block;
+  }
 }
 @include for-tablet-up {
   .page-header {

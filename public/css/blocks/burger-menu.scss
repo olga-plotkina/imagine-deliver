@@ -1,12 +1,11 @@
 .burger-menu {
   display: flex;
-  position: absolute;
-  display: none;
+  position: fixed;
   top: -100%;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 6;
+  z-index: 10;
   background-color: $dark-text-color;
   padding: 200px 132px 333px 24px;
   transition: top 0.4s ease-in-out;
