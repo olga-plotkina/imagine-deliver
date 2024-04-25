@@ -150,12 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.querySelector('.burger-button__close');
   const burgerMenu = document.querySelector('.burger-menu');
 
-  burgerButton.addEventListener('click', function () {
+  burgerButton.addEventListener('click', function (e) {
     burgerButton.classList.toggle('open');
     burgerMenu.classList.toggle('open');
   });
 
-  closeIcon.addEventListener('click', function () {
-    burgerMenu.classList.remove('open');
-  });
+  // closeIcon.addEventListener('click', function () {
+  //   burgerMenu.classList.remove('open');
+  // });
 });

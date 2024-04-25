@@ -31,11 +31,18 @@
   height: 12vw;
   border-radius: 50%;
   display: flex;
+
   justify-content: center;
   align-items: center;
-
+  svg {
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  svg:first-child {
+    top: 6vw;
+  }
   svg:last-child {
-    display: none;
+    top: 7.25vw;
   }
 }
 .burger-button.open {
@@ -43,11 +50,14 @@
   position: absolute;
   z-index: 50;
 
+  path {
+    stroke: $dark-text-color;
+  }
   svg:first-child {
-    display: none;
+    transform: rotate(45deg) translate(-0vw, 0.35vw);
   }
   svg:last-child {
-    display: block;
+    transform: rotate(-45deg) translate(0.25vw, -0.1vw);
   }
 }
 @include for-tablet-up {
@@ -77,5 +87,12 @@
     height: 3.33vw;
     right: 1.67vw;
     top: 1.67vw;
+
+    svg:first-child {
+      top: 0.7vw;
+    }
+    svg:last-child {
+      top: 1.2vw;
+    }
   }
 }
