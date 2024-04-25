@@ -151,9 +151,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerMenu = document.querySelector('.burger-menu');
 
   burgerButton.addEventListener('click', function (e) {
-    burgerButton.classList.toggle('open');
+    burgerButton.classList.toggle('close');
     burgerMenu.classList.toggle('open');
   });
+
+  // var anchor = document.querySelectorAll('button');
+
+  // [].forEach.call(anchor, function (anchor) {
+  //   var open = false;
+  //   anchor.onclick = function (event) {
+  //     event.preventDefault();
+  //     if (!open) {
+  //       this.classList.add('close');
+  //       open = true;
+  //     } else {
+  //       this.classList.remove('close');
+  //       open = false;
+  //     }
+  //   };
+  // });
 
   // closeIcon.addEventListener('click', function () {
   //   burgerMenu.classList.remove('open');

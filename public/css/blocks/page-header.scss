@@ -1,3 +1,18 @@
+$button-size: 1.67vw;
+$transition: 0.35s;
+$color: #000000;
+
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: 0.1vw;
+  background: $color;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
 .page-header {
   position: relative;
   padding-top: 8vw;
@@ -19,47 +34,85 @@
     height: 8vw;
   }
 }
+
 .burger-button {
+  width: 12vw;
+  height: 12vw;
   position: fixed;
   top: 4vw;
   right: 4vw;
   z-index: 12;
   cursor: pointer;
   background-color: $dark-text-color;
-  border: 1px solid transparent;
-  width: 12vw;
-  height: 12vw;
   border-radius: 50%;
-  display: flex;
+  border: 1px solid transparent;
+  outline: none;
+}
+.lines {
+  @include line;
+  position: relative;
+  background: transparent;
 
-  justify-content: center;
-  align-items: center;
-  svg {
+  /*create the upper and lower lines as pseudo-elements of the middle line*/
+  &:before,
+  &:after {
+    @include line;
     position: absolute;
-    transition: all 0.3s ease;
+    left: 0;
+    content: '';
+    -webkit-transform-origin: 6vw center;
+    -moz-transform-origin: 6vw center;
+    -ms-transform-origin: 6vw center;
+    transform-origin: 6vw center;
   }
-  svg:first-child {
-    top: 6vw;
-  }
-  svg:last-child {
+  &:before {
     top: 7.25vw;
   }
+  &:after {
+    top: 6vw;
+  }
 }
-.burger-button.open {
-  background-color: $background-yellow;
-  position: absolute;
-  z-index: 50;
+// .burger-button {
+//   position: fixed;
+//   top: 4vw;
+//   right: 4vw;
+//   z-index: 12;
+//   cursor: pointer;
+//   background-color: $dark-text-color;
+//   border: 1px solid transparent;
+//   width: 12vw;
+//   height: 12vw;
+//   border-radius: 50%;
+//   display: flex;
 
-  path {
-    stroke: $dark-text-color;
-  }
-  svg:first-child {
-    transform: rotate(45deg) translate(-0vw, 0.35vw);
-  }
-  svg:last-child {
-    transform: rotate(-45deg) translate(0.25vw, -0.1vw);
-  }
-}
+//   justify-content: center;
+//   align-items: center;
+//   svg {
+//     position: absolute;
+//     transition: all 0.3s ease;
+//   }
+//   svg:first-child {
+//     top: 6vw;
+//   }
+//   svg:last-child {
+//     top: 7.25vw;
+//   }
+// }
+// .burger-button.open {
+//   background-color: $background-yellow;
+//   position: absolute;
+//   z-index: 50;
+
+//   path {
+//     stroke: $dark-text-color;
+//   }
+//   svg:first-child {
+//     transform: rotate(45deg) translate(-0vw, 0.35vw);
+//   }
+//   svg:last-child {
+//     transform: rotate(-45deg) translate(0.25vw, -0.1vw);
+//   }
+// }
 @include for-tablet-up {
   .page-header {
     padding-top: 1.67vw;
@@ -88,11 +141,75 @@
     right: 1.67vw;
     top: 1.67vw;
 
-    svg:first-child {
-      top: 0.7vw;
+    .lines {
+      &:before,
+      &:after {
+        @include line;
+        position: absolute;
+        left: 0;
+        content: '';
+        -webkit-transform-origin: 0 center;
+        -moz-transform-origin: 0 center;
+        -ms-transform-origin: 0 center;
+        transform-origin: 0 center;
+      }
+      &:before {
+        top: -0vw;
+      }
+      &:after {
+        top: -0.5vw;
+      }
     }
-    svg:last-child {
-      top: 1.2vw;
+
+    // svg:first-child {
+    //   top: 0.7vw;
+    // }
+    // svg:last-child {
+    //   top: 1.2vw;
+    // }
+  }
+}
+
+.burger-button.x .lines {
+  &:before,
+  &:after {
+    background-color: $background-yellow;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    transition: top 0.3s 0.1s ease, transform 0.1s ease;
+  }
+}
+
+.burger-button.x.close {
+  background-color: $background-yellow;
+  transition: background-color 0.5s ease;
+  .lines {
+    &:before,
+    &:after {
+      background-color: $dark-text-color;
+      -webkit-transition: top 0.5s ease, transform 0.6s 0.05s ease,
+        background-color 0.5s ease;
+      -moz-transition: top 0.5s ease, transform 0.6s 0.05s ease,
+        background-color 0.5s ease;
+      -ms-transition: top 0.5s ease, transform 0.6s 0.05s ease,
+        background-color 0.5s ease;
+      transition: top 0.5s ease, transform 0.6s 0.05s ease,
+        background-color 0.5s ease;
+      top: -0.3vw;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
     }
   }
 }

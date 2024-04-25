@@ -74,7 +74,9 @@
     }
   }
 }
-
+nav > ul > li > ul {
+  display: none;
+}
 .burger-menu.open {
   top: 0;
 
