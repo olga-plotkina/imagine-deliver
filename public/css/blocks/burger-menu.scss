@@ -43,7 +43,7 @@
     a {
       position: absolute;
       transform: translateY(12.75vw);
-      transition: transform 0.5s cubic-bezier(0.5, 0.8, 0.2, 0.43);
+      transition: transform 0.5s ease;
       font-size: 12.75vw;
       color: $background-yellow;
       font-weight: 700;
