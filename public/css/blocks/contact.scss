@@ -13,6 +13,7 @@
     border-radius: 8px;
     border: 0.5px solid rgba(22, 46, 46, 0.25);
     background: rgba(22, 46, 46, 0.04);
+    font-size: 4.25vw;
     // height: 10vw;
     width: 90%;
     padding: 4.5vw 4vw;
@@ -28,7 +29,10 @@
     left: 11vw;
   }
 }
-
+.contact__container {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
 @include for-tablet-up {
   .contact {
     padding-bottom: 8.33vw;
@@ -40,6 +44,7 @@
     }
 
     p {
+      text-align: center;
       font-size: 3.125vw;
       max-width: 60vw;
       margin-bottom: 3.33vw;
@@ -49,6 +54,7 @@
       width: 21.66vw;
       padding: 1.25vw 1.11vw;
       margin-bottom: unset;
+      font-size: 1.25vw;
 
       //   height: 3.33vw;
     }
@@ -60,5 +66,12 @@
       width: unset;
       gap: 2.22vw;
     }
+  }
+  .contact__container {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -65,6 +65,10 @@
   transform: translateY(50%);
   padding-top: 1.8vw;
 }
+.guides.cases__container .animated-button {
+  margin-left: auto;
+  margin-right: auto;
+}
 @include for-tablet-up {
   .animated-button {
     border: $border-desktop-width solid #162e2e66;

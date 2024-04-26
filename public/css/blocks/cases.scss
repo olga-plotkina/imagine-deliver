@@ -5,19 +5,32 @@
 
 .cases__item {
   background-color: $background-yellow;
-  height: 100vh;
-
-  padding-bottom: 20.5vw;
-  padding-top: 8vw;
+  // height: 100vh;
 
   width: 100%;
 
   .cases__container {
+    height: 100vh;
+
+    padding-bottom: 20.5vw;
+    padding-top: 8vw;
     padding-left: 6vw;
     padding-right: 6vw;
     background-color: $background-yellow;
+    opacity: 1;
   }
 }
+.cases__item.changed-background {
+  background-color: rgba(22, 46, 46);
+
+  .cases__container {
+    opacity: 0.4;
+    transition: opacity 1s ease;
+  }
+}
+// .cases__item--guides {
+//   height: 100vh;
+// }
 .cases__item:not(:first-child) {
   border-top: 0.5px solid $dark-text-color;
 }
@@ -67,7 +80,10 @@
 .cases .cases__container {
   background-color: $background-yellow;
 }
-
+.cases .cases__item.changed-background .cases__container {
+  opacity: 0.4;
+  transition: opacity 1s ease;
+}
 // .cases .cases__item:first-child {
 //   z-index: 0;
 //   position: absolute;
@@ -155,11 +171,14 @@
   .cases__container {
     padding-left: 4.5vw;
     padding-right: 4.5vw;
-  }
-  .cases__item {
     padding-bottom: 5vw;
     // padding-bottom: 8.89vw;
     padding-top: 2.78vw;
+  }
+
+  .cases__item--guides {
+    padding-top: 11.67vw;
+    padding-bottom: 19.5vw;
   }
   .cases__item-image {
     display: block;

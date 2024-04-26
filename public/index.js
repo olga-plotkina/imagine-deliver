@@ -238,4 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  //grey background for cases
+
+  const allCaseItems = document.querySelectorAll('.cases__item');
+  if (allCaseItems.length) {
+    allCaseItems.forEach(item => {
+      if (!item.classList.contains('cases__item--guides')) {
+        item.addEventListener('click', e => {
+          item.classList.toggle('changed-background');
+        });
+      }
+    });
+  }
 });

@@ -1,10 +1,17 @@
 .insights {
   padding-bottom: 24vw;
+
   h3 {
+    text-align: center;
     text-transform: uppercase;
     font-family: $secondary-font-family;
     font-size: 12vw;
     margin-bottom: 10vw;
+  }
+  h4 {
+    font-size: 5.5vw;
+    font-weight: 500;
+    line-height: 1.27;
   }
   img {
     margin-bottom: 4vw;
@@ -16,18 +23,36 @@
     display: none;
   }
 }
+.insights__container {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+.insights__item:not(:last-child) {
+  margin-bottom: 10vw;
+}
+
 @include for-tablet-up {
   .insights {
     padding-bottom: 13.33vw;
 
     h3 {
+      text-align: unset;
+
       font-size: 4.9vw;
       margin-bottom: 4.44vw;
+    }
+
+    h4 {
+      font-size: 1.6vw;
     }
 
     img {
       margin-bottom: 1.67vw;
     }
+  }
+  .insights__container {
+    padding-left: 4.44vw;
+    padding-right: 4.44vw;
   }
   .insights__title-wrapper {
     display: flex;
@@ -42,6 +67,6 @@
     gap: 2.22vw;
   }
   .insights__item {
-    width: calc(33% - 2.22vw);
+    width: calc(33% - 1.11vw);
   }
 }
