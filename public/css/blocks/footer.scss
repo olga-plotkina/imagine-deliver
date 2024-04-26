@@ -1,24 +1,49 @@
 footer {
   background-color: $dark-text-color;
   padding-top: 16vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  padding-bottom: 10vw;
 }
 .footer__logo {
   display: flex;
-  gap: 10px;
+  width: 70vw;
+  gap: 1.84vw;
 }
 .footer__logo-wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 15.75vw;
+
+  img {
+    width: 16.25vw;
+    height: 14vw;
+  }
 }
 .footer__partners {
   display: flex;
   justify-content: center;
+
+  img:first-child {
+    width: 49.5vw;
+    height: 17.85vw;
+  }
+  img:last-child {
+    width: 28.25vw;
+    height: 17.85vw;
+  }
 }
 .footer__top {
   border-bottom: 0.5px solid rgba(251, 247, 236, 0.3);
+  padding-bottom: 8.75vw;
+}
+.footer__bottom {
+  padding-top: 8vw;
 }
 .footer__links {
+  white-space: nowrap;
+  font-size: 4.25vw;
+  font-weight: 400;
   display: flex;
   column-gap: 4vw;
   row-gap: 8vw;
@@ -28,9 +53,14 @@ footer {
   width: calc(50% - 4vw);
   ul {
     padding: 0;
+    margin-top: 6vw;
+    margin-bottom: 0;
   }
   li {
     text-align: left;
+  }
+  li:not(:last-child) {
+    margin-bottom: 4vw;
   }
   h4 {
     color: $violet-accent-text;
@@ -39,37 +69,170 @@ footer {
     color: $white-text;
   }
 }
+.footer__basement {
+  padding-top: 12vw;
+}
+.footer__socials {
+  ul {
+    display: flex;
+    gap: 4vw;
+    padding-left: 0;
+    justify-content: center;
+    list-style: none;
+  }
+  a {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background-color: $background-yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  svg {
+    display: block;
+    width: 5.62vw;
+    height: 5.62vw;
+  }
+}
+.footer__contacts {
+  font-size: 3.5vw;
+  font-weight: 500;
+  padding-top: 10vw;
+
+  color: #8c8b98;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4vw;
+  }
+
+  li:last-child {
+    margin-top: 8vw;
+  }
+
+  a {
+    color: inherit;
+  }
+}
 
 @include for-tablet-up {
   footer {
+    padding-top: 10vw;
+    padding-left: 4.44vw;
+    padding-right: 4.44vw;
+    padding-bottom: 4.44vw;
+
     .container {
       display: flex;
+    }
+    > div:first-child {
+      display: flex;
+      gap: 8vw;
+    }
+  }
+  .footer__logo {
+    display: flex;
+    width: 25vw;
+    gap: 0.7vw;
+  }
+  .footer__logo-wrapper {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 4.55vw;
+
+    img {
+      width: 5vw;
+      height: 4vw;
+    }
+  }
+  .footer__partners {
+    justify-content: left;
+    img:first-child {
+      width: 13.75vw;
+      height: 4.96vw;
+    }
+    img:last-child {
+      width: 7.9vw;
+      height: 4.96vw;
     }
   }
   .footer__top {
     border-bottom: none;
-    flex-grow: 0.2;
+    padding-bottom: 0;
   }
   .footer__bottom {
-    flex-grow: 0.8;
+    padding-top: 0;
   }
+
   .footer__links {
-    row-gap: 1.94vw;
-    column-gap: unset;
+    font-size: 1.25vw;
+    // row-gap: 2.22vw;
+    column-gap: 6vw;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
   .footer__links-item {
-    width: calc(25% - 1.94vw);
+    width: calc(25% - 2vw);
     ul {
       padding: 0;
+      margin-top: 2.22vw;
+      margin-bottom: 0;
     }
     li {
       text-align: left;
+    }
+    li:not(:last-child) {
+      margin-bottom: 1.11vw;
     }
     h4 {
       color: $violet-accent-text;
     }
     a {
       color: $white-text;
+    }
+  }
+
+  .footer__basement {
+    padding-top: 8.54vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__socials {
+    ul {
+      gap: 0.56vw;
+      justify-content: left;
+    }
+    a {
+      width: 2.22vw;
+      height: 2.22vw;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 1.56vw;
+      height: 1.56vw;
+    }
+  }
+  .footer__contacts {
+    font-size: 0.97vw;
+    padding-top: 0;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      gap: 5vw;
+    }
+
+    li:last-child {
+      margin-top: 0;
     }
   }
 }
