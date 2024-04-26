@@ -33,7 +33,7 @@ module.exports = env => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin({ template: './public/index.html' }),
+      new HtmlWebpackPlugin({ template: './public/index.html', minify: false }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
         patterns: [
