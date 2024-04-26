@@ -146,6 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   //burger menu
+  const sideMenuItems = document.querySelectorAll(
+    '.burger-menu__sidemenu [data-menu]'
+  );
+  const mainMenuItems = document.querySelectorAll(
+    '.burger-menu__main [data-id]'
+  );
   const burgerButton = document.querySelector('.burger-button');
   const closeIcon = document.querySelector('.burger-button__close');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -153,27 +159,35 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerButton.addEventListener('click', function (e) {
     burgerButton.classList.toggle('close');
     burgerMenu.classList.toggle('open');
+    sideMenuItems.forEach(item => {
+      item.classList.remove('hovered');
+    });
+    mainMenuItems.forEach(item => {
+      item.classList.remove('hovered');
+      item.classList.remove('other-hovered');
+    });
   });
 
   // submenu header
 
-  const mainMenuItems = document.querySelectorAll(
-    '.burger-menu__main [data-id]'
-  );
-  const sideMenuItems = document.querySelectorAll(
-    '.burger-menu__sidemenu [data-menu]'
-  );
-  const menuLinks = document.querySelectorAll('.burger-menu__main a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      if (e.target === link) {
-        link.classList.add('submenu-shown');
-      } else {
-        link.classList.remove('submenu-shown');
-      }
+  const mainMenu = document.querySelector('.burger-menu');
+
+  const menuLinks = document.querySelectorAll('.burger-menu__main  a');
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    menuLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        if (e.target === link) {
+          menuLinks.forEach(link => {
+            link.parentElement.classList.remove('submenu-shown');
+          });
+          link.parentElement.classList.add('submenu-shown');
+        } else {
+          link.parentElement.classList.remove('submenu-shown');
+        }
+      });
     });
-  });
+  }
   mainMenuItems.forEach(mainItem => {
     mainItem.addEventListener('mouseover', function () {
       mainMenuItems.forEach(mainItemAny => {
