@@ -155,16 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerButton = document.querySelector('.burger-button');
   const closeIcon = document.querySelector('.burger-button__close');
   const burgerMenu = document.querySelector('.burger-menu');
+  const mainSection = document.querySelector('main');
+  const headerSection = document.querySelector('header');
 
   burgerButton.addEventListener('click', function (e) {
     burgerButton.classList.toggle('close');
     burgerMenu.classList.toggle('open');
+    mainSection.classList.toggle('menu-open');
+    headerSection.classList.toggle('menu-open');
+
     sideMenuItems.forEach(item => {
       item.classList.remove('hovered');
     });
     mainMenuItems.forEach(item => {
       item.classList.remove('hovered');
       item.classList.remove('other-hovered');
+      item.classList.remove('submenu-shown');
     });
   });
 
