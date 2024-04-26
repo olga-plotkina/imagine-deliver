@@ -4,83 +4,62 @@
 }
 
 .cases__item {
+  position: relative;
+  z-index: 6;
   background-color: $background-yellow;
-  transition: background-color 1s ease;
-
-  // height: 100vh;
-
+  transition: background-color 2s ease;
+  transition-delay: 1s;
   width: 100%;
 
   .cases__container {
     height: 100vh;
 
     padding-bottom: 20.5vw;
-    padding-top: 8vw;
+    // padding-top: 8vw;
     padding-left: 6vw;
     padding-right: 6vw;
     background-color: $background-yellow;
     opacity: 1;
-    transition: opacity 1s ease;
+    transition: opacity 2s ease;
+    transition-delay: 1s;
   }
 }
-.cases__item.changed-background {
+#case-2 {
+  z-index: 3;
+}
+#case-3 {
+  z-index: 4;
+}
+#case-4 {
+  z-index: 5;
+}
+.cases__item.absolute {
+  position: absolute;
+}
+.cases__item.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.cases__item.background-grey {
   background-color: rgba(22, 46, 46);
-  transition: background-color 1s ease;
+  transition: background-color 2s ease;
+  transition-delay: 1s;
 
   .cases__container {
     opacity: 0.4;
-    transition: opacity 1s ease;
+    transition: opacity 2s ease;
+    transition-delay: 1s;
   }
 }
-// .cases__item--guides {
-//   height: 100vh;
-// }
+
 .cases__item:not(:first-child) {
   border-top: 0.5px solid $dark-text-color;
 }
 .cases__item.cases__item--guides {
   border-top: none;
 }
-// .cases__item:first-child {
-//   position: absolute;
-//   top: 0;
-//   z-index: 1;
-// }
-.cases__item.static {
-  position: static;
-}
-.cases__item.absolute {
-  position: absolute;
-}
-.cases__item.absolute-top {
-  z-index: 2;
-  top: 0;
-  position: absolute;
-}
-.cases__item.absolute-bottom {
-  position: absolute;
-  // bottom: 0;
-  // top: 140vh;
-}
 
-.cases__item:nth-child(2) {
-  top: 120vh;
-  z-index: 3;
-}
-.cases__item:nth-child(3) {
-  top: 240vh;
-  z-index: 4;
-}
-.cases__item--guides {
-  height: auto;
-  top: 350vh;
-  z-index: 5;
-}
-.cases__item.fixed {
-  z-index: 2;
-  position: fixed;
-  top: 0;
-}
 .cases .cases__container {
   background-color: $background-yellow;
 }

@@ -27,9 +27,9 @@
 
 @include for-tablet-up {
   .guides {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
 
     .animated-button {
       margin-bottom: 3.33vw;
@@ -38,8 +38,12 @@
     img {
       width: 36.53vw;
       height: 36.53vw;
+      margin-left: auto;
+      margin-right: auto;
     }
     h3 {
+      margin-left: auto;
+      margin-right: auto;
       font-size: 6.25vw;
       line-height: 1.04;
       margin-bottom: 2.78vw;
