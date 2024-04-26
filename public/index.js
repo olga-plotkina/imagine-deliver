@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (topOffset <= 0 && bottomOffset >= window.innerHeight) {
           if (i < items.length - 1) {
             items[i].classList.add('fixed');
+            items[i].classList.add('changed-background');
             items[i].classList.remove('absolute');
           } else {
             items.forEach(item => {
@@ -241,14 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //grey background for cases
 
-  const allCaseItems = document.querySelectorAll('.cases__item');
-  if (allCaseItems.length) {
-    allCaseItems.forEach(item => {
-      if (!item.classList.contains('cases__item--guides')) {
-        item.addEventListener('click', e => {
-          item.classList.toggle('changed-background');
-        });
-      }
-    });
-  }
+  // const allCaseItems = document.querySelectorAll('.cases__item');
+  // if (allCaseItems.length) {
+  //   allCaseItems.forEach(item => {
+  //     if (!item.classList.contains('cases__item--guides')) {
+  //       item.addEventListener('click', e => {
+  //         item.classList.toggle('changed-background');
+  //       });
+  //     }
+  //   });
+  // }
 });
