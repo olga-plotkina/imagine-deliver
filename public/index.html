@@ -974,20 +974,20 @@
     <div class="burger-menu">
       <img src="./images/img/navigation.jpg" />
       <div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li>
+        <nav class="burger-menu__navigation">
+          <ul class="burger-menu__main">
+            <li data-id="home"><a href="/">Home</a></li>
+            <li data-id="impact">
               <a href="/">Impact</a>
-              <ul>
+              <ul class="burger-menu__submenu">
                 <li><a href="/">Process</a></li>
                 <li><a href="/">Case Studies</a></li>
                 <li><a href="/">Insights</a></li>
               </ul>
             </li>
-            <li>
+            <li data-id="resources">
               <a href="/">Resources</a>
-              <ul>
+              <ul class="burger-menu__submenu">
                 <li>
                   <a href="/">Courses</a>
                 </li>
@@ -999,9 +999,9 @@
                 </li>
               </ul>
             </li>
-            <li>
+            <li data-id="company">
               <a href="/">Company</a>
-              <ul>
+              <ul class="burger-menu__submenu">
                 <li>
                   <a href="/">About</a>
                 </li>
@@ -1019,9 +1019,9 @@
                 </li>
               </ul>
             </li>
-            <li>
+            <li data-id="connect">
               <a href="/">Connect</a>
-              <ul>
+              <ul class="burger-menu__submenu">
                 <li>
                   <a href="/">Partner</a>
                 </li>
@@ -1034,7 +1034,54 @@
               </ul>
             </li>
           </ul>
+          <div class="burger-menu__sidemenu">
+            <ul data-menu="impact" class="burger-menu__submenu">
+              <li><a href="/">Process</a></li>
+              <li><a href="/">Case Studies</a></li>
+              <li><a href="/">Insights</a></li>
+            </ul>
+            <ul data-menu="resources" class="burger-menu__submenu">
+              <li>
+                <a href="/">Courses</a>
+              </li>
+              <li>
+                <a href="/">Guides</a>
+              </li>
+              <li>
+                <a href="/">Whitepapers</a>
+              </li>
+            </ul>
+            <ul data-menu="company" class="burger-menu__submenu">
+              <li>
+                <a href="/">About</a>
+              </li>
+              <li>
+                <a href="/">Vision</a>
+              </li>
+              <li>
+                <a href="/">Team</a>
+              </li>
+              <li>
+                <a href="/">Careers</a>
+              </li>
+              <li>
+                <a href="/">News</a>
+              </li>
+            </ul>
+            <ul data-menu="connect" class="burger-menu__submenu">
+              <li>
+                <a href="/">Partner</a>
+              </li>
+              <li>
+                <a href="/">Support</a>
+              </li>
+              <li>
+                <a href="/">Email</a>
+              </li>
+            </ul>
+          </div>
         </nav>
+
         <div class="burger-menu__credentials">
           <div>Minneapolis, MN</div>
           <div>

@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
+  //burger menu
   const burgerButton = document.querySelector('.burger-button');
   const closeIcon = document.querySelector('.burger-button__close');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -155,23 +155,46 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerMenu.classList.toggle('open');
   });
 
-  // var anchor = document.querySelectorAll('button');
+  // submenu header
 
-  // [].forEach.call(anchor, function (anchor) {
-  //   var open = false;
-  //   anchor.onclick = function (event) {
-  //     event.preventDefault();
-  //     if (!open) {
-  //       this.classList.add('close');
-  //       open = true;
-  //     } else {
-  //       this.classList.remove('close');
-  //       open = false;
-  //     }
-  //   };
-  // });
-
-  // closeIcon.addEventListener('click', function () {
-  //   burgerMenu.classList.remove('open');
-  // });
+  const mainMenuItems = document.querySelectorAll(
+    '.burger-menu__main [data-id]'
+  );
+  const sideMenuItems = document.querySelectorAll(
+    '.burger-menu__sidemenu [data-menu]'
+  );
+  const menuLinks = document.querySelectorAll('.burger-menu__main a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      if (e.target === link) {
+        link.classList.add('submenu-shown');
+      } else {
+        link.classList.remove('submenu-shown');
+      }
+    });
+  });
+  mainMenuItems.forEach(mainItem => {
+    mainItem.addEventListener('mouseover', function () {
+      mainMenuItems.forEach(mainItemAny => {
+        if (mainItemAny !== mainItem) {
+          mainItemAny.classList.add('other-hovered');
+          mainItemAny.classList.remove('hovered');
+        } else {
+          mainItemAny.classList.add('hovered');
+          mainItemAny.classList.remove('other-hovered');
+        }
+      });
+      const dataId = this.getAttribute('data-id');
+      sideMenuItems.forEach(item => {
+        if (item.getAttribute('data-menu') === dataId) {
+          item.classList.add('hovered');
+          mainItem.classList.add('hovered');
+        } else {
+          item.classList.remove('hovered');
+          mainItem.classList.remove('hovered');
+        }
+      });
+    });
+  });
 });
