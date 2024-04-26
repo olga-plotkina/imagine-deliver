@@ -107,20 +107,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.deltaY < 0) {
       for (let i = 0; i < items.length; i++) {
         const topOffset = items[i].getBoundingClientRect().top;
+        const bottomOffset = items[i].getBoundingClientRect().bottom;
+
         if (topOffset >= viewportHeight) {
           if (items[i - 1]) {
             items[i - 1].classList.remove('fixed');
             items[i - 1].classList.add('absolute-top');
           }
         } else {
-          if (i < items.length - 1) {
-            items[i].classList.add('fixed');
-            items[i].classList.remove('static');
-          } else {
-            items[i].classList.add('absolute-bottom');
-            items[i].classList.remove('static');
-          }
+          // items[i].classList.remove('static');
+          // // items[i].classList.add('absolute');
+          // if (i < items.length - 1) {
+          //   items[i].classList.add('absolute');
+          // }
         }
+        if (topOffset >= 0 && topOffset < 60 && i === items.length - 1) {
+          items.forEach(item => {
+            item.classList.remove('static');
+            item.classList.add('fixed');
+          });
+
+          items[i].classList.add('absolute-bottom');
+          items[i].classList.remove('static');
+          items[i].classList.remove('fixed');
+        }
+
+        // if (topOffset > viewportHeight) {
+        //   if (items[i - 1]) {
+        //     items[i - 1].classList.add('absolute-top');
+        //     items[i - 1].classList.remove('fixed');
+        //   } else {
+        //     items.forEach(item => {
+        //       item.classList.remove('fixed');
+        //     });
+        //   }
+        // }
       }
     } else {
       for (let i = 0; i < items.length; i++) {
