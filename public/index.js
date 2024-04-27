@@ -132,6 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //Scroll logic
   function onScroll() {
     var scrollBarPosition = window.pageYOffset;
+    console.log(window.pageYOffset, checkPointTwo);
+
     if (scrollBarPosition >= 0 && scrollBarPosition < checkPointTwo) {
       removeClass(sectionTwo, sectionThree);
       removeBackground(sectionTwo);
