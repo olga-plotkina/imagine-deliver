@@ -58,6 +58,9 @@
 }
 .cases__item.cases__item--guides {
   border-top: none;
+  .cases__container {
+    padding-bottom: 18vw;
+  }
 }
 
 .cases .cases__container {
@@ -152,10 +155,12 @@
     .cases__container {
       padding-left: 4.5vw;
       padding-right: 4.5vw;
-      padding-bottom: 4vw;
-      // padding-bottom: 8.89vw;
+      padding-bottom: 8.89vw;
       padding-top: 2.78vw;
     }
+  }
+  .cases__item.cases__item--guides .cases__container {
+    padding-bottom: 3vw;
   }
 
   // .cases__item--guides {
@@ -164,7 +169,8 @@
   // }
   .cases__item-image {
     display: block;
-    margin-bottom: unset;
+    // margin-bottom: unset;
+
     // img {
     //   width: 44.44vw;
     //   height: 49.93vw;
@@ -173,7 +179,7 @@
 
   .cases__item-top {
     font-size: 0.97vw;
-    margin-bottom: 5vw;
+    // margin-bottom: 3vw;
     justify-content: left;
 
     > div:first-child {
@@ -191,7 +197,7 @@
   }
   .cases__item-image {
     max-width: 44.44vw;
-    height: unset;
+    height: 40vw;
     width: unset;
 
     order: 2;
@@ -204,6 +210,8 @@
     font-size: 1.6vw;
     line-height: 1.39;
     text-align: left;
+    // margin-top: 4.9vw;
+    margin-bottom: 2.22vw;
   }
   .cases__item-lid {
     max-width: 36.67vw;
@@ -211,6 +219,7 @@
 
     font-size: 5vw;
     line-height: 0.93;
+    margin-bottom: 0;
   }
   .cases__item-description {
     font-size: 1.25vw;
@@ -218,5 +227,7 @@
   }
   .animated-button.cases__item-link {
     margin-left: unset;
+    margin-bottom: 15vw;
+    margin-top: 4.78vw;
   }
 }
