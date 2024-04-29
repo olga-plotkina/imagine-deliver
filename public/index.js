@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clickable: true,
     },
     speed: 800,
+    allowTouchMove: false,
   });
   const featuresSwiper = new Swiper(featuresSwiperContainer, {
     loop: true,
