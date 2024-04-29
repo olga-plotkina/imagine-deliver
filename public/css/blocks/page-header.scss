@@ -75,9 +75,21 @@ $transition: 0.35s;
   }
   &:before {
     top: -500%;
+    right: 0.18vw;
   }
   &:after {
     top: 100%;
+    right: 0.18vw;
+  }
+
+  @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
+    &:before {
+      right: 0vw; /* Adjusted right value for Safari */
+    }
+
+    &:after {
+      right: 0vw; /* Adjusted right value for Safari */
+    }
   }
 }
 
