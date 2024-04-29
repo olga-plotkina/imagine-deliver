@@ -59,6 +59,8 @@ $transition: 0.35s;
   @include line;
   position: relative;
   background: transparent;
+  // display: flex;
+  // justify-content: center;
 
   /*create the upper and lower lines as pseudo-elements of the middle line*/
   &:before,
@@ -84,11 +86,22 @@ $transition: 0.35s;
 
   @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
     &:before {
-      right: 15%;
+      right: 20%;
     }
 
     &:after {
-      right: 15%; /* Adjusted right value for Safari */
+      right: 20%; /* Adjusted right value for Safari */
+    }
+  }
+  /* Apply different styles for Chrome */
+  @supports (-webkit-appearance: none) {
+    @supports (-webkit-touch-callout: none) {
+      .lines {
+        &:before,
+        &:after {
+          right: 0;
+        }
+      }
     }
   }
 }
