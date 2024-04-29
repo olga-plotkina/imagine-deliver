@@ -10,7 +10,7 @@
     font-family: inherit;
     font-weight: 700;
     max-width: 90.25vw;
-    line-height: 1;
+    line-height: 1.18;
     letter-spacing: -0.05em;
     margin-bottom: 8vw;
   }
@@ -62,6 +62,7 @@ div.word {
 }
 
 .splitText .word {
+  line-height: 1.18;
   overflow: hidden;
   display: inline-block;
 }

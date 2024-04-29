@@ -66,7 +66,7 @@ $transition: 0.35s;
     @include line;
     position: absolute;
     border-radius: 1px;
-    left: 0;
+    left: 0vw;
     content: '';
     -webkit-transform-origin: 3vw center;
     -moz-transform-origin: 3vw center;
@@ -74,10 +74,10 @@ $transition: 0.35s;
     transform-origin: 3vw center;
   }
   &:before {
-    top: -2vw;
+    top: -500%;
   }
   &:after {
-    top: 0;
+    top: 100%;
   }
 }
 
