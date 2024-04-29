@@ -1,13 +1,14 @@
 footer {
   background-color: $dark-text-color;
   padding-top: 16vw;
-  padding-left: 6vw;
-  padding-right: 6vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
   padding-bottom: 10vw;
 }
 .footer__logo {
   display: flex;
-  width: 70vw;
+  justify-content: center;
+  width: 80vw;
   gap: 1.84vw;
 }
 .footer__logo-wrapper {
@@ -39,6 +40,8 @@ footer {
 }
 .footer__bottom {
   padding-top: 8vw;
+  padding-left: 2.44vw;
+  padding-right: 2.44vw;
 }
 .footer__links {
   white-space: nowrap;
@@ -119,7 +122,35 @@ footer {
     color: inherit;
   }
 }
+.logo__i {
+  width: 2vw;
+  height: 13.75vw;
+}
+.logo__m {
+  width: 6.5vw;
+  height: 13.75vw;
+}
+.logo__r {
+  width: 5.25vw;
+  height: 13.75vw;
+}
+.logo__a,
+.logo__v {
+  width: 5.75vw;
+  height: 13.75vw;
+}
+.logo__g,
+.logo__n,
+.logo__d {
+  width: 5vw;
+  height: 13.75vw;
+}
 
+.logo__e,
+.logo__l {
+  width: 4.25vw;
+  height: 13.75vw;
+}
 @include for-tablet-up {
   footer {
     padding-top: 10vw;
@@ -137,6 +168,8 @@ footer {
   }
   .footer__logo {
     display: flex;
+    justify-content: left;
+
     width: 25vw;
     gap: 0.7vw;
   }
@@ -167,6 +200,8 @@ footer {
   }
   .footer__bottom {
     padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .footer__links {
@@ -234,5 +269,35 @@ footer {
     li:last-child {
       margin-top: 0;
     }
+  }
+
+  .logo__i {
+    width: 0.56vw;
+    height: 3.75vw;
+  }
+  .logo__m {
+    width: 1.8vw;
+    height: 3.75vw;
+  }
+  .logo__a,
+  .logo__v {
+    width: 1.6vw;
+    height: 3.75vw;
+  }
+  .logo__r {
+    width: 1.46vw;
+    height: 3.75vw;
+  }
+  .logo__g,
+  .logo__n,
+  .logo__d {
+    width: 1.39vw;
+    height: 3.75vw;
+  }
+
+  .logo__e,
+  .logo__l {
+    width: 1.18vw;
+    height: 3.75vw;
   }
 }
