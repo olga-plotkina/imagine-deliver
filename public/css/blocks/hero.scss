@@ -32,31 +32,6 @@
   }
 }
 
-@include for-tablet-up {
-  .hero {
-    padding-bottom: 8.3vw;
-
-    .splitText {
-      font-size: 6.25vw;
-      max-width: 69.4vw;
-      line-height: 1.18;
-      margin-bottom: 4.22vw;
-    }
-
-    img {
-      width: 85.4vw;
-      margin-bottom: 5.56vw;
-      //   height: 54.9vw;
-    }
-
-    p {
-      max-width: 60vw;
-      font-size: 3.13vw;
-      line-height: 1.2;
-      margin-bottom: 2.22vw;
-    }
-  }
-}
 div.word {
   overflow: hidden;
 }
@@ -65,7 +40,7 @@ div.word {
   line-height: 1.18;
   overflow: hidden;
   display: inline-block;
-  margin-bottom: -2vw;
+  margin-bottom: -6vw;
 }
 
 .splitText .letter {
@@ -98,4 +73,33 @@ div.word {
   -o-transition: transform 0.05s linear;
   transition: transform 0.05s linear;
   transition: transform 0.05s linear, -webkit-transform 0.05s linear;
+}
+
+@include for-tablet-up {
+  .hero {
+    padding-bottom: 8.3vw;
+
+    .splitText {
+      font-size: 6.25vw;
+      max-width: 69.4vw;
+      line-height: 1.18;
+      margin-bottom: 4.22vw;
+    }
+
+    img {
+      width: 85.4vw;
+      margin-bottom: 5.56vw;
+      //   height: 54.9vw;
+    }
+
+    p {
+      max-width: 60vw;
+      font-size: 3.13vw;
+      line-height: 1.2;
+      margin-bottom: 2.22vw;
+    }
+  }
+  .splitText .word {
+    margin-bottom: -3vw;
+  }
 }
