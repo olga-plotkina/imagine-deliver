@@ -59,7 +59,7 @@
 .cases__item.cases__item--guides {
   border-top: none;
   .cases__container {
-    padding-bottom: 18vw;
+    padding-bottom: 15vw;
   }
 }
 
@@ -93,7 +93,9 @@
 .cases__item-image {
   display: flex;
   justify-content: center;
-  margin-bottom: 8vw;
+  margin-bottom: 2vw; //8
+  margin-right: auto;
+  margin-left: auto;
 
   width: 76.75vw;
   height: 86.25vw;
@@ -199,6 +201,8 @@
     max-width: 44.44vw;
     height: 40vw;
     width: unset;
+    margin-right: 0;
+    margin-bottom: 8vw;
 
     order: 2;
     margin-left: 10vw;
