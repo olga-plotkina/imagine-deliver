@@ -4,7 +4,7 @@
   align-items: center;
   padding-bottom: 14vw;
 
-  h1 {
+  .splitText {
     font-size: 12.75vw;
     text-align: center;
     font-family: inherit;
@@ -36,10 +36,10 @@
   .hero {
     padding-bottom: 8.3vw;
 
-    h1 {
+    .splitText {
       font-size: 6.25vw;
       max-width: 69.4vw;
-      line-height: 1.04;
+      line-height: 1.18;
       margin-bottom: 2.22vw;
     }
 
@@ -56,4 +56,44 @@
       margin-bottom: 2.22vw;
     }
   }
+}
+div.word {
+  overflow: hidden;
+}
+
+.splitText .word {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.splitText .letter {
+  font-style: normal;
+  -webkit-transition: -webkit-transform 0.5s linear;
+  transition: -webkit-transform 0.5s linear;
+  -o-transition: transform 0.5s linear;
+  transition: transform 0.5s linear;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+  -webkit-transform: translate(0, 160px);
+  -ms-transform: translate(0, 160px);
+  transform: translate(0, 160px);
+  display: inline-block;
+}
+
+.is-visible .letter {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.letter {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.05s linear;
+  transition: -webkit-transform 0.05s linear;
+  -o-transition: transform 0.05s linear;
+  transition: transform 0.05s linear;
+  transition: transform 0.05s linear, -webkit-transform 0.05s linear;
 }

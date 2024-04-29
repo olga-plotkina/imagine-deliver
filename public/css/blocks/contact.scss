@@ -3,7 +3,7 @@
   form {
     width: 100%;
   }
-  p {
+  .splitText {
     font-size: 6.5vw;
     font-weight: 700;
     text-align: center;
@@ -43,7 +43,7 @@
       align-items: center;
     }
 
-    p {
+    .splitText {
       text-align: center;
       font-size: 3.125vw;
       max-width: 60vw;

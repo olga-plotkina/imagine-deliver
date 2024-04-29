@@ -33,7 +33,7 @@ module.exports = env => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin({ template: './public/index.html', minify: false }),
+      new HtmlWebpackPlugin({ template: './public/index.html' }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
         patterns: [
@@ -58,6 +58,46 @@ module.exports = env => {
         {
           test: /\.js$/,
           use: ['babel-loader'],
+        },
+        {
+          test: /\.(ico|gif|png|jpg|jpeg)$/i,
+          use: isProduction
+            ? [
+                {
+                  loader: 'file-loader',
+                  options: {
+                    outputPath: './build/images', // Specify the output directory for images
+                    name: '[name].[ext]',
+                  },
+                },
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
+                    mozjpeg: {
+                      progressive: true,
+                      quality: 65,
+                    },
+                    // Optipng settings
+                    optipng: {
+                      enabled: false,
+                    },
+                    // PNGquant settings
+                    pngquant: {
+                      quality: [0.65, 0.9],
+                      speed: 4,
+                    },
+                    // GIF lossy compression
+                    gifsicle: {
+                      interlaced: false,
+                    },
+                    // the webp option will enable WEBP
+                    webp: {
+                      quality: 75,
+                    },
+                  },
+                },
+              ]
+            : [],
         },
         {
           test: /public\/css\/common\.scss$/,

@@ -69,9 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //feature slider and titles
 
-  const featureTitles = document.querySelectorAll('.features__big-titles h3');
-  let lastHoveredTitle = null;
-  let lastHoveredSlide = null;
+  const featureTitles = [
+    ...document.querySelectorAll('.features__big-titles h3'),
+  ];
+  let lastHoveredTitle = document.querySelector(
+    '.features__big-titles h3.accent'
+  );
+  let lastHoveredSlide = document.querySelector(
+    '.features__right-wrapper .feature__desktop-slide.is-shown'
+  );
+  let autoToggleTimer;
 
   const featureSlides = document.querySelectorAll(
     '.features__right-wrapper .feature__desktop-slide'
@@ -85,17 +92,61 @@ document.addEventListener('DOMContentLoaded', () => {
       this.classList.add('accent');
       lastHoveredTitle = this;
 
-      // Find the relevant slide based on data-id
       const dataId = this.textContent.trim().toLowerCase();
       const relevantSlide = document.querySelector(
         `.feature__desktop-slide[data-id="${dataId}"]`
       );
 
-      // Add class "is-shown" to relevant slide and remove from others
       relevantSlide.classList.add('is-shown');
       lastHoveredSlide = relevantSlide;
+
+      clearInterval(autoToggleTimer);
+
+      autoToggleTimer = setInterval(() => {
+        const currentIndex = featureTitles.findIndex(
+          title => title === lastHoveredTitle
+        );
+        const nextIndex = (currentIndex + 1) % featureTitles.length;
+        const nextTitle = featureTitles[nextIndex];
+
+        featureTitles.forEach(t => t.classList.remove('accent'));
+        featureSlides.forEach(slide => slide.classList.remove('is-shown'));
+
+        nextTitle.classList.add('accent');
+        lastHoveredTitle = nextTitle;
+
+        const dataId = nextTitle.textContent.trim().toLowerCase();
+        const relevantSlide = document.querySelector(
+          `.feature__desktop-slide[data-id="${dataId}"]`
+        );
+
+        relevantSlide.classList.add('is-shown');
+        lastHoveredSlide = relevantSlide;
+      }, 3000);
     });
   });
+
+  autoToggleTimer = setInterval(() => {
+    const currentIndex = featureTitles.findIndex(
+      title => title === lastHoveredTitle
+    );
+    const nextIndex = (currentIndex + 1) % featureTitles.length;
+    const nextTitle = featureTitles[nextIndex];
+
+    featureTitles.forEach(t => t.classList.remove('accent'));
+    featureSlides.forEach(slide => slide.classList.remove('is-shown'));
+
+    nextTitle.classList.add('accent');
+    lastHoveredTitle = nextTitle;
+
+    const dataId = nextTitle.textContent.trim().toLowerCase();
+    const relevantSlide = document.querySelector(
+      `.feature__desktop-slide[data-id="${dataId}"]`
+    );
+
+    relevantSlide.classList.add('is-shown');
+    lastHoveredSlide = relevantSlide;
+  }, 3000);
 
   //cases animation
 
@@ -132,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //Scroll logic
   function onScroll() {
     var scrollBarPosition = window.pageYOffset;
-    console.log(window.pageYOffset, checkPointTwo);
 
     if (scrollBarPosition >= 0 && scrollBarPosition < checkPointTwo) {
       removeClass(sectionTwo, sectionThree);
@@ -307,16 +357,143 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //grey background for cases
+  //parallax
 
-  // const allCaseItems = document.querySelectorAll('.cases__item');
-  // if (allCaseItems.length) {
-  //   allCaseItems.forEach(item => {
-  //     if (!item.classList.contains('cases__item--guides')) {
-  //       item.addEventListener('click', e => {
-  //         item.classList.toggle('changed-background');
-  //       });
-  //     }
-  //   });
-  // }
+  const parallaxContainers = document.querySelectorAll('.container');
+
+  parallaxContainers.forEach(container => {
+    const parallax = container.querySelectorAll('.parallax');
+    const parallax1 = container.querySelectorAll('.parallax1');
+    const parallax2 = container.querySelectorAll('.parallax2');
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        const coordinateY = container.getBoundingClientRect();
+        if (coordinateY.top <= 100) {
+          parallax.forEach(img => {
+            const amount = Math.round(coordinateY.top * 0.1);
+            img.style.transform = 'translateY(' + amount + 'px)';
+            img.style.transition = 'transform 0.5s linear';
+          });
+
+          parallax1.forEach(img => {
+            const amount = Math.round(coordinateY.top * 0.02);
+            img.style.transform = 'translateY(' + amount + 'px)';
+            img.style.transition = 'transform 0.5s linear';
+          });
+
+          parallax2.forEach(img => {
+            const amount = Math.round(coordinateY.top * 0.04);
+            img.style.transform = 'translateY(' + amount + 'px)';
+            img.style.transition = 'transform 0.5s linear';
+          });
+        }
+      },
+      false
+    );
+  });
+
+  document.querySelectorAll('div.splitText').forEach(element => {
+    const listText = [];
+
+    const wrapTextNodes = node => {
+      if (node.textContent) {
+        return node.textContent
+          .trim()
+          .split(' ')
+          .map(word => {
+            const letters = word
+              .split('')
+              .map(letter => {
+                if (letter !== '') {
+                  return `<span class="letter">${letter}</span>`;
+                }
+              })
+              .join('');
+            return `<div class="word">${letters}</div>`;
+          })
+          .join(' ');
+      }
+    };
+
+    element.childNodes.forEach(child => {
+      if (child.nodeName === '#text') {
+        listText.push(wrapTextNodes(child));
+      }
+      if (child.tagName === 'BR') {
+        listText.push(child.outerHTML);
+      } else {
+        child.innerHTML = wrapTextNodes(child);
+        listText.push(child.outerHTML);
+      }
+    });
+
+    element.innerHTML = listText.join('');
+
+    // element.innerHTML = element.innerText
+    //   .split(" ")
+    //   .map((word) => {
+    //     const letters = word
+    //       .split("")
+    //       .map((letter) => `<span class="letter">${letter}</span>`)
+    //       .join("");
+    //     return `<div class="word">${letters}</div>`;
+    //   })
+    //   .join(" ");
+
+    element.querySelectorAll('.letter').forEach((letter, index) => {
+      letter.style.transitionDelay = index * 0.03 + 's';
+    });
+
+    new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            target.classList.add('is-visible');
+            observer.unobserve(target);
+          }
+        });
+      },
+      { rootMargin: '-10%' }
+    ).observe(element);
+  });
+
+  // Select the ticker container
+  const tickerContainers = document.querySelectorAll('.ticker__content');
+
+  tickerContainers.forEach(container => {
+    let lastScrollTop = 0;
+
+    // Function to handle scroll ticker events
+    function handleScroll() {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        container.style.animationDuration = '10s';
+        container.style.animationDirection = 'normal';
+
+        setTimeout(() => {
+          container.style.animationDuration = '17s';
+        }, 500);
+      } else {
+        container.style.animationDirection = 'reverse';
+        container.style.animationDuration = '20s';
+
+        // After 1 second, revert the animation direction to normal
+        setTimeout(() => {
+          container.style.animationDirection = 'normal';
+          container.style.animationDuration = '17s';
+        }, 500);
+      }
+
+      // Update the last scroll position
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+  });
 });
