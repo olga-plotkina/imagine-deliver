@@ -68,7 +68,7 @@ $transition: 0.35s;
     @include line;
     position: absolute;
     border-radius: 1px;
-    // right: 0.18vw;
+    right: 0.18vw;
     content: '';
     -webkit-transform-origin: 3vw center;
     -moz-transform-origin: 3vw center;
@@ -77,22 +77,20 @@ $transition: 0.35s;
   }
   &:before {
     top: -500%;
-    // right: 0.18vw;
+    right: 0.18vw;
   }
   &:after {
     top: 100%;
-    // right: 0.18vw;
+    right: 0.18vw;
   }
 
   @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
     &:before {
-      right: 50%;
-      // transform: translateX(50%);
+      right: 15%;
     }
 
     &:after {
-      right: 50%;
-      // transform: translateX(50%);
+      right: 15%; /* Adjusted right value for Safari */
     }
   }
   /* Apply different styles for Chrome */
