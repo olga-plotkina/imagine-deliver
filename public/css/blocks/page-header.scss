@@ -84,11 +84,11 @@ $transition: 0.35s;
 
   @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
     &:before {
-      left: 2vw; /* Adjusted right value for Safari */
+      left: 6vw; /* Adjusted right value for Safari */
     }
 
     &:after {
-      left: 2vw; /* Adjusted right value for Safari */
+      left: 6vw; /* Adjusted right value for Safari */
     }
   }
 }
