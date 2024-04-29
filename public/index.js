@@ -29,20 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const featuresContentSwiperContainer = document.querySelector(
     '.features__content-swiper'
   );
-
-  const featuresSwiper = new Swiper(featuresSwiperContainer, {
-    loop: true,
-    slidesPerView: 1,
-    modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    pagination: {
-      el: '.features__images-swiper .swiper-pagination',
-      clickable: true,
-    },
-    speed: 800,
-  });
-
-  if (featuresSwiperContainer) featuresSwiper.init();
-
   const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
     loop: true,
     slidesPerView: 1,
@@ -52,10 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
       clickable: true,
     },
     speed: 800,
+  });
+  const featuresSwiper = new Swiper(featuresSwiperContainer, {
+    loop: true,
+    slidesPerView: 1,
+    modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
+    pagination: {
+      el: '.features__images-swiper .swiper-pagination',
+      clickable: true,
+    },
+    speed: 800,
     controller: {
-      control: featuresSwiper, // Connect featuresContentSwiper as controller
+      control: featuresContentSwiper, // Connect featuresSwiper as controller
     },
   });
+
+  if (featuresSwiperContainer) featuresSwiper.init();
 
   if (featuresContentSwiperContainer) featuresContentSwiper.init();
 
