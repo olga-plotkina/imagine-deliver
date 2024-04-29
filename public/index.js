@@ -26,16 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const featuresSwiperContainer = document.querySelector(
     '.features__images-swiper'
   );
+  const featuresContentSwiperContainer = document.querySelector(
+    '.features__content-swiper'
+  );
 
-  const featuresSwiper = new Swiper('.features__images-swiper', {
+  const featuresSwiper = new Swiper(featuresSwiperContainer, {
     loop: true,
     slidesPerView: 1,
     modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    //  navigation: {
-    //    nextEl: '.home-hero-swiper .swiper-button-next',
-    //    prevEl: '.home-hero-swiper .swiper-button-prev',
-    //  },
-
     pagination: {
       el: '.features__images-swiper .swiper-pagination',
       clickable: true,
@@ -45,24 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (featuresSwiperContainer) featuresSwiper.init();
 
-  const featuresContentSwiperContainer = document.querySelector(
-    '.features__images-swiper'
-  );
-
-  const featuresContentSwiper = new Swiper('.features__content-swiper', {
+  const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
     loop: true,
     slidesPerView: 1,
     modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    //  navigation: {
-    //    nextEl: '.home-hero-swiper .swiper-button-next',
-    //    prevEl: '.home-hero-swiper .swiper-button-prev',
-    //  },
-
     pagination: {
-      el: '.features__images-swiper .swiper-pagination',
+      el: '.features__content-swiper .swiper-pagination',
       clickable: true,
     },
     speed: 800,
+    controller: {
+      control: featuresSwiper, // Connect featuresContentSwiper as controller
+    },
   });
 
   if (featuresContentSwiperContainer) featuresContentSwiper.init();
@@ -461,6 +453,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Select the ticker container
+  function throttle(func, delay) {
+    let lastCall = 0;
+    return function (...args) {
+      const now = new Date().getTime();
+      if (now - lastCall < delay) {
+        return;
+      }
+      lastCall = now;
+      func(...args);
+    };
+  }
+
   const tickerContainers = document.querySelectorAll('.ticker__content');
 
   tickerContainers.forEach(container => {
@@ -472,28 +476,52 @@ document.addEventListener('DOMContentLoaded', () => {
         window.pageYOffset || document.documentElement.scrollTop;
 
       if (scrollTop > lastScrollTop) {
-        container.style.animationDuration = '10s';
-        container.style.animationDirection = 'normal';
-
-        setTimeout(() => {
-          container.style.animationDuration = '17s';
-        }, 500);
-      } else {
-        container.style.animationDirection = 'reverse';
-        container.style.animationDuration = '20s';
-
-        // After 1 second, revert the animation direction to normal
-        setTimeout(() => {
+        if (container.parentElement.classList.contains('ticker--features')) {
+          container.style.animationDuration = '10s';
           container.style.animationDirection = 'normal';
-          container.style.animationDuration = '17s';
-        }, 500);
+
+          setTimeout(() => {
+            container.style.animationDuration = '17s';
+            container.style.animationDirection = 'normal';
+          }, 500);
+        }
+        if (container.parentElement.classList.contains('ticker--air-date')) {
+          container.style.animationDuration = '16s';
+          container.style.animationDirection = 'normal';
+
+          setTimeout(() => {
+            container.style.animationDuration = '17s';
+            container.style.animationDirection = 'normal';
+          }, 500);
+        }
+      } else {
+        if (container.parentElement.classList.contains('ticker--features')) {
+          container.style.animationDirection = 'reverse';
+          container.style.animationDuration = '20s';
+
+          // After 1 second, revert the animation direction to normal
+          setTimeout(() => {
+            container.style.animationDirection = 'normal';
+            container.style.animationDuration = '17s';
+          }, 500);
+        }
+        if (container.parentElement.classList.contains('ticker--air-date')) {
+          container.style.animationDirection = 'reverse';
+          container.style.animationDuration = '18s';
+
+          // After 1 second, revert the animation direction to normal
+          setTimeout(() => {
+            container.style.animationDirection = 'normal';
+            container.style.animationDuration = '17s';
+          }, 500);
+        }
       }
 
       // Update the last scroll position
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }
-
+    const throttledScroll = throttle(handleScroll, 1000);
     // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttledScroll);
   });
 });
