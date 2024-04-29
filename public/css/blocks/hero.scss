@@ -9,10 +9,14 @@
     text-align: center;
     font-family: inherit;
     font-weight: 700;
-    max-width: 90.25vw;
+    max-width: 95vw;
     line-height: 1.18;
     letter-spacing: -0.05em;
     margin-bottom: 8vw;
+
+    .letter {
+      line-height: 0.7vw;
+    }
   }
 
   img {
@@ -37,13 +41,14 @@ div.word {
 }
 
 .splitText .word {
-  line-height: 1.18;
+  // line-height: 0.7;
   overflow: hidden;
   display: inline-block;
-  margin-bottom: -8vw;
+  // margin-bottom: -8vw;
 }
 
 .splitText .letter {
+  // margin-bottom: 3vw;
   font-style: normal;
   -webkit-transition: -webkit-transform 0.5s linear;
   transition: -webkit-transform 0.5s linear;
@@ -99,7 +104,7 @@ div.word {
       margin-bottom: 2.22vw;
     }
   }
-  .splitText .word {
-    margin-bottom: -3vw;
-  }
+  // .splitText .word {
+  //   margin-bottom: -3vw;
+  // }
 }

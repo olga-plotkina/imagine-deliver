@@ -5,8 +5,10 @@
     text-align: center;
     text-transform: uppercase;
     font-family: $secondary-font-family;
-    font-size: 12vw;
+    font-size: 17vw;
     margin-bottom: 10vw;
+    line-height: 1;
+    font-weight: 900;
   }
   h4 {
     font-size: 5.5vw;
@@ -14,8 +16,13 @@
     line-height: 1.27;
   }
   img {
+    width: 100%;
+  }
+  .insights__thumb {
     margin-bottom: 4vw;
     width: 86.25vw;
+    overflow: hidden;
+    border-radius: 16px;
   }
 }
 .insights__title-wrapper {
@@ -38,7 +45,7 @@
     h3 {
       text-align: unset;
 
-      font-size: 4.9vw;
+      font-size: 6.94vw;
       margin-bottom: 4.44vw;
     }
 
@@ -46,7 +53,8 @@
       font-size: 1.6vw;
     }
 
-    img {
+    .insights__thumb {
+      width: 28.89vw;
       margin-bottom: 1.67vw;
     }
   }
@@ -57,6 +65,7 @@
   .insights__title-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .animated-button {
       display: block;
     }

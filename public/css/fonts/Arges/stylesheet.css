@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Arges-NormalHeavy';
+  src: url('/public/css/fonts/Arges/Arges-NormalHeavy.woff2') format('woff2'),
+    url('/public/css/fonts/Arges/Arges-NormalHeavy.woff') format('woff'),
+    url('/public/css/fonts/Arges/Arges-NormalHeavy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
