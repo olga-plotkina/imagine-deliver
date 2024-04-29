@@ -86,11 +86,11 @@ $transition: 0.35s;
 
   @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
     &:before {
-      right: 17%;
+      right: 15%;
     }
 
     &:after {
-      right: 17%; /* Adjusted right value for Safari */
+      right: 15%; /* Adjusted right value for Safari */
     }
   }
   /* Apply different styles for Chrome */
