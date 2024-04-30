@@ -144,6 +144,9 @@
   // margin-bottom: 8vw;
   letter-spacing: 0.1vw;
 }
+.splitText.cases__item-lid .word {
+  line-height: 0.897;
+}
 .animated-button.cases__item-link {
   margin-left: auto;
   margin-right: auto;
@@ -227,6 +230,9 @@
     line-height: 0.82;
     letter-spacing: 0.04vw;
     margin-bottom: 2.78vw;
+  }
+  .splitText.cases__item-lid .word {
+    line-height: 0.82;
   }
   .cases__item-description {
     font-size: 1.25vw;

@@ -5,7 +5,7 @@
   padding-bottom: 14vw;
 
   .splitText {
-    font-size: 12.75vw;
+    font-size: 10.75vw;
     text-align: center;
     font-family: inherit;
     font-weight: 700;
@@ -36,19 +36,19 @@
   }
 }
 
-div.word {
+.word {
   overflow: hidden;
 }
 
 .splitText .word {
-  // line-height: 0.7;
+  line-height: 1.18;
   overflow: hidden;
   display: inline-block;
   // margin-bottom: -8vw;
 }
 
 .splitText .letter {
-  // margin-bottom: 3vw;
+  margin-bottom: -3vw;
   font-style: normal;
   -webkit-transition: -webkit-transform 0.5s linear;
   transition: -webkit-transform 0.5s linear;
