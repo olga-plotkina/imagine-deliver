@@ -46,7 +46,8 @@
       text-align: unset;
 
       font-size: 6.94vw;
-      margin-bottom: 4.44vw;
+      // margin-bottom: 4.44vw;
+      margin-bottom: 0;
     }
 
     h4 {
@@ -66,6 +67,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4.44vw;
+
     .animated-button {
       display: block;
     }
@@ -77,5 +80,8 @@
   }
   .insights__item {
     width: calc(33% - 1.11vw);
+  }
+  .insights__item:not(:last-child) {
+    margin-bottom: 0;
   }
 }

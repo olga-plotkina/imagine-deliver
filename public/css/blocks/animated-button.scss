@@ -71,16 +71,18 @@
 }
 @include for-tablet-up {
   .animated-button {
+    // box-sizing: border-box;
+    // max-width: 9.44vw;
     border: $border-desktop-width solid #162e2e66;
-    width: 8vw;
+    width: 9.93vw;
     border-radius: 3.33vw;
-    height: 3.33vw;
+    height: 3.26vw;
 
     .features & {
       margin-left: unset;
       margin-right: auto;
-      padding-left: 2.22vw;
-      padding-right: 2.22vw;
+      // padding-left: 2.22vw;
+      // padding-right: 2.22vw;
       width: 11.6vw;
       font-weight: 500;
     }
@@ -90,9 +92,10 @@
     }
 
     .page-header & {
-      min-width: 9.4vw;
       padding-left: 1.67vw;
       padding-right: 1.67vw;
+      height: 2.71vw;
+      max-width: 9.44vw;
 
       display: block;
       border-radius: 2.22vw;
@@ -102,6 +105,10 @@
       border: $border-desktop-width solid #162e2e66;
       background-color: transparent;
       font-size: 0.97vw;
+
+      // .animated-button__primary {
+      //   width: 9.44vw;
+      // }
     }
   }
 

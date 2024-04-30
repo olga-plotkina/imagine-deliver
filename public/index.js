@@ -23,41 +23,42 @@ document.addEventListener('DOMContentLoaded', () => {
   //   });
 
   //   lightbox.init();
-  const featuresSwiperContainer = document.querySelector(
+  const featuresSwiperContainer = document.querySelectorAll(
     '.features__images-swiper'
   );
-  const featuresContentSwiperContainer = document.querySelector(
+  const featuresContentSwiperContainer = document.querySelectorAll(
     '.features__content-swiper'
   );
-  const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
-    loop: true,
-    slidesPerView: 1,
-    modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    pagination: {
-      el: '.features__content-swiper .swiper-pagination',
-      clickable: true,
-    },
-    speed: 800,
-    allowTouchMove: false,
+  featuresContentSwiperContainer.forEach(container => {
+    const featuresContentSwiper = new Swiper(container, {
+      loop: true,
+      slidesPerView: 1,
+      modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
+      pagination: {
+        el: '.features__content-swiper .swiper-pagination',
+        clickable: true,
+      },
+      speed: 800,
+      allowTouchMove: false,
+    });
+    const featuresSwiper = new Swiper(featuresSwiperContainer, {
+      loop: true,
+      slidesPerView: 1,
+      modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
+      pagination: {
+        el: '.features__images-swiper .swiper-pagination',
+        clickable: true,
+      },
+      speed: 800,
+      controller: {
+        control: featuresContentSwiper, // Connect featuresSwiper as controller
+      },
+    });
+
+    if (featuresSwiperContainer) featuresSwiper.init();
+
+    if (featuresContentSwiperContainer) featuresContentSwiper.init();
   });
-  const featuresSwiper = new Swiper(featuresSwiperContainer, {
-    loop: true,
-    slidesPerView: 1,
-    modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    pagination: {
-      el: '.features__images-swiper .swiper-pagination',
-      clickable: true,
-    },
-    speed: 800,
-    controller: {
-      control: featuresContentSwiper, // Connect featuresSwiper as controller
-    },
-  });
-
-  if (featuresSwiperContainer) featuresSwiper.init();
-
-  if (featuresContentSwiperContainer) featuresContentSwiper.init();
-
   //feature slider and titles
 
   const featureTitles = [
