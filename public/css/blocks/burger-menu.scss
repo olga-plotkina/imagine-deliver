@@ -24,6 +24,7 @@ header {
   width: 100%;
   height: 100vh;
   z-index: 10;
+  pointer-events: none;
   background-color: $dark-text-color;
   padding: 23.47vh 33vw 7.51vh 6vw;
 
@@ -57,7 +58,7 @@ header {
     > li.other-hovered {
       opacity: 0.4;
     }
-    > li:not(last-child) {
+    > li:not(:last-child) {
       margin-bottom: 4vw;
     }
     > li > a {
@@ -157,7 +158,7 @@ header {
   }
 
   .burger-menu__credentials {
-    margin-top: 8.8vh;
+    // margin-top: 8.8vh;
     display: none;
     align-items: flex-end;
     justify-content: space-between;
@@ -182,6 +183,7 @@ header {
 }
 
 .burger-menu.open {
+  pointer-events: all;
   top: 0;
   .burger-menu__credentials {
     display: flex;
@@ -197,11 +199,21 @@ header {
 }
 
 @include for-tablet-up {
+  .burger-menu__image {
+    background-size: cover;
+    background-position: center 0;
+    width: 43.4vw;
+    background-image: url('/public/images/img/navigation.jpg');
+    height: 100%;
+  }
   .burger-menu {
     top: -110%;
     transition: top 0.4s cubic-bezier(0.46, 0.2, 0.8, 0.1);
 
     .burger-menu__main {
+      > li:not(:last-child) {
+        margin-bottom: 1.11vw;
+      }
       > li:nth-child(1) > a {
         transition-delay: 0.5s;
       }
@@ -282,12 +294,12 @@ header {
     img {
       display: block;
       height: auto;
-      transform: translateX(-24%);
+      transform: translateX(calc(-100% + 43.47vw));
     }
-    > div {
+    > div:not(:first-child) {
       margin-top: 12vw;
-      margin-left: 2vw;
-      transform: translateX(-7vw);
+      margin-left: 7.78vw;
+      margin-bottom: 7.23vw;
 
       .burger-menu__main > li:not(:last-child) {
         margin-bottom: 1.11vw;
@@ -309,6 +321,11 @@ header {
       a {
         transform: translateY(0);
       }
+    }
+    > div:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .burger-menu__sidemenu .burger-menu__submenu.hovered {
@@ -338,7 +355,6 @@ header {
     }
   }
   .burger-menu .burger-menu__credentials {
-    margin-top: 23.14vh;
     font-size: 0.9vw;
     gap: 15.97vw;
     > div:last-child {

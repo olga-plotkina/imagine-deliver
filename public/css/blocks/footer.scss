@@ -6,10 +6,7 @@ footer {
   padding-bottom: 10vw;
 }
 .footer__logo {
-  display: flex;
-  justify-content: center;
   width: 80vw;
-  gap: 1.84vw;
 }
 .footer__logo-wrapper {
   display: flex;
@@ -163,24 +160,24 @@ footer {
     }
     > div:first-child {
       display: flex;
-      gap: 8vw;
+      gap: 10.62vw;
     }
   }
   .footer__logo {
-    display: flex;
-    justify-content: left;
-
     width: 25vw;
-    gap: 0.7vw;
+
+    svg {
+      width: 15.48vw;
+    }
   }
   .footer__logo-wrapper {
     display: flex;
     justify-content: left;
-    margin-bottom: 4.55vw;
+    margin-bottom: 4.65vw;
 
     img {
-      width: 5vw;
-      height: 4vw;
+      width: 3.86vw;
+      height: 3.33vw;
     }
   }
   .footer__partners {
@@ -207,13 +204,15 @@ footer {
   .footer__links {
     font-size: 1.25vw;
     // row-gap: 2.22vw;
-    column-gap: 6vw;
+    column-gap: 2.22vw;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
   .footer__links-item {
-    width: calc(25% - 2vw);
+    // width: calc(25% - 6.66vw);
+    width: unset;
     ul {
+      width: 13.61vw;
       padding: 0;
       margin-top: 2.22vw;
       margin-bottom: 0;
@@ -233,7 +232,7 @@ footer {
   }
 
   .footer__basement {
-    padding-top: 8.54vw;
+    padding-top: 8.59vw;
     display: flex;
     justify-content: space-between;
   }

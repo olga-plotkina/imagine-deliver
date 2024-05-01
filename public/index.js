@@ -355,11 +355,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const listText = [];
 
     const wrapTextNodes = node => {
-      if (node.textContent) {
-        return node.textContent
-          .trim()
-          .split(' ')
-          .map(word => {
+      return node.textContent
+        .split(' ')
+        .map(word => {
+          if (word) {
             const letters = word
               .split('')
               .map(letter => {
@@ -368,21 +367,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
               })
               .join('');
-            return `<div class="word">${letters}</div>`;
-          })
-          .join(' ');
-      }
+            return `<div class="word">${letters} </div>`;
+          }
+        })
+        .join(' ');
     };
 
     element.childNodes.forEach(child => {
-      if (child.nodeName === '#text') {
+      if (child.textContent) {
         listText.push(wrapTextNodes(child));
-      }
-      if (child.tagName === 'BR') {
-        listText.push(child.outerHTML);
-      } else {
-        child.innerHTML = wrapTextNodes(child);
-        listText.push(child.outerHTML);
       }
     });
 
