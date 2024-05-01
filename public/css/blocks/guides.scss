@@ -14,7 +14,7 @@
     width: 86.25vw;
     height: 86.25vw;
   }
-  .splitText {
+  .guides__title {
     letter-spacing: -0.045em;
     text-align: center;
     font-size: 12.75vw;
@@ -41,7 +41,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .splitText {
+    .guides__title {
       margin-left: auto;
       margin-right: auto;
       font-size: 6.25vw;
@@ -49,6 +49,16 @@
       margin-bottom: 2.22vw;
       max-width: 72vw;
       font-weight: 700;
+    }
+  }
+  .cases--about .guides {
+    img {
+      width: 28.89vw;
+      height: 28.89vw;
+    }
+
+    .guides__title {
+      margin-bottom: 3.33vw;
     }
   }
 }

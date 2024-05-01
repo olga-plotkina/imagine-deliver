@@ -188,6 +188,21 @@
       width: 38.89vw;
       align-self: flex-end;
     }
+
+    .guides.cases__container {
+      display: flex;
+      gap: 10vw;
+      align-items: center;
+    }
+    .guides__title {
+      text-align: left;
+      font-size: 3.125vw;
+      width: 36.66vw;
+      margin-left: 7.78vw;
+    }
+    .cases__item.cases__item--guides .cases__container {
+      padding-bottom: 13.33vw;
+    }
   }
 
   .cases__item-top {
