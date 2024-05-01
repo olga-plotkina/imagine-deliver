@@ -183,9 +183,13 @@
     //   height: 49.93vw;
     // }
   }
-  .cases.cases--about {
+  .cases.cases--regular {
+    .cases__item-text {
+      min-width: 36.67vw;
+      max-width: 44.44vw;
+    }
     .cases__item-image {
-      width: 38.89vw;
+      width: 28.89vw;
       align-self: flex-end;
     }
 
@@ -198,7 +202,11 @@
       text-align: left;
       font-size: 3.125vw;
       width: 36.66vw;
-      margin-left: 7.78vw;
+    }
+    .cases__item:nth-child(odd) {
+      .guides__title {
+        margin-left: 7.78vw;
+      }
     }
     .cases__item.cases__item--guides .cases__container {
       padding-bottom: 13.33vw;
@@ -284,10 +292,15 @@
       font-weight: 400;
     }
   }
+  .cases__paragraphs-item {
+    .animated-button {
+      margin-top: 2.77vw;
+    }
+  }
   .cases__paragraphs-item:not(:last-child) {
     margin-bottom: 2.77vw;
   }
-  .cases.cases--about {
+  .cases.cases--regular {
     .cases__item {
       border-bottom: none;
       border-top: none;
@@ -298,6 +311,11 @@
       }
       .cases__item-text {
         order: 2;
+      }
+    }
+    .cases__item:nth-child(odd) {
+      .cases__item-image {
+        margin-left: 0;
       }
     }
   }

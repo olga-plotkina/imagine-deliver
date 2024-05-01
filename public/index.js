@@ -69,44 +69,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //feature slider and titles
 
-  const featureTitles = [
-    ...document.querySelectorAll('.features__big-titles h3'),
-  ];
-  let lastHoveredTitle = document.querySelector(
-    '.features__big-titles h3.accent'
-  );
-  let lastHoveredSlide = document.querySelector(
-    '.features__right-wrapper .feature__desktop-slide.is-shown'
-  );
-  let autoToggleTimer;
+  const bigTitlesContainer = document.querySelectorAll('.features__container');
+  if (bigTitlesContainer.length) {
+    bigTitlesContainer.forEach(container => {
+      const featureTitles = [
+        ...container.querySelectorAll('.features__big-titles h3'),
+      ];
+      let lastHoveredTitle = container.querySelector(
+        '.features__big-titles h3.accent'
+      );
+      let lastHoveredSlide = container.querySelector(
+        '.features__right-wrapper .feature__desktop-slide.is-shown'
+      );
+      let autoToggleTimer;
 
-  const featureSlides = document.querySelectorAll(
-    '.features__right-wrapper .feature__desktop-slide'
-  );
+      const featureSlides = container.querySelectorAll(
+        '.features__right-wrapper .feature__desktop-slide'
+      );
 
-  autoToggleTimer = setInterval(() => {
-    const currentIndex = featureTitles.findIndex(
-      title => title === lastHoveredTitle
-    );
-    const nextIndex = (currentIndex + 1) % featureTitles.length;
+      autoToggleTimer = setInterval(() => {
+        const currentIndex = featureTitles.findIndex(
+          title => title === lastHoveredTitle
+        );
+        const nextIndex = (currentIndex + 1) % featureTitles.length;
 
-    const nextTitle = featureTitles[nextIndex];
+        const nextTitle = featureTitles[nextIndex];
 
-    featureTitles.forEach(t => t.classList.remove('accent'));
-    featureSlides.forEach(slide => slide.classList.remove('is-shown'));
+        featureTitles.forEach(t => t.classList.remove('accent'));
+        featureSlides.forEach(slide => slide.classList.remove('is-shown'));
 
-    nextTitle.classList.add('accent');
-    lastHoveredTitle = nextTitle;
+        nextTitle.classList.add('accent');
+        lastHoveredTitle = nextTitle;
 
-    const dataId = nextTitle.textContent.trim().toLowerCase();
+        const dataId = nextTitle.textContent.trim().toLowerCase();
 
-    const relevantSlide = document.querySelector(
-      `.feature__desktop-slide[data-id="${dataId}"]`
-    );
+        const relevantSlide = container.querySelector(
+          `.feature__desktop-slide[data-id="${dataId}"]`
+        );
 
-    relevantSlide.classList.add('is-shown');
-    lastHoveredSlide = relevantSlide;
-  }, 3000);
+        relevantSlide.classList.add('is-shown');
+        lastHoveredSlide = relevantSlide;
+      }, 3000);
+    });
+  }
 
   //cases animation
 

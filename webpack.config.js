@@ -45,6 +45,12 @@ module.exports = env => {
         chunks: ['about'],
         // minify: false,
       }),
+      new HtmlWebpackPlugin({
+        template: './public/process.html',
+        filename: 'process.html',
+        chunks: ['process'],
+        // minify: false,
+      }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
         patterns: [

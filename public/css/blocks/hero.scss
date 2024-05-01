@@ -138,9 +138,14 @@
       font-weight: 400;
     }
   }
-  .hero--about {
+  .hero.hero--about {
     img {
       border-radius: 16px;
+    }
+  }
+  .hero--process {
+    img {
+      width: 44.24vw;
     }
   }
   // .splitText .word {
