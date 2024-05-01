@@ -3,6 +3,13 @@ import './css/common.scss';
 import PhotoSwipeLightbox from '/node_modules/photoswipe/dist/photoswipe-lightbox.esm.js';
 import PhotoSwipe from '/node_modules/photoswipe/dist/photoswipe.esm.js';
 import Swiper from 'swiper/bundle';
+import Scrollbar from 'smooth-scrollbar';
+import Lenis from 'lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
+import { TimelineMax } from 'gsap';
+
+// const lenis = new Lenis();
 
 // import styles bundle
 import 'swiper/css/bundle';
@@ -14,6 +21,8 @@ import {
   Thumbs,
   FreeMode,
 } from 'swiper/modules';
+// import { forEach } from 'lodash';
+import { Timeline } from 'gsap/gsap-core';
 
 document.addEventListener('DOMContentLoaded', () => {
   //   const lightbox = new PhotoSwipeLightbox({
@@ -102,7 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //cases animation
 
   const items = document.querySelectorAll('.cases__item');
-  if (items.length) {
+  const itemContainerHome = document.querySelector('.cases--home');
+
+  if (itemContainerHome) {
     window.addEventListener('scroll', onScroll, false);
 
     //Get all the section reference
@@ -117,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
       sectionFourth.querySelector('cases__container');
     var sectionFifth = document.querySelector('#case-4');
     var sectionSix = document.querySelector('.insights');
-
     //Calculate their individual height
     var SectionOneHeight = getComputedStyle(sectionOne).height.split('px')[0];
     var SectionTwoHeight = getComputedStyle(sectionTwo).height.split('px')[0];
@@ -482,4 +492,122 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add scroll event listener
     window.addEventListener('scroll', throttledScroll);
   });
+
+  //gsap ticker
+
+  // gsap.registerEffect({
+  //   name: 'ticker',
+  //   effect(targets, config) {
+  //     buildTickers({
+  //       targets: targets,
+  //       clone:
+  //         config.clone ||
+  //         (el => {
+  //           let clone = el.children[0].cloneNode(true);
+  //           el.insertBefore(clone, el.children[0]);
+  //           return clone;
+  //         }),
+  //     });
+  //     function buildTickers(config, originals) {
+  //       let tickers;
+  //       if (originals && originals.clones) {
+  //         // on window resizes, we should delete the old clones and reset the widths
+  //         originals.clones.forEach(
+  //           el => el && el.parentNode && el.parentNode.removeChild(el)
+  //         );
+  //         originals.forEach((el, i) =>
+  //           originals.inlineWidths[i]
+  //             ? (el.style.width = originals.inlineWidths[i])
+  //             : el.style.removeProperty('width')
+  //         );
+  //         tickers = originals;
+  //       } else {
+  //         tickers = config.targets;
+  //       }
+  //       const clones = (tickers.clones = []),
+  //         inlineWidths = (tickers.inlineWidths = []);
+  //       tickers.forEach((el, index) => {
+  //         // Set the width of the ticker section to match the screen width
+  //         el.style.width = '100vw';
+  //         el.children[0].style.display = 'inline-block';
+  //         let width = el.children[0].offsetWidth,
+  //           cloneCount = Math.ceil(window.innerWidth / width),
+  //           right = el.dataset.direction === 'right',
+  //           i;
+  //         el.style.width = width * (cloneCount + 1) + 'px';
+  //         for (i = 0; i < cloneCount; i++) {
+  //           clones.push(config.clone(el));
+  //         }
+  //         gsap.fromTo(
+  //           el,
+  //           {
+  //             x: right ? -width : 0,
+  //           },
+  //           {
+  //             x: right ? 0 : -width,
+  //             duration: width / 100 / parseFloat(el.dataset.speed || 1),
+  //             repeat: -1,
+  //             overwrite: 'auto',
+  //             ease: 'none',
+  //           }
+  //         );
+  //       });
+  //       originals ||
+  //         window.addEventListener('resize', () =>
+  //           buildTickers(config, tickers)
+  //         );
+  //     }
+  //   },
+  // });
+
+  // gsap.effects.ticker('.ticker-section');
+
+  ////
+
+  // gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(TimelineMax);
+  // const timeline = gsap.timeline();
+
+  // const lenis = new Lenis();
+
+  // lenis.on('scroll', e => {
+  //   ScrollTrigger.update();
+  // });
+
+  // lenis.on('scroll', ScrollTrigger.update);
+
+  // gsap.ticker.add(time => {
+  //   lenis.raf(time * 1000);
+  // });
+
+  // gsap.ticker.lagSmoothing(0);
+
+  // ScrollTrigger.create({
+  //   trigger: '.ticker-section',
+  //   start: 'top top',
+  //   end: 'bottom bottom',
+  //   scrub: true,
+  //   onUpdate: self => {
+  //     const scrollDirection = self.direction === 1 ? 1 : -1;
+  //     const reverseDuration = 0.5; // Duration for reverse animation
+
+  //     // Reverse animation when scrolling up
+  //     if (scrollDirection === 1) {
+  //       timeline.to('.ticker-section', {
+  //         duration: reverseDuration,
+  //         onComplete: () => gsap.to('.ticker-section'),
+  //       });
+  //     }
+  //   },
+  // });
+
+  // if you want to customize the cloning process, you can define a function that'll be passed the target and you do the cloning and return the element from the function:
+  // gsap.effects.ticker(".hero__ticker-init", {
+  //   clone: el => {
+  //     const list = el.querySelector("ul");
+  //     const clone = list.cloneNode(true);
+  //     list.parentNode.insertBefore(clone, list.prevSibling);
+  //     return clone;
+  //   }
+  // });
 });

@@ -51,8 +51,11 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "gh-pages": "^6.1.1",
+    "gsap": "^3.12.5",
+    "lenis": "^1.0.45",
     "normalize.css": "^8.0.1",
     "photoswipe": "^5.4.3",
+    "smooth-scrollbar": "^8.8.4",
     "swiper": "^11.1.1",
     "zlib": "^1.0.5"
   }

@@ -183,6 +183,12 @@
     //   height: 49.93vw;
     // }
   }
+  .cases.cases--about {
+    .cases__item-image {
+      width: 38.89vw;
+      align-self: flex-end;
+    }
+  }
 
   .cases__item-top {
     font-size: 0.97vw;
@@ -198,6 +204,7 @@
   .cases__item-content {
     display: flex;
     align-items: center;
+    gap: 10vw;
   }
   .cases__item-content {
     text-align: left;
@@ -210,7 +217,7 @@
     margin-bottom: 8vw;
 
     order: 2;
-    margin-left: 10vw;
+    // margin-left: 10vw;
     img {
       width: 100%;
     }
@@ -242,5 +249,41 @@
     margin-left: unset;
     margin-bottom: 17.15vw;
     margin-top: 2.78vw;
+  }
+  .cases__item-title {
+    font-size: 3.125vw;
+    font-weight: 700;
+    margin-bottom: 3.33vw;
+  }
+  .cases__paragraphs {
+    h4,
+    p {
+      font-size: 1.25vw;
+    }
+    h4 {
+      font-weight: 500;
+      font-size: 1.4vw;
+      margin-bottom: 1.39vw;
+    }
+    p {
+      font-weight: 400;
+    }
+  }
+  .cases__paragraphs-item:not(:last-child) {
+    margin-bottom: 2.77vw;
+  }
+  .cases.cases--about {
+    .cases__item {
+      border-bottom: none;
+      border-top: none;
+    }
+    .cases__item:nth-child(even) {
+      .cases__item-image {
+        order: 1;
+      }
+      .cases__item-text {
+        order: 2;
+      }
+    }
   }
 }

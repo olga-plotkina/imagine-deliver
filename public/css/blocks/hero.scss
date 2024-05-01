@@ -87,6 +87,7 @@
     text-align: center;
     line-height: 1.12;
     font-weight: 400;
+    color: #5f5d5d;
   }
 }
 
@@ -133,6 +134,13 @@
     p {
       font-size: 1.25vw;
       max-width: 60vw;
+      line-height: 1.39vw;
+      font-weight: 400;
+    }
+  }
+  .hero--about {
+    img {
+      border-radius: 16px;
     }
   }
   // .splitText .word {
