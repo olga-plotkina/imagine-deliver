@@ -1,0 +1,27 @@
+.case-gallery__container {
+  padding-left: 4.44vw;
+  padding-right: 4.44vw;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2.22vw;
+  row-gap: 4.44vw;
+
+  p {
+    text-align: left;
+    color: $dark-text-color;
+    font-size: 1.6vw;
+    line-height: 1.39;
+  }
+}
+.case-gallery__item {
+  width: 28.89vw;
+}
+.case-gallery__image-wrapper {
+  width: 100%;
+  border-radius: 1.11vw;
+  overflow: hidden;
+  margin-bottom: 1.67vw;
+  img {
+    width: 100%;
+  }
+}

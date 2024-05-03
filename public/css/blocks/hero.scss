@@ -158,7 +158,13 @@
     .hero__image-wrapper.hero__image-wrapper--mb-64 {
       margin-bottom: 4.44vw;
     }
-
+    .hero__buttons-wrapper {
+      display: flex;
+      gap: 1.11vw;
+      .animated-button {
+        margin-bottom: 0;
+      }
+    }
     .hero__lid {
       max-width: 60vw;
       font-size: 3.13vw;
@@ -179,6 +185,11 @@
   .hero.hero--pb-168 {
     .hero__container {
       padding-bottom: 11.67vw;
+    }
+  }
+  .hero.hero--short {
+    .hero__container {
+      padding-bottom: 6.67vw;
     }
   }
   .hero.hero--pt-168 {
