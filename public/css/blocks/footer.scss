@@ -45,7 +45,7 @@ footer {
   font-size: 4.25vw;
   font-weight: 400;
   display: flex;
-  column-gap: 4vw;
+  // column-gap: 4vw;
   row-gap: 8vw;
   flex-wrap: wrap;
 }
@@ -204,7 +204,7 @@ footer {
   .footer__links {
     font-size: 1.25vw;
     // row-gap: 2.22vw;
-    column-gap: 2.22vw;
+    // column-gap: 2.22vw;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
