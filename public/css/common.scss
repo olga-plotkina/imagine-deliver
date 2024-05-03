@@ -11,6 +11,30 @@
 @import './utils/variables.scss';
 @import './utils/media-mixins.scss';
 
+body {
+  color: $dark-text-color;
+  font-family: $primary-font-family;
+  font-weight: 400;
+  margin: 0;
+  background-color: $background-yellow;
+}
+p {
+  font-size: 4.25vw;
+  max-width: 87.78vw;
+  text-align: center;
+  line-height: 1.12;
+  font-weight: 400;
+  color: #5f5d5d;
+}
+
+@include for-tablet-up {
+  p {
+    font-size: 1.25vw;
+    max-width: 60vw;
+    line-height: 1.39;
+    font-weight: 400;
+  }
+}
 @import './blocks/container.scss';
 @import './blocks/page-header.scss';
 @import './blocks/hero.scss';
@@ -24,11 +48,4 @@
 @import './blocks/footer.scss';
 @import './blocks/burger-menu.scss';
 @import './blocks/air-date.scss';
-
-body {
-  color: $dark-text-color;
-  font-family: $primary-font-family;
-  font-weight: 400;
-  margin: 0;
-  background-color: $background-yellow;
-}
+@import './blocks/info-blocks.scss';

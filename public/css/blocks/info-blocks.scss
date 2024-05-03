@@ -1,9 +1,9 @@
-.cases {
+.info-blocks {
   position: relative;
   background-color: $background-yellow;
 }
 
-.cases__item {
+.info-blocks__item {
   position: relative;
   z-index: 6;
   background-color: $background-yellow;
@@ -11,9 +11,7 @@
   transition-delay: 1s;
   width: 100%;
 
-  .cases__container {
-    // height: 100vh;
-
+  .info-blocks__item-container {
     padding-bottom: 20.5vw;
     padding-top: 8vw;
     padding-left: 6vw;
@@ -33,37 +31,33 @@
 #case-4 {
   z-index: 5;
 }
-.cases__item.absolute {
+.info-blocks__item.absolute {
   position: absolute;
 }
-.cases__item.fixed {
+.info-blocks__item.fixed {
   position: sticky;
   top: 0;
   z-index: 2;
 }
-.cases__item.background-grey {
+.info-blocks__item.background-grey {
   background-color: rgba(22, 46, 46);
   transition: background-color 2s ease;
   transition-delay: 1s;
 
-  .cases__container {
+  .info-blocks__item-container {
     opacity: 0.4;
     transition: opacity 2s ease;
     transition-delay: 1s;
   }
 }
 
-.cases__item:not(:first-child) {
-  border-top: 0.5px solid $dark-text-color;
-}
-.cases__item.cases__item--guides {
-  border-top: none;
-  .cases__container {
+.info-blocks__item.cases__item--guides {
+  .info-blocks__item-container {
     padding-bottom: 15vw;
   }
 }
 
-.cases .cases__container {
+.info-blocks .info-blocks__item-container {
   background-color: $background-yellow;
 }
 
@@ -90,7 +84,7 @@
 //   // animation-delay: 2ms;
 // }
 
-.cases__item-image {
+.info-blocks__item-image {
   display: flex;
   justify-content: center;
   margin-bottom: 8vw;
@@ -100,7 +94,7 @@
   width: 76.75vw;
   // height: 86.25vw;
 }
-.cases__item-top {
+.info-blocks__item-top {
   display: flex;
   justify-content: space-between;
   font-size: 3.25vw;
@@ -124,7 +118,7 @@
     color: inherit;
   }
 }
-.cases__item-company {
+.info-blocks__item-company {
   text-align: center;
   font-size: 5.5vw;
   line-height: 1.27;
@@ -132,7 +126,7 @@
   letter-spacing: -0.0038em;
   margin-bottom: 4vw;
 }
-.cases__item-lid {
+.info-blocks__item-lid {
   max-width: 86.25vw;
   text-align: center;
   font-family: $secondary-font-family;
@@ -147,54 +141,59 @@
 .splitText.cases__item-lid .word {
   line-height: 0.897;
 }
-.animated-button.cases__item-link {
+.animated-button.info-blocks__item-link {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 12vw;
 }
-.cases__item-description {
+.info-blocks__item-description {
   font-size: 4.25vw;
   font-weight: 400;
   text-align: center;
 }
 @include for-tablet-up {
-  .cases__item {
-    box-sizing: border-box;
-    height: 100vh;
-
-    .cases__container {
-      height: 100%;
-      box-sizing: border-box;
-      max-height: 100%;
-      padding-left: 4.5vw;
-      padding-right: 4.5vw;
-      padding-top: 2.78vw;
-      padding-bottom: 8.89vw;
+  .info-blocks {
+    padding-top: 11.67vw;
+    padding-bottom: 13.33vw;
+  }
+  .info-blocks__item {
+    p {
+      text-align: left;
+    }
+    .info-blocks__item-container {
+      padding-left: 4.44vw;
+      padding-right: 4.44vw;
+      padding-bottom: 0;
+      padding-top: 0;
     }
   }
-  .cases__item.cases__item--guides .cases__container {
-    // box-sizing: border-box;
-    // height: 100vh;
-    padding-top: 16.4vh; //6vh;
-    padding-bottom: 14.06vh; //10vw;
+  .info-blocks__item:not(:last-child) {
+    margin-bottom: 8.33vw;
   }
 
-  // .cases__item--guides {
-  //   padding-top: 11.67vw;
-  //   padding-bottom: 19.5vw;
-  // }
-  .cases__item-image {
+  .cases__item-text {
+    min-width: 36.67vw;
+    max-width: 44.44vw;
+  }
+  .info-blocks__item-image {
+    width: 28.89vw;
+    // align-self: flex-end;
     display: block;
-    // margin-bottom: unset;
-
-    // img {
-    //   width: 44.44vw;
-    //   height: 49.93vw;
-    // }
   }
 
-  .cases__item-top {
+  .guides__title {
+    text-align: left;
+    font-size: 3.125vw;
+    width: 36.66vw;
+  }
+
+  .info-blocks__item.info-blocks__item--guides .info-blocks__item-container {
+    padding-bottom: 13.33vw;
+  }
+
+  .info-blocks__item-top {
     font-size: 0.97vw;
-    margin-bottom: 5vw;
+    // margin-bottom: 3vw;
     justify-content: left;
 
     > div:first-child {
@@ -203,36 +202,36 @@
       }
     }
   }
-  .cases__item-content {
+  .info-blocks__item-content {
     display: flex;
-    height: 100%;
-    // align-items: center;
+    align-items: center;
     gap: 10vw;
-    text-align: left;
+    padding-left: 7.78vw;
+    padding-right: 7.78vw;
   }
 
-  .cases__item-image {
-    // max-width: 44.44vw;
-    height: 100%;
-    width: auto;
+  .info-blocks__item-image {
+    max-width: 29.75vw;
+    // height: 40vw;
+    width: unset;
     margin-right: 0;
     // margin-bottom: 8vw;
+    margin-bottom: 0;
 
     order: 2;
     // margin-left: 10vw;
     img {
       width: 100%;
-      max-height: 100%;
     }
   }
-  .cases__item-company {
+  .info-blocks__item-company {
     font-size: 1.6vw;
     line-height: 1.39;
     text-align: left;
     // margin-top: 4.9vw;
     margin-bottom: 2.22vw;
   }
-  .cases__item-lid {
+  .info-blocks__item-lid {
     max-width: 36.67vw;
     text-align: left;
 
@@ -241,26 +240,47 @@
     letter-spacing: 0.04vw;
     margin-bottom: 2.78vw;
   }
-  .cases__item-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   .splitText.cases__item-lid .word {
     line-height: 0.82;
   }
-  .cases__item-description {
+  .info-blocks__item-description {
     font-size: 1.25vw;
     text-align: left;
-    justify-self: flex-end;
   }
-  .animated-button.cases__item-link {
+  .animated-button.info-blocks__item-link {
     margin-left: unset;
+    margin-bottom: 17.15vw;
     margin-top: 2.78vw;
   }
-  .cases__item-title {
+  .info-blocks__item-title {
     font-size: 3.125vw;
     font-weight: 700;
     margin-bottom: 3.33vw;
+    line-height: 1.2;
+  }
+  .info-blocks__paragraphs {
+    h4 {
+      font-weight: 500;
+      font-size: 1.25vw;
+      margin-bottom: 1.39vw;
+    }
+  }
+  .info-blocks__paragraphs-item {
+    .animated-button {
+      margin-top: 2.77vw;
+    }
+  }
+  .info-blocks__paragraphs-item:not(:last-child) {
+    margin-bottom: 2.77vw;
+  }
+  .info-blocks {
+    .info-blocks__item:nth-child(even) {
+      .cases__item-image {
+        order: 1;
+      }
+      .info-blocks__item-text {
+        order: 2;
+      }
+    }
   }
 }

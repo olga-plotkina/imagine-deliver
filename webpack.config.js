@@ -37,19 +37,25 @@ module.exports = env => {
         template: './public/index.html',
         filename: 'index.html',
         chunks: ['main'],
-        // minify: false,
+        minify: false,
       }),
       new HtmlWebpackPlugin({
         template: './public/about.html',
         filename: 'about.html',
         chunks: ['about'],
-        // minify: false,
+        minify: false,
       }),
       new HtmlWebpackPlugin({
         template: './public/process.html',
         filename: 'process.html',
         chunks: ['process'],
-        // minify: false,
+        minify: false,
+      }),
+      new HtmlWebpackPlugin({
+        template: './public/vision.html',
+        filename: 'vision.html',
+        chunks: ['vision'],
+        minify: false,
       }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
