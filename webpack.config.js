@@ -69,6 +69,12 @@ module.exports = env => {
         chunks: ['case-studies-landing'],
         minify: false,
       }),
+      new HtmlWebpackPlugin({
+        template: './public/team.html',
+        filename: 'team.html',
+        chunks: ['team'],
+        minify: false,
+      }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
         patterns: [
