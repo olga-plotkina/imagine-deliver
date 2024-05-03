@@ -90,6 +90,14 @@
 }
 @include for-tablet-up {
   .hero {
+    .hero__page-name {
+      text-align: center;
+      margin-bottom: 1.67vw;
+      font-size: 1.6vw;
+      font-weight: 500;
+      line-height: 1.39;
+      letter-spacing: -0.03vw;
+    }
     .hero__container {
       padding-bottom: 13.33vw;
       padding-left: 4.44vw;
@@ -98,7 +106,7 @@
     .hero__description {
       margin-bottom: 3.33vw;
     }
-    .hero__subdecription {
+    .hero__subdecription:not(:last-child) {
       margin-bottom: 2.78vw;
     }
     .hero__subdecription.hero__subdecription--no-mb {

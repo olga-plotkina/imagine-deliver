@@ -1,0 +1,16 @@
+.image-section {
+  .image-section__container {
+    padding-left: 4.44vw;
+    padding-right: 4.44vw;
+  }
+
+  .image-section__image-wrapper {
+    width: 91.11vw;
+    border-radius: 1.11vw;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+}
