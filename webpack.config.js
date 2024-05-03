@@ -57,6 +57,12 @@ module.exports = env => {
         chunks: ['vision'],
         minify: false,
       }),
+      new HtmlWebpackPlugin({
+        template: './public/careers.html',
+        filename: 'careers.html',
+        chunks: ['careers'],
+        minify: false,
+      }),
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
         patterns: [

@@ -1,0 +1,65 @@
+@include for-tablet-up {
+  .open-roles {
+    padding-bottom: 11.67vw;
+  }
+  .open-roles__container {
+    padding-left: 4.44vw;
+    padding-right: 4.44vw;
+  }
+  .open-roles__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4.44vw;
+    h2 {
+      font-size: 6.94vw;
+      font-family: $secondary-font-family;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0.03vw;
+    }
+  }
+  .open-roles__link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.97vw;
+
+    a {
+      color: inherit;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+  .open-roles__table {
+    margin-bottom: 3.33vw;
+  }
+  .open-roles__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.78vw;
+    padding-bottom: 2.78vw;
+    border-bottom: 0.5px solid $dark-text-color;
+
+    h3 {
+      font-size: 1.6vw;
+      text-align: left;
+      font-weight: 500;
+      line-height: 1.39;
+      width: 37.9vw;
+      letter-spacing: -0.03vw;
+    }
+  }
+  .open-roles__item:first-child {
+    border-top: 0.5px solid $dark-text-color;
+  }
+  .open-roles__disclaimer {
+    width: 45.83vw;
+    font-size: 0.97vw;
+    color: #8f8e8e;
+    text-align: left;
+    font-weight: 500;
+    line-height: 1.36;
+  }
+}
