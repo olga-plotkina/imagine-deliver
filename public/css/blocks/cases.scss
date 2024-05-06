@@ -56,6 +56,7 @@
 .cases__item:not(:first-child) {
   border-top: 0.5px solid $dark-text-color;
 }
+
 .cases__item.cases__item--guides {
   border-top: none;
   .cases__container {
@@ -171,6 +172,13 @@
       padding-bottom: 8.89vw;
     }
   }
+  .cases--study .cases__item:first-child {
+    border-top: 0.5px solid $dark-text-color;
+  }
+  .cases--study .cases__item {
+    height: unset;
+  }
+
   .cases__item.cases__item--guides .cases__container {
     // box-sizing: border-box;
     // height: 100vh;
@@ -184,7 +192,7 @@
   // }
   .cases__item-image {
     display: block;
-    // margin-bottom: unset;
+    margin-bottom: 0;
 
     // img {
     //   width: 44.44vw;
@@ -245,6 +253,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .cases--study .cases__item-text {
+    gap: 15.42vw;
+    justify-content: unset;
   }
   .splitText.cases__item-lid .word {
     line-height: 0.82;

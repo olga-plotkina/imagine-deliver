@@ -1,0 +1,30 @@
+.double-text-section {
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  .double-text-section__container {
+    display: flex;
+    gap: 8.89vw;
+    padding-left: 4.44vw;
+    padding-right: 4.44vw;
+  }
+  span {
+    display: block;
+    margin-bottom: 1.67vw;
+    font-size: 1.6vw;
+    line-height: 1.39;
+  }
+
+  h3 {
+    font-size: 3.125vw;
+    margin-bottom: 4.44vw;
+    line-height: 1.2;
+    letter-spacing: -0.11vw;
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
+  p:not(:last-child) {
+    margin-bottom: 2.22vw;
+  }
+}

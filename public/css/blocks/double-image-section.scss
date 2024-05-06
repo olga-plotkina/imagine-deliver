@@ -1,0 +1,15 @@
+.double-image-section__container {
+  display: flex;
+  padding-left: 4.44vw;
+  padding-right: 4.44vw;
+  gap: 2.22vw;
+}
+.double-image-section__image-wrapper {
+  width: calc(50% - 2.23vw);
+  border-radius: 1.11vw;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
