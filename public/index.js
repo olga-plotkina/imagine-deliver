@@ -8,6 +8,7 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
 import { TimelineMax } from 'gsap';
+import NiceSelect from 'nice-select2';
 
 // const lenis = new Lenis();
 
@@ -769,4 +770,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  var selectElement = document.getElementById('cases-filter');
+  var niceSelectContainer = document.querySelector('.nice-select    ');
+
+  new NiceSelect(selectElement, { searchable: true });
+
+  var filterWrapper = document.querySelector('.hero__clear-filter-wrapper');
+  selectElement.addEventListener('change', function () {
+    filterWrapper.classList.remove('is-hidden');
+  });
 });

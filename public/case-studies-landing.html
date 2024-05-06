@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="styles.css" />
     <script defer src="bundle.js"></script>
   </head>
@@ -166,18 +167,48 @@
             <div class="splitText">Systems impact and product innovation</div>
           </div>
           <div class="hero__buttons-wrapper">
-            <div class="animated-button">
+            <select id="cases-filter">
+              <option value="" selected>Services</option>
+              <option value="engagement_insights">Engagement & Insights</option>
+              <option value="strategy_design">Strategy Design</option>
+              <option value="service_design">Service Design</option>
+              <option value="system_design">System Design</option>
+            </select>
+            <!-- <div class="animated-button">
               <a class="animated-button__primary" href="/">Services +</a>
               <a class="animated-button__slide" href="/"
                 ><span>Services +</span></a
               >
-            </div>
+            </div> -->
             <div class="animated-button">
               <a class="animated-button__primary" href="/">Industry +</a>
               <a class="animated-button__slide" href="/"
                 ><span>Industry +</span></a
               >
             </div>
+          </div>
+          <div class="hero__clear-filter-wrapper is-hidden">
+            <button type="button">
+              Clear filter
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M10.8286 6.17188L5.17176 11.8287"
+                  stroke="#5F5D5D"
+                  stroke-width="1.25"
+                />
+                <path
+                  d="M10.8286 11.8286L5.17176 6.17176"
+                  stroke="#5F5D5D"
+                  stroke-width="1.25"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </section>

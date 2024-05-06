@@ -172,6 +172,9 @@
       gap: 1.11vw;
       .animated-button {
         margin-bottom: 0;
+        border: 1px solid #5f5d5d;
+        color: #5f5d5d;
+        font-weight: 500;
       }
     }
     .hero__lid {
@@ -205,6 +208,36 @@
     .hero__container {
       padding-top: 11.67vw;
     }
+  }
+
+  .hero__clear-filter-wrapper {
+    display: block;
+    padding: 0.76vw 0.83vw 0.76vw 1.11vw;
+    border-radius: 2.22vw;
+    border: 1px solid #5f5d5d;
+    margin-top: 2.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    // height: 3.26vw;
+
+    > button {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      font-size: 1.25vw;
+      color: #5f5d5d;
+      font-weight: 500;
+
+      cursor: pointer;
+
+      svg {
+        margin-left: 0.27vw;
+      }
+    }
+  }
+  .hero__clear-filter-wrapper.is-hidden {
+    display: none;
   }
 
   // .splitText .word {

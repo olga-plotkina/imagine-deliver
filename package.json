@@ -53,6 +53,7 @@
     "gh-pages": "^6.1.1",
     "gsap": "^3.12.5",
     "lenis": "^1.0.45",
+    "nice-select2": "^2.2.0",
     "normalize.css": "^8.0.1",
     "photoswipe": "^5.4.3",
     "smooth-scrollbar": "^8.8.4",
