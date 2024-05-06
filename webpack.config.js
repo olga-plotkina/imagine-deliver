@@ -81,6 +81,25 @@ module.exports = env => {
         chunks: ['case-study'],
         minify: false,
       }),
+      new HtmlWebpackPlugin({
+        template: './public/insights.html',
+        filename: 'insights.html',
+        chunks: ['insights'],
+        minify: false,
+      }),
+      new HtmlWebpackPlugin({
+        template: './public/article.html',
+        filename: 'article.html',
+        chunks: ['article'],
+        minify: false,
+      }),
+      new HtmlWebpackPlugin({
+        template: './public/product-landing-guides.html',
+        filename: 'product-landing-guides.html',
+        chunks: ['product-landing-guides'],
+        minify: false,
+      }),
+
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
         patterns: [

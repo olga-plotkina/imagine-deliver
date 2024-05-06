@@ -16,9 +16,12 @@
 .case-gallery--pb-168 {
   padding-bottom: 11.67vw;
 }
+.case-gallery--pb-192 {
+  padding-bottom: 13.33vw;
+}
 .case-gallery__item {
   //   width: 28.89vw;
-  width: 28.59vw;
+  width: calc(86vw / 3);
 }
 .case-gallery__item-title {
   font-size: 1.25vw;
@@ -37,7 +40,36 @@
   border-radius: 1.11vw;
   overflow: hidden;
   margin-bottom: 1.67vw;
+  position: relative;
+
+  .js-open-modal-button {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.33vw;
+    height: 3.33vw;
+    border-radius: 3.33vw;
+    background-color: #ffbdb2;
+    bottom: 2.22vw;
+    right: 2.22vw;
+    cursor: pointer;
+    border: none;
+  }
   img {
     width: 100%;
+  }
+}
+.case-gallery__image-wrapper:hover {
+  .js-open-modal-button {
+    visibility: visible;
+    pointer-events: all;
+    display: flex;
+    opacity: 1;
   }
 }

@@ -125,14 +125,20 @@
     .hero__title-wrapper.hero__title-wrapper--small-margin {
       margin-bottom: 2.22vw;
     }
-
+    .hero__title-wrapper.hero__title-wrapper--no-margin {
+      margin-bottom: 0;
+    }
     .hero__image-wrapper {
       width: 91.11vw;
       // width: 100%;
       margin-bottom: 5.56vw;
       //   height: 54.9vw;
     }
-    .hero__image-wrapper.hero__hero__image-wrapper--no-mb {
+    .hero__image-wrapper--border-radius {
+      border-radius: 1.11vw;
+      overflow: hidden;
+    }
+    .hero__image-wrapper.hero__image-wrapper--no-mb {
       margin-bottom: 0;
     }
     .hero__image-wrapper.hero__image-wrapper--smooth-borders {

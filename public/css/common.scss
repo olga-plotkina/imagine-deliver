@@ -18,6 +18,9 @@ body {
   margin: 0;
   background-color: $background-yellow;
 }
+body.modal-open {
+  overflow: hidden;
+}
 p {
   font-size: 4.25vw;
   max-width: 87.78vw;
@@ -58,3 +61,7 @@ p {
 @import './blocks/counter.scss';
 @import './blocks/double-text-section.scss';
 @import './blocks/quote-section.scss';
+@import './blocks/article.scss';
+@import './blocks/article-preview.scss';
+@import './blocks/team-member.scss';
+@import './blocks/modal.scss';

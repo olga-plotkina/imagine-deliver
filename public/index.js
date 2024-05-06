@@ -615,4 +615,158 @@ document.addEventListener('DOMContentLoaded', () => {
   //     return clone;
   //   }
   // });
+
+  //team members modal
+
+  const membersData = [
+    {
+      name: 'Kate Downing Khaled',
+      position: 'Founder, Managing Director',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Kate.jpg',
+      info: '<p>Kate is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Taqee Khaled',
+      position: 'Co-Founder, Advisor',
+      pronounce: 'He/His/Him',
+      src: './images/img/ID-team-Taqee.jpg',
+      info: '<p>Taqee is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Tiffany Xiong',
+      position: 'Head of Growth & Operations',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Tiffany.jpg',
+      info: '<p>Tiffany is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Johnna White',
+      position: 'Principal Strategist',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Johnna.jpg',
+      info: '<p>Johnna is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Monica Cruz-Zorilla',
+      position: 'Principal Strategist',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Monica.jpg',
+      info: '<p>Monica is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Sami Milliren',
+      position: 'Executive & Special Projects Coordinator',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Sami.jpg',
+      info: '<p>Sami is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Jenny Tam',
+      position: 'Strategy Consultant',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Jenny.jpg',
+      info: '<p>Jenny is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Chiamaka Gabrielle Ifedi',
+      position: 'Associate Strategist',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Chiamaka.jpg',
+      info: '<p>Chiamaka is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Matilda Chang',
+      position: 'Digital Strategist',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Matilda.jpg',
+      info: '<p>Matilda is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Fatima Mubarak',
+      position: 'Senior Growth & Operations Manager',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Fatima.jpg',
+      info: '<p>Fatima is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Allie Palmer',
+      position: 'Strategy Consultant',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Allie.jpg',
+      info: '<p>Allie is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+    {
+      name: 'Amina Mohamed',
+      position: 'Senior Strategy Consultant',
+      pronounce: 'She/Her/Hers',
+      src: './images/img/ID-team-Amina.jpg',
+      info: '<p>Amina is the kind of leader who will believe in you even when you don’t believe in yourself. As a strategist and former community organizer, she’s an expert at listening to teams and leading them in transformative directions. She has the uncanny ability to see beyond the limitations others place on themselves to spot brilliance in the people around her. With nearly two decades of experience in philanthropy, community-based research and human-centered design, Kate knows the best services and products are designed by the people who use them. Named a Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in 2022, Kate founded Imagine Deliver because she routinely saw systems operating in ways that excluded people from problem solving rather than meaningfully including them.</p> <p>As Imagine Deliver’s managing director, Kate helps bold, intersectional leaders across healthcare, government, philanthropy, and financial services sectors eliminate that disconnect by showing them how to tap </p>',
+    },
+  ];
+  const teamGalleryContainer = document.querySelector('.js-team-gallery');
+  const teamMemberCard = document.getElementById('team-member-card');
+
+  const teamMemberModal = document.getElementById('team-memeber-modal');
+  const closeModalButtonsArray = document.querySelectorAll(
+    '.modal__close-button'
+  );
+  const modalsArray = document.querySelectorAll('.modal');
+
+  if (modalsArray.length) {
+    modalsArray.forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === e.currentTarget) {
+          modal.classList.add('is-hidden');
+          document.body.classList.remove('modal-open');
+        }
+      });
+    });
+  }
+  if (closeModalButtonsArray.length) {
+    closeModalButtonsArray.forEach(button => {
+      const closestModal = button.closest('.modal');
+      button.addEventListener('click', e => {
+        closestModal.classList.add('is-hidden');
+        document.body.classList.remove('modal-open');
+      });
+    });
+  }
+  if (teamGalleryContainer && teamMemberCard && teamMemberModal) {
+    const memberPicture = teamMemberCard.querySelector(
+      '.team-member__image-wrapper img'
+    );
+    const memberContent = teamMemberCard.querySelector('.team-member__content');
+    const memberName = teamMemberCard.querySelector('.team-member__name');
+    const memberPosition = teamMemberCard.querySelector(
+      '.team-member__position'
+    );
+    const memberPronounce = teamMemberCard.querySelector(
+      '.team-member__pronounce'
+    );
+    const teamMembersArray = teamGalleryContainer.querySelectorAll(
+      '.case-gallery__item'
+    );
+    if (teamMembersArray.length) {
+      teamMembersArray.forEach(member => {
+        const openModalButton = member.querySelector('.js-open-modal-button');
+        const teamMemberName = member.querySelector('.js-team-member');
+
+        openModalButton.addEventListener('click', e => {
+          teamMemberModal.classList.remove('is-hidden');
+          document.body.classList.add('modal-open');
+
+          membersData.forEach(infoItem => {
+            if (infoItem.name === teamMemberName.textContent.trim()) {
+              memberName.textContent = infoItem.name;
+              memberPosition.textContent = infoItem.position;
+              memberPronounce.textContent = infoItem.pronounce;
+              memberContent.innerHTML = infoItem.info;
+              memberPicture.src = infoItem.src;
+            }
+          });
+        });
+      });
+    }
+  }
 });
