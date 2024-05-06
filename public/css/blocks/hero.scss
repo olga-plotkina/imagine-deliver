@@ -177,6 +177,17 @@
         font-weight: 500;
       }
     }
+    .hero__buttons-wrapper--connection {
+      .animated-button {
+        width: 12vw;
+        border: none;
+        color: $dark-text-color;
+      }
+      .animated-button:first-child {
+        background-color: $dark-text-color;
+        color: white;
+      }
+    }
     .hero__lid {
       max-width: 60vw;
       font-size: 3.13vw;

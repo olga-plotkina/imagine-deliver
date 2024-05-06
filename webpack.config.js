@@ -99,6 +99,12 @@ module.exports = env => {
         chunks: ['product-landing-guides'],
         minify: false,
       }),
+      new HtmlWebpackPlugin({
+        template: './public/connect.html',
+        filename: 'connect.html',
+        chunks: ['connect'],
+        minify: false,
+      }),
 
       new MiniCssExtractPlugin({ filename: 'styles.css' }),
       new CopyPlugin({
