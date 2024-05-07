@@ -259,11 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //burger menu
   const sideMenuItems = document.querySelectorAll(
-    '.burger-menu__sidemenu [data-menu]'
+    '.burger-menu__sidemenu [data-id]'
   );
-  const mainMenuItems = document.querySelectorAll(
-    '.burger-menu__main [data-id]'
-  );
+  const mainMenuItems = document.querySelectorAll('.burger-menu__main >li');
+  console.log(mainMenuItems);
   const burgerButton = document.querySelector('.burger-button');
   const closeIcon = document.querySelector('.burger-button__close');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -317,9 +316,9 @@ document.addEventListener('DOMContentLoaded', () => {
           mainItemAny.classList.remove('other-hovered');
         }
       });
-      const dataId = this.getAttribute('data-id');
+      const dataId = this.getAttribute('id');
       sideMenuItems.forEach(item => {
-        if (item.getAttribute('data-menu') === dataId) {
+        if (item.getAttribute('data-id') === dataId) {
           item.classList.add('hovered');
           mainItem.classList.add('hovered');
         } else {
