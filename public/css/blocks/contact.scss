@@ -3,7 +3,7 @@
   form {
     width: 100%;
   }
-  .splitText {
+  .contact__text {
     font-size: 6.5vw;
     font-weight: 700;
     text-align: center;
@@ -43,15 +43,18 @@
       align-items: center;
     }
 
-    .splitText {
+    .contact__text {
+      line-height: 1.2;
       text-align: center;
       font-size: 3.125vw;
       max-width: 60vw;
       margin-bottom: 3.33vw;
+      letter-spacing: -0.11vw;
+      font-weight: 700;
     }
 
     input {
-      width: 21.66vw;
+      width: 19.66vw;
       padding: 0.8vw 1.11vw;
       margin-bottom: unset;
       font-size: 1.2vw;

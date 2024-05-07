@@ -160,7 +160,7 @@
 @include for-tablet-up {
   .cases__item {
     box-sizing: border-box;
-    height: 100vh;
+    // height: 100vh;
 
     .cases__container {
       height: 100%;
@@ -168,7 +168,7 @@
       max-height: 100%;
       padding-left: 4.5vw;
       padding-right: 4.5vw;
-      padding-top: 2.78vw;
+      padding-top: 2.6vw; //3.9vh;
       padding-bottom: 8.89vw;
     }
   }
@@ -182,8 +182,8 @@
   .cases__item.cases__item--guides .cases__container {
     // box-sizing: border-box;
     // height: 100vh;
-    padding-top: 16.4vh; //6vh;
-    padding-bottom: 14.06vh; //10vw;
+    padding-top: 10vw; //16.4vh; //6vh;
+    padding-bottom: 12.5vw; //10vw;
   }
 
   // .cases__item--guides {
@@ -202,7 +202,7 @@
 
   .cases__item-top {
     font-size: 0.97vw;
-    margin-bottom: 5vw;
+    margin-bottom: 0; //9.77vh; //7.2vw; //5vw;
     justify-content: left;
 
     > div:first-child {
@@ -221,15 +221,15 @@
 
   .cases__item-image {
     // max-width: 44.44vw;
-    height: 100%;
-    width: auto;
+    //height: 87.5vh; //49.93vw;
+    // width: auto;
     margin-right: 0;
     // margin-bottom: 8vw;
 
     order: 2;
     // margin-left: 10vw;
     img {
-      width: 100%;
+      // width: 100%;
       max-height: 100%;
     }
   }
@@ -238,19 +238,29 @@
     line-height: 1.39;
     text-align: left;
     // margin-top: 4.9vw;
-    margin-bottom: 2.22vw;
+    margin-bottom: 3.125vh; //2.22vw;
   }
   .cases__item-lid {
-    max-width: 36.67vw;
+    // min-width: 36.67vw;
+    max-width: 43.67vw;
+
+    min-width: 39.67vw;
     text-align: left;
 
     font-size: 8.3vw;
-    line-height: 0.82;
+    line-height: 0.92;
     letter-spacing: 0.04vw;
-    margin-bottom: 2.78vw;
+    margin-bottom: 3.125vh;
+  }
+  #case-2 {
+    .cases__item-lid {
+      // width: 33vw;
+      min-width: 33.67vw;
+    }
   }
   .cases__item-text {
     display: flex;
+    margin-top: 19.53vh;
     flex-direction: column;
     justify-content: space-between;
   }
@@ -265,10 +275,12 @@
     font-size: 1.25vw;
     text-align: left;
     justify-self: flex-end;
+    width: 30vw;
+    margin-top: 24.12vh;
   }
   .animated-button.cases__item-link {
     margin-left: unset;
-    margin-top: 2.78vw;
+    margin-top: 3.125vh;
   }
   .cases__item-title {
     font-size: 3.125vw;

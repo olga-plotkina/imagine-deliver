@@ -50,7 +50,7 @@ footer {
   flex-wrap: wrap;
 }
 .footer__links-item {
-  width: calc(50% - 4vw);
+  width: 18vw;
   ul {
     padding: 0;
     margin-top: 6vw;
@@ -160,7 +160,7 @@ footer {
     }
     > div:first-child {
       display: flex;
-      gap: 10.62vw;
+      gap: 2.62vw;
     }
   }
   .footer__logo {
@@ -212,7 +212,7 @@ footer {
     // width: calc(25% - 6.66vw);
     width: unset;
     ul {
-      width: 13.61vw;
+      width: 15vw;
       padding: 0;
       margin-top: 2.22vw;
       margin-bottom: 0;

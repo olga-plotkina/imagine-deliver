@@ -40,7 +40,7 @@
 
 @include for-tablet-up {
   .insights {
-    margin-top: 39vh;
+    margin-top: 0; //39vh;
 
     padding-bottom: 13.33vw;
 

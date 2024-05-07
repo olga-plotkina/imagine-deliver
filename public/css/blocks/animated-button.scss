@@ -95,9 +95,9 @@
     }
 
     .page-header & {
-      padding-left: 1.67vw;
-      padding-right: 1.67vw;
-      height: 2.71vw;
+      // padding-left: 1.67vw;
+      // padding-right: 1.67vw;
+      height: 2.78vw;
       max-width: 9.44vw;
 
       display: block;
@@ -107,7 +107,10 @@
       color: inherit;
       border: $border-desktop-width solid #162e2e66;
       background-color: transparent;
-      font-size: 0.97vw;
+
+      a {
+        font-size: 0.97vw;
+      }
 
       // .animated-button__primary {
       //   width: 9.44vw;

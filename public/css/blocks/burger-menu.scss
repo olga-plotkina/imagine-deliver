@@ -9,12 +9,12 @@
 main.menu-open,
 header.menu-open {
   transform: translateY(149vw);
-  transition: transform 0.9s cubic-bezier(0.46, 0.2, 0.8, 0.1);
+  transition: transform 2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 main,
 header {
   // transform: translateY(0);
-  transition: transform 0.4s cubic-bezier(0.46, 0.2, 0.8, 0.1);
+  transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .burger-menu {
   display: flex;
@@ -28,7 +28,7 @@ header {
   background-color: $dark-text-color;
   padding: 23.47vh 33vw 7.51vh 6vw;
 
-  transition: top 0.6s cubic-bezier(0.02, 0.34, 0.94, 0.57);
+  transition: top 1s cubic-bezier(0.25, 0.1, 0.25, 1);
   // transition: top 0.4s cubic-bezier(0.46, 0.2, 0.8, 0.1);
   a {
     color: $background-yellow;
@@ -207,7 +207,7 @@ header {
   }
   .burger-menu {
     top: -110%;
-    transition: top 0.4s cubic-bezier(0.46, 0.2, 0.8, 0.1);
+    transition: top 1s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     .burger-menu__main {
       > li:not(:last-child) {

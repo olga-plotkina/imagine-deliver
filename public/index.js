@@ -152,39 +152,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var checkPointFifth = sectionFifth.getBoundingClientRect().top;
 
+    // Load the saved state of each section from local storage
+    var savedSectionStates =
+      JSON.parse(localStorage.getItem('sectionStates')) || {};
+    applySavedSectionStates(savedSectionStates);
+
     //Scroll logic
     function onScroll() {
       var scrollBarPosition = window.pageYOffset;
 
+      // Store the current state of each section in local storage
+      localStorage.setItem('sectionStates', JSON.stringify(sectionStates));
+
       if (scrollBarPosition >= 0 && scrollBarPosition < checkPointTwo) {
         removeClass(sectionTwo, sectionThree);
-        removeBackground(sectionTwo);
-        removeBackground(sectionThree);
-        removeBackground(sectionFourth);
+        // removeBackground(sectionTwo);
+        // removeBackground(sectionThree);
+        // removeBackground(sectionFourth);
       } else if (
         window.pageYOffset >= checkPointTwo &&
         window.pageYOffset < checkPointThree
       ) {
         addClass(sectionTwo);
-        addBackground(sectionTwo);
-        removeBackground(sectionThree);
+        // addBackground(sectionTwo);
+        // removeBackground(sectionThree);
       } else if (
         window.pageYOffset >= checkPointThree &&
         window.pageYOffset < checkPointFourth
       ) {
         addClass(sectionThree);
-        addBackground(sectionThree);
-        removeBackground(sectionFourth);
+        // addBackground(sectionThree);
+        // removeBackground(sectionFourth);
       } else if (
         window.pageYOffset >= checkPointFourth &&
         window.pageYOffset < checkPointFifth
       ) {
         addClass(sectionFourth);
-        addBackground(sectionFourth);
-      } else if (scrollBarPosition === 0) {
-        removeBackground(sectionTwo);
-        removeBackground(sectionThree);
-        removeBackground(sectionFourth);
+        // addBackground(sectionFourth);
+      }
+      // else if (scrollBarPosition === 0) {
+      //   removeBackground(sectionTwo);
+      //   removeBackground(sectionThree);
+      //   removeBackground(sectionFourth);
+      // }
+
+      // Check if each section is fixed or absolute
+      var sectionStates = {
+        sectionTwo: isSectionFixed(sectionTwo),
+        sectionThree: isSectionFixed(sectionThree),
+        sectionFourth: isSectionFixed(sectionFourth),
+        sectionFifth: isSectionFixed(sectionFifth),
+      };
+
+      localStorage.setItem('sectionStates', JSON.stringify(sectionStates));
+    }
+    // Function to check if a section is fixed
+    function isSectionFixed(section) {
+      return section.classList.contains('fixed');
+    }
+    // Function to apply saved section states
+    function applySavedSectionStates(savedSectionStates) {
+      if (savedSectionStates.sectionTwo) {
+        sectionTwo.classList.add('fixed');
+      }
+      if (savedSectionStates.sectionThree) {
+        sectionThree.classList.add('fixed');
+      }
+      if (savedSectionStates.sectionFourth) {
+        sectionFourth.classList.add('fixed');
+      }
+      if (savedSectionStates.sectionFifth) {
+        sectionFifth.classList.add('fixed');
       }
     }
     function addClass(elemOne) {
@@ -194,17 +232,23 @@ document.addEventListener('DOMContentLoaded', () => {
       elemOne.style.top = margin + 'px';
       elemOne.style.position = 'absolute';
     }
-    function addBackground(elem) {
-      elem.classList.add('background-grey');
-    }
+    // function addBackground(elem) {
+    //   elem.classList.add('background-grey');
+    // }
 
-    function removeBackground(elem) {
-      elem.classList.remove('background-grey');
-    }
+    // function removeBackground(elem) {
+    //   elem.classList.remove('background-grey');
+    // }
     function removeClass(elemOne, elemTwo) {
       elemOne.classList.remove('fixed');
       elemTwo.classList.remove('absolute');
     }
+
+    [sectionTwo, sectionThree, sectionFourth, sectionFifth].forEach(section => {
+      section.addEventListener('transitionend', () => {
+        onScroll();
+      });
+    });
     // document.addEventListener('wheel', () => {
     //   const viewportHeight = window.innerHeight;
 
@@ -262,7 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
     '.burger-menu__sidemenu [data-id]'
   );
   const mainMenuItems = document.querySelectorAll('.burger-menu__main >li');
-  console.log(mainMenuItems);
   const burgerButton = document.querySelector('.burger-button');
   const closeIcon = document.querySelector('.burger-button__close');
   const burgerMenu = document.querySelector('.burger-menu');
@@ -426,77 +469,77 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Select the ticker container
-  function throttle(func, delay) {
-    let lastCall = 0;
-    return function (...args) {
-      const now = new Date().getTime();
-      if (now - lastCall < delay) {
-        return;
-      }
-      lastCall = now;
-      func(...args);
-    };
-  }
+  // function throttle(func, delay) {
+  //   let lastCall = 0;
+  //   return function (...args) {
+  //     const now = new Date().getTime();
+  //     if (now - lastCall < delay) {
+  //       return;
+  //     }
+  //     lastCall = now;
+  //     func(...args);
+  //   };
+  // }
 
-  const tickerContainers = document.querySelectorAll('.ticker__content');
+  // const tickerContainers = document.querySelectorAll('.ticker__content');
 
-  tickerContainers.forEach(container => {
-    let lastScrollTop = 0;
+  // tickerContainers.forEach(container => {
+  //   let lastScrollTop = 0;
 
-    // Function to handle scroll ticker events
-    function handleScroll() {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+  //   // Function to handle scroll ticker events
+  //   function handleScroll() {
+  //     const scrollTop =
+  //       window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > lastScrollTop) {
-        if (container.parentElement.classList.contains('ticker--features')) {
-          container.style.animationDuration = '10s';
-          container.style.animationDirection = 'normal';
+  //     if (scrollTop > lastScrollTop) {
+  //       if (container.parentElement.classList.contains('ticker--features')) {
+  //         container.style.animationDuration = '10s';
+  //         container.style.animationDirection = 'normal';
 
-          setTimeout(() => {
-            container.style.animationDuration = '17s';
-            container.style.animationDirection = 'normal';
-          }, 500);
-        }
-        if (container.parentElement.classList.contains('ticker--air-date')) {
-          container.style.animationDuration = '16s';
-          container.style.animationDirection = 'normal';
+  //         setTimeout(() => {
+  //           container.style.animationDuration = '17s';
+  //           container.style.animationDirection = 'normal';
+  //         }, 500);
+  //       }
+  //       if (container.parentElement.classList.contains('ticker--air-date')) {
+  //         container.style.animationDuration = '16s';
+  //         container.style.animationDirection = 'normal';
 
-          setTimeout(() => {
-            container.style.animationDuration = '17s';
-            container.style.animationDirection = 'normal';
-          }, 500);
-        }
-      } else {
-        if (container.parentElement.classList.contains('ticker--features')) {
-          container.style.animationDirection = 'reverse';
-          container.style.animationDuration = '20s';
+  //         setTimeout(() => {
+  //           container.style.animationDuration = '17s';
+  //           container.style.animationDirection = 'normal';
+  //         }, 500);
+  //       }
+  //     } else {
+  //       if (container.parentElement.classList.contains('ticker--features')) {
+  //         container.style.animationDirection = 'reverse';
+  //         container.style.animationDuration = '20s';
 
-          // After 1 second, revert the animation direction to normal
-          setTimeout(() => {
-            container.style.animationDirection = 'normal';
-            container.style.animationDuration = '17s';
-          }, 500);
-        }
-        if (container.parentElement.classList.contains('ticker--air-date')) {
-          container.style.animationDirection = 'reverse';
-          container.style.animationDuration = '18s';
+  //         // After 1 second, revert the animation direction to normal
+  //         setTimeout(() => {
+  //           container.style.animationDirection = 'normal';
+  //           container.style.animationDuration = '17s';
+  //         }, 500);
+  //       }
+  //       if (container.parentElement.classList.contains('ticker--air-date')) {
+  //         container.style.animationDirection = 'reverse';
+  //         container.style.animationDuration = '18s';
 
-          // After 1 second, revert the animation direction to normal
-          setTimeout(() => {
-            container.style.animationDirection = 'normal';
-            container.style.animationDuration = '17s';
-          }, 500);
-        }
-      }
+  //         // After 1 second, revert the animation direction to normal
+  //         setTimeout(() => {
+  //           container.style.animationDirection = 'normal';
+  //           container.style.animationDuration = '17s';
+  //         }, 500);
+  //       }
+  //     }
 
-      // Update the last scroll position
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }
-    const throttledScroll = throttle(handleScroll, 1000);
-    // Add scroll event listener
-    window.addEventListener('scroll', throttledScroll);
-  });
+  //     // Update the last scroll position
+  //     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  //   }
+  //   const throttledScroll = throttle(handleScroll, 1000);
+  //   // Add scroll event listener
+  //   window.addEventListener('scroll', throttledScroll);
+  // });
 
   //gsap ticker
 
@@ -772,11 +815,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var selectElement = document.getElementById('cases-filter');
   var niceSelectContainer = document.querySelector('.nice-select    ');
-
-  new NiceSelect(selectElement, { searchable: true });
-
   var filterWrapper = document.querySelector('.hero__clear-filter-wrapper');
-  selectElement.addEventListener('change', function () {
-    filterWrapper.classList.remove('is-hidden');
-  });
+
+  if (selectElement) {
+    new NiceSelect(selectElement, { searchable: true });
+
+    selectElement.addEventListener('change', function () {
+      filterWrapper.classList.remove('is-hidden');
+    });
+  }
 });
