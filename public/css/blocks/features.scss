@@ -23,7 +23,7 @@
   h4 {
     font-size: 5.5vw;
     font-weight: 500;
-    margin-bottom: 6vw;
+    margin-bottom: 4vw;
     text-align: center;
   }
 }
@@ -48,7 +48,7 @@
   display: none;
 }
 .features__images-swiper {
-  margin-bottom: 6vw;
+  margin-bottom: 2vw;
 
   .swiper-wrapper {
     margin-bottom: 10vw;
@@ -71,12 +71,15 @@
     flex-direction: column;
     align-items: center;
   }
+  p {
+    line-height: 1.41;
+  }
 }
 .swiper-pagination-bullet-active {
   background: $dark-text-color !important;
 }
 .features.features--home {
-  padding-bottom: 13.54vw; //11.67vw;
+  padding-bottom: 15.54vw; //11.67vw;
 }
 .features.features--process {
   padding-bottom: 1.67vw;
@@ -189,5 +192,8 @@
   }
   .features__container.features__container--big-gap {
     gap: 10vw;
+  }
+  .features.features--home {
+    padding-bottom: 13.54vw; //11.67vw;
   }
 }

@@ -60,7 +60,7 @@
 .cases__item.cases__item--guides {
   border-top: none;
   .cases__container {
-    padding-bottom: 15vw;
+    padding-bottom: 22vw;
   }
 }
 
@@ -94,12 +94,12 @@
 .cases__item-image {
   display: flex;
   justify-content: center;
-  margin-bottom: 8vw;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 11.14vw;
 
   width: 76.75vw;
-  // height: 86.25vw;
+  height: 87.79vw;
 }
 .cases__item-top {
   display: flex;
@@ -134,10 +134,10 @@
   margin-bottom: 4vw;
 }
 .cases__item-lid {
-  max-width: 86.25vw;
+  max-width: 80.25vw;
   text-align: center;
   font-family: $secondary-font-family;
-  font-size: 19.5vw;
+  font-size: 17.85vw;
   font-weight: 900;
   margin-bottom: 8vw;
 
@@ -156,6 +156,7 @@
   font-size: 4.25vw;
   font-weight: 400;
   text-align: center;
+  margin-top: 12.21vw;
 }
 @include for-tablet-up {
   .cases__item {
@@ -193,6 +194,7 @@
   .cases__item-image {
     display: block;
     margin-bottom: 0;
+    height: auto;
 
     // img {
     //   width: 44.44vw;

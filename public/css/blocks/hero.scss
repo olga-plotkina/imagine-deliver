@@ -50,13 +50,13 @@
   }
 
   .hero__title-wrapper {
-    font-size: 10.75vw;
+    font-size: 11.2vw;
     text-align: center;
     font-family: inherit;
     font-weight: 700;
     max-width: 95vw;
-    line-height: 0.8;
-    // letter-spacing: -0.05em;
+    line-height: 1.2;
+    letter-spacing: -0.5vw;
     margin-bottom: 8vw;
 
     .word {
@@ -64,13 +64,18 @@
     }
   }
   .hero__image-wrapper {
-    width: 100vw;
+    width: 88.04vw;
+    height: 89.57vw;
+
     margin-bottom: 12vw;
+    background-image: url('/public/images/img/ID-hero-home.jpg');
+    background-size: cover;
+    background-position: center;
     // height: 54.9vw;
 
-    img {
-      width: 100%;
-    }
+    // img {
+    //   width: 100%;
+    // }
   }
 
   .hero__lid {
@@ -132,7 +137,9 @@
       width: 91.11vw;
       // width: 100%;
       margin-bottom: 5.56vw;
-      //   height: 54.9vw;
+      height: 54.93vw;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
     .hero__image-wrapper--border-radius {
       border-radius: 1.11vw;

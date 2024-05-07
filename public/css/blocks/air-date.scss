@@ -1,7 +1,9 @@
-.air-date {
-  padding-top: 4.44vw;
-}
-
 .air-date--about {
   margin-bottom: 6.67vw;
+  padding-top: 4.44vw;
+}
+@include for-tablet-up {
+  .air-date {
+    padding-top: 4.44vw;
+  }
 }
