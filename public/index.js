@@ -88,29 +88,58 @@ document.addEventListener('DOMContentLoaded', () => {
         '.features__right-wrapper .feature__desktop-slide'
       );
 
-      autoToggleTimer = setInterval(() => {
-        const currentIndex = featureTitles.findIndex(
-          title => title === lastHoveredTitle
-        );
-        const nextIndex = (currentIndex + 1) % featureTitles.length;
+      const startAutoToggleTimer = () => {
+        autoToggleTimer = setInterval(() => {
+          const currentIndex = featureTitles.findIndex(
+            title => title === lastHoveredTitle
+          );
+          const nextIndex = (currentIndex + 1) % featureTitles.length;
 
-        const nextTitle = featureTitles[nextIndex];
+          const nextTitle = featureTitles[nextIndex];
 
-        featureTitles.forEach(t => t.classList.remove('accent'));
-        featureSlides.forEach(slide => slide.classList.remove('is-shown'));
+          featureTitles.forEach(t => t.classList.remove('accent'));
+          featureSlides.forEach(slide => slide.classList.remove('is-shown'));
 
-        nextTitle.classList.add('accent');
-        lastHoveredTitle = nextTitle;
+          nextTitle.classList.add('accent');
+          lastHoveredTitle = nextTitle;
 
-        const dataId = nextTitle.textContent.trim().toLowerCase();
+          const dataId = nextTitle.textContent.trim().toLowerCase();
 
-        const relevantSlide = container.querySelector(
-          `.feature__desktop-slide[data-id="${dataId}"]`
-        );
+          const relevantSlide = container.querySelector(
+            `.feature__desktop-slide[data-id="${dataId}"]`
+          );
 
-        relevantSlide.classList.add('is-shown');
-        lastHoveredSlide = relevantSlide;
-      }, 3000);
+          relevantSlide.classList.add('is-shown');
+          lastHoveredSlide = relevantSlide;
+        }, 3000);
+      };
+      // Mouseover event listener for each title
+      featureTitles.forEach(title => {
+        title.addEventListener('mouseover', () => {
+          // Remove accent class from last hovered title
+          if (lastHoveredTitle) {
+            lastHoveredTitle.classList.remove('accent');
+          }
+          // Add accent class to the currently hovered title
+          title.classList.add('accent');
+          // Update the last hovered title
+          lastHoveredTitle = title;
+          // Find the index of the hovered title
+          const currentIndex = featureTitles.findIndex(t => t === title);
+          // Show the corresponding slide
+          const relevantSlide = featureSlides[currentIndex];
+          // Hide all slides first
+          featureSlides.forEach(slide => slide.classList.remove('is-shown'));
+          // Show the relevant slide
+          relevantSlide.classList.add('is-shown');
+          // Update the last hovered slide
+          lastHoveredSlide = relevantSlide;
+          // Clear the auto toggle timer to prevent automatic switching
+          clearInterval(autoToggleTimer);
+          startAutoToggleTimer();
+        });
+      });
+      autoToggleTimer = setInterval(startAutoToggleTimer, 3000);
     });
   }
 
