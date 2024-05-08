@@ -1,15 +1,16 @@
 @use 'sass:math';
 @import '~normalize.css/normalize.css';
-@import './utils/reset.scss';
-
 @import './fonts/DMSans/stylesheet.css';
 @import './fonts/Arges/stylesheet.css';
+@import './utils/variables.scss';
+
+@import './utils/reset.scss';
+
 @import '~nice-select2/src/scss/nice-select2.scss';
 
 @import './utils/visuallyhidden.scss';
 
 @import './utils/fonts.scss';
-@import './utils/variables.scss';
 @import './utils/media-mixins.scss';
 
 body {
