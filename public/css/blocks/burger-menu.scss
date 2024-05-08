@@ -26,7 +26,7 @@ header {
   z-index: 10;
   pointer-events: none;
   background-color: $dark-text-color;
-  padding: 23.47vh 33vw 7.51vh 6vw;
+  padding: 23.47vh 33vw 0 6vw;
 
   transition: top 1s cubic-bezier(0.25, 0.1, 0.25, 1);
   // transition: top 0.4s cubic-bezier(0.46, 0.2, 0.8, 0.1);
@@ -184,8 +184,10 @@ header {
 .burger-menu.open {
   pointer-events: all;
   top: 0;
+
   .burger-menu__credentials {
     display: flex;
+    margin-top: 25vh;
   }
   .burger-menu__main {
     > li {
