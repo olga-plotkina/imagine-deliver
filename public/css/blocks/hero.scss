@@ -69,14 +69,8 @@
     height: 89.57vw;
 
     margin-bottom: 12vw;
-    background-image: url('/public/images/img/ID-hero-home.jpg');
     background-size: cover;
     background-position: center;
-    // height: 54.9vw;
-
-    // img {
-    //   width: 100%;
-    // }
   }
 
   .hero__lid {
@@ -105,7 +99,6 @@
       letter-spacing: -0.03vw;
     }
     .hero__container {
-      // padding-bottom: 13.33vw;
       padding-bottom: 8.33vw;
       padding-left: 4.44vw;
       padding-right: 4.44vw;
@@ -137,7 +130,6 @@
     }
     .hero__image-wrapper {
       width: 91.11vw;
-      // width: 100%;
       margin-bottom: 5.56vw;
       height: 54.93vw;
       background-size: contain;
@@ -204,11 +196,7 @@
       margin-bottom: 2.22vw;
     }
   }
-  // .hero.hero--home {
-  //   .hero__container {
-  //     padding-bottom: 8.33vw;
-  //   }
-  // }
+
   .hero.hero--no-bottom-padding {
     .hero__container {
       padding-bottom: 0;
@@ -238,7 +226,6 @@
     margin-top: 2.5vw;
     margin-left: auto;
     margin-right: auto;
-    // height: 3.26vw;
 
     > button {
       background-color: transparent;
@@ -259,8 +246,4 @@
   .hero__clear-filter-wrapper.is-hidden {
     display: none;
   }
-
-  // .splitText .word {
-  //   margin-bottom: -3vw;
-  // }
 }
