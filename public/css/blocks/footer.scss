@@ -11,7 +11,7 @@ footer {
 .footer__logo-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 15.75vw;
+  margin-bottom: 9vw;
 
   img {
     width: 16.25vw;
@@ -167,7 +167,7 @@ footer {
   .footer__logo-wrapper {
     display: flex;
     justify-content: left;
-    margin-bottom: 4.65vw;
+    margin-bottom: 3.7vw;
 
     img {
       width: 3.86vw;
@@ -205,7 +205,7 @@ footer {
     ul {
       width: 15vw;
       padding: 0;
-      margin-top: 2.22vw;
+      margin-top: 1.5vw;
       margin-bottom: 0;
     }
     li {
@@ -223,9 +223,10 @@ footer {
   }
 
   .footer__basement {
-    padding-top: 8.59vw;
+    padding-top: 7vw;
     display: flex;
-    justify-content: space-between;
+    gap: 20.9vw;
+    // justify-content: space-between;
   }
 
   .footer__socials {
@@ -246,7 +247,7 @@ footer {
   }
   .footer__contacts {
     font-size: 0.97vw;
-    padding-top: 0;
+    padding-top: 1.2vw;
 
     ul {
       display: flex;

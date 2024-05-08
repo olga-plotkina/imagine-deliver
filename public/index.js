@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //cases animation
 
   const items = document.querySelectorAll('.cases__item');
-  const itemContainerHome = document.querySelector('.cases--home');
+  const itemContainerHome = document.querySelector('.cases');
 
   if (itemContainerHome) {
     window.addEventListener('scroll', onScroll, false);

@@ -1,5 +1,5 @@
 .features {
-  padding-bottom: 13.33vw;
+  padding-bottom: 15.33vw;
   // width: 130%;
 
   h3,
@@ -95,6 +95,7 @@
 }
 @include for-tablet-up {
   .features {
+    padding-bottom: 13.33vw;
     .features__container {
       display: flex;
       padding-left: 4.5vw;
