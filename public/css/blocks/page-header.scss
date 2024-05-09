@@ -13,7 +13,7 @@ $transition: 0.35s;
 @mixin line-desktop {
   display: inline-block;
   width: 1.67vw;
-  height: 0.1vw;
+  height: 2px;
   background: $dark-text-color;
   -webkit-transition: $transition;
   -moz-transition: $transition;
@@ -87,11 +87,11 @@ $transition: 0.35s;
 
   @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) {
     &:before {
-      right: 15%;
+      right: 0;
     }
 
     &:after {
-      right: 15%; /* Adjusted right value for Safari */
+      right: 0; /* Adjusted right value for Safari */
     }
   }
   /* Apply different styles for Chrome */
