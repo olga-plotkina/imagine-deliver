@@ -70,12 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //feature slider and titles
 
-  const bigTitlesContainer = document.querySelectorAll('.features__container');
-  if (bigTitlesContainer.length) {
-    bigTitlesContainer.forEach(container => {
+  const bigTitlesContainers = document.querySelectorAll('.features__container');
+  if (bigTitlesContainers.length) {
+    bigTitlesContainers.forEach(container => {
       const featureTitles = [
         ...container.querySelectorAll('.features__big-titles h3'),
       ];
+      const featureSlides = container.querySelectorAll(
+        '.features__right-wrapper .feature__desktop-slide'
+      );
       let lastHoveredTitle = container.querySelector(
         '.features__big-titles h3.accent'
       );
@@ -84,11 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
       );
       let autoToggleTimer;
 
-      const featureSlides = container.querySelectorAll(
-        '.features__right-wrapper .feature__desktop-slide'
-      );
+      startAutoToggleTimer(container);
 
-      const startAutoToggleTimer = () => {
+      function startAutoToggleTimer(container) {
         autoToggleTimer = setInterval(() => {
           const currentIndex = featureTitles.findIndex(
             title => title === lastHoveredTitle
@@ -112,41 +113,52 @@ document.addEventListener('DOMContentLoaded', () => {
           relevantSlide.classList.add('is-shown');
           lastHoveredSlide = relevantSlide;
         }, 3000);
-      };
-      // Mouseover event listener for each title
+      }
+
       featureTitles.forEach(title => {
-        title.addEventListener('mouseover', () => {
-          // Remove accent class from last hovered title
-          if (lastHoveredTitle) {
-            lastHoveredTitle.classList.remove('accent');
-          }
-          // Add accent class to the currently hovered title
-          title.classList.add('accent');
-          // Update the last hovered title
-          lastHoveredTitle = title;
-          // Find the index of the hovered title
-          const currentIndex = featureTitles.findIndex(t => t === title);
-          // Show the corresponding slide
-          const relevantSlide = featureSlides[currentIndex];
-          // Hide all slides first
+        const titleHeight = title.clientHeight;
+
+        const overlayHeight = titleHeight * 0.8; // Adjust as needed
+        const overlayTop = (titleHeight - overlayHeight) / 2;
+
+        const overlay = document.createElement('div');
+        overlay.classList.add('title-overlay');
+        overlay.style.position = `absolute`;
+
+        overlay.style.top = `${overlayTop}px`;
+        overlay.style.left = `0`;
+
+        overlay.style.height = `${overlayHeight}px`;
+        overlay.style.width = `25vw`;
+
+        title.appendChild(overlay);
+
+        overlay.addEventListener('mouseover', e => {
+          const dataId = title.textContent.trim().toLowerCase();
+          const relevantSlide = container.querySelector(
+            `.feature__desktop-slide[data-id="${dataId}"]`
+          );
+          featureTitles.forEach(t => t.classList.remove('accent'));
           featureSlides.forEach(slide => slide.classList.remove('is-shown'));
-          // Show the relevant slide
+          title.classList.add('accent');
           relevantSlide.classList.add('is-shown');
-          // Update the last hovered slide
+          lastHoveredTitle = title;
           lastHoveredSlide = relevantSlide;
-          // Clear the auto toggle timer to prevent automatic switching
-          clearInterval(autoToggleTimer);
-          startAutoToggleTimer();
+          if (autoToggleTimer) {
+            clearInterval(autoToggleTimer);
+          }
+        });
+        overlay.addEventListener('mouseleave', e => {
+          startAutoToggleTimer(container);
         });
       });
-      autoToggleTimer = setInterval(startAutoToggleTimer, 3000);
     });
   }
 
   //cases animation
 
   const items = document.querySelectorAll('.cases__item');
-  const itemContainerHome = document.querySelector('.cases');
+  const itemContainerHome = document.getElementById('home-cases');
 
   if (itemContainerHome) {
     window.addEventListener('scroll', onScroll, false);
@@ -184,8 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load the saved state of each section from local storage
     var savedSectionStates =
       JSON.parse(localStorage.getItem('sectionStates')) || {};
-    applySavedSectionStates(savedSectionStates);
-
+    if (savedSectionStates) {
+      applySavedSectionStates(savedSectionStates);
+    }
     //Scroll logic
     function onScroll() {
       var scrollBarPosition = window.pageYOffset;
@@ -854,17 +867,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const lenis = new Lenis();
-  lenis.on('scroll', e => {
-    console.log(e);
-  });
+  // const lenis = new Lenis();
+  // lenis.on('scroll', e => {
+  //   console.log(e);
+  // });
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+  // function raf(time) {
+  //   lenis.raf(time);
+  //   requestAnimationFrame(raf);
+  // }
 
-  requestAnimationFrame(raf);
+  // requestAnimationFrame(raf);
 
   // const tickerContainer = document.querySelectorAll('.ticker__content');
 

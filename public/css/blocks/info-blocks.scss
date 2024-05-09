@@ -10,6 +10,13 @@
   transition: background-color 2s ease;
   transition-delay: 1s;
   width: 100%;
+  p {
+    text-align: left;
+  }
+
+  h4 {
+    margin-bottom: 3vw;
+  }
 
   .info-blocks__item-container {
     padding-bottom: 20.5vw;
@@ -55,6 +62,17 @@
   .info-blocks__item-container {
     padding-bottom: 15vw;
   }
+}
+.info-blocks__item-title {
+  margin-bottom: 6.77vw;
+}
+.info-blocks__paragraphs-item {
+  .animated-button {
+    margin-top: 6.77vw;
+  }
+}
+.info-blocks__paragraphs-item:not(:last-child) {
+  margin-bottom: 6.77vw;
 }
 
 .info-blocks .info-blocks__item-container {

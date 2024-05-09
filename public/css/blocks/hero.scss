@@ -72,7 +72,13 @@
     background-size: cover;
     background-position: center;
   }
-
+  .hero__subdecription,
+  .hero__description {
+    margin-bottom: 8.14vw;
+  }
+  .hero__page-name {
+    margin-bottom: 5vw;
+  }
   .hero__lid {
     max-width: 86vw;
     text-align: center;

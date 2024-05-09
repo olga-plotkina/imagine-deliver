@@ -1,36 +1,31 @@
-// .ticker-section {
-//   width: 100%;
-//   position: relative;
-//   display: block;
-// }
+@keyframes ticker-mobile {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-375vw);
+  }
+}
+@keyframes ticker-desktop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-109vw);
+  }
+}
 
-.ticker,
-.partners__container {
-  // overflow: hidden;
-  width: 100%;
-  // float: left;
+.ticker {
   overflow: hidden;
   position: relative;
-  height: 24vw;
-  // padding-top: 10.5vw;
-  // padding-bottom: 10.5vw;
+  height: 24.45vw;
   margin-bottom: 12vw;
-}
-.partners__container {
-  margin-bottom: 0;
-}
-.partners__content {
-  display: flex;
-  align-items: center;
-  gap: 6vw;
+  color: $dark-text-color;
 }
 
-.ticker__content,
-.partners__content {
+.ticker__content {
   position: absolute;
   top: 10vw;
-  // float: left;
-
   display: flex;
   gap: 4vw;
   align-items: center;
@@ -38,14 +33,23 @@
   font-size: 4.25vw;
   font-weight: 500;
   letter-spacing: -0.01em;
-  width: 100%;
+  width: 200%;
   white-space: nowrap;
 }
+
 .ticker__content {
-  animation: ticker 17s linear infinite;
+  animation: ticker-mobile 10s linear infinite;
 }
-.partners__content {
-  top: 0;
+.ticker__content {
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: unset;
+    }
+  }
 }
 .ticker--air-date {
   font-family: $secondary-font-family;
@@ -61,46 +65,31 @@
     line-height: 1;
   }
 }
-.partner-logo__healthcare {
-  width: 62.7vw;
-  height: 15.57vw;
-}
-.partner-logo__metropolitan {
-  width: 36.27vw;
-  height: 20.87vw;
-}
-.partner-logo__minneapolis {
-  width: 52.67vw;
-  height: 13.09vw;
-}
-.partner-logo__ford {
-  width: 31.1vw;
-  height: 10.66vw;
-}
-.partner-logo__united-health {
-  width: 66.16vw;
-  height: 4.83vw;
-}
-.partner-logo__headw {
-  width: 47.33vw;
-  height: 27.23vw;
-}
-.ticker--partners {
-  height: 24vw;
+// .partner-logo__healthcare {
+//   width: 62.7vw;
+//   height: 15.57vw;
+// }
+// .partner-logo__metropolitan {
+//   width: 36.27vw;
+//   height: 20.87vw;
+// }
+// .partner-logo__minneapolis {
+//   width: 52.67vw;
+//   height: 13.09vw;
+// }
+// .partner-logo__ford {
+//   width: 31.1vw;
+//   height: 10.66vw;
+// }
+// .partner-logo__united-health {
+//   width: 66.16vw;
+//   height: 4.83vw;
+// }
+// .partner-logo__headw {
+//   width: 47.33vw;
+//   height: 27.23vw;
+// }
 
-  .ticker__content {
-    position: absolute;
-  }
-}
-
-@keyframes ticker {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 .ticker__dot {
   svg {
     display: block;
@@ -110,14 +99,8 @@
 }
 @include for-tablet-up {
   .ticker {
-    // padding-top: 2.4vw;
-    // padding-bottom: 2.4vw;
     height: 6.67vw;
-
     margin-bottom: 11vw;
-  }
-  .partners {
-    margin-bottom: 5.56vw;
 
     h3 {
       font-size: 1.6vw;
@@ -125,23 +108,14 @@
       margin-bottom: 5.18vw;
     }
   }
-  .partners.partners--second {
-    margin-bottom: 13.3vw;
-  }
-  .partners__container {
-    height: 5.7vw;
-  }
 
-  .ticker__content,
-  .partners__content {
+  .ticker__content {
     top: 2.8vw;
     font-size: 1.25vw;
     gap: 1.11vw;
+    animation: ticker-desktop 15s linear infinite;
   }
-  .partners__content {
-    gap: 5.22vw;
-    top: 0;
-  }
+
   .ticker--air-date {
     height: 10.97svw;
     position: relative;
@@ -155,37 +129,29 @@
       top: 0.3vw;
     }
   }
-  .ticker--partners {
-    height: 5.69vw;
 
-    // img {
-    //   height: 5.69vw;
-    //   width: auto;
-    // }
-  }
-
-  .partner-logo__healthcare {
-    width: 17.11vw;
-    height: 4.25vw;
-  }
-  .partner-logo__metropolitan {
-    width: 9.9vw;
-    height: 5.69vw;
-  }
-  .partner-logo__minneapolis {
-    width: 14.37vw;
-    height: 3.57vw;
-  }
-  .partner-logo__ford {
-    width: 7.8vw;
-    height: 2.91vw;
-  }
-  .partner-logo__united-health {
-    width: 18.06vw;
-    height: 1.32vw;
-  }
-  .partner-logo__headw {
-    width: 12.92vw;
-    height: 7.43vw;
-  }
+  // .partner-logo__healthcare {
+  //   width: 17.11vw;
+  //   height: 4.25vw;
+  // }
+  // .partner-logo__metropolitan {
+  //   width: 9.9vw;
+  //   height: 5.69vw;
+  // }
+  // .partner-logo__minneapolis {
+  //   width: 14.37vw;
+  //   height: 3.57vw;
+  // }
+  // .partner-logo__ford {
+  //   width: 7.8vw;
+  //   height: 2.91vw;
+  // }
+  // .partner-logo__united-health {
+  //   width: 18.06vw;
+  //   height: 1.32vw;
+  // }
+  // .partner-logo__headw {
+  //   width: 12.92vw;
+  //   height: 7.43vw;
+  // }
 }
