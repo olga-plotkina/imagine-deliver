@@ -1,0 +1,109 @@
+.burger-button {
+  width: 48px; //12.21vw;
+  height: 48px; //12.21vw;
+  position: fixed;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  top: 3.8vw;
+  right: 16px; // 4.07vw;
+  z-index: 12;
+  cursor: pointer;
+  background-color: $dark-text-color;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  outline: none;
+  transition: background-color 0.5s ease;
+
+  .lines {
+    display: inline-block;
+    width: 24px; //6.11vw;
+    height: 24px; //6.11vw;
+    position: relative;
+    background: transparent;
+    pointer-events: none;
+
+    &:before,
+    &:after {
+      background-color: $background-yellow;
+      width: 24px; //6.11vw;
+      height: 1.5px;
+      position: absolute;
+      border-radius: 1px;
+      right: 0;
+      content: '';
+      transition: top 0.5s ease, transform 0.6s 0.05s ease,
+        background-color 0.5s ease;
+    }
+    &:before {
+      top: 8px; // 2.04vw;
+    }
+    &:after {
+      bottom: 8px; //2.04vw;
+    }
+  }
+}
+
+.burger-button.x.close {
+  background-color: $background-yellow;
+  transition: background-color 0.5s ease;
+
+  .lines {
+    // transition: top 0.3s 0.1s ease, transform 0.3s ease;
+
+    &:before,
+    &:after {
+      top: 12px; //3.05vw;
+      background-color: $dark-text-color;
+      transition: top 0.5s ease, transform 0.6s 0.05s ease,
+        background-color 0.5s ease;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@include for-tablet-up {
+  .burger-button {
+    width: 3.33vw;
+    height: 3.33vw;
+    right: 1.67vw;
+    top: 1.67vw;
+
+    .lines {
+      width: 1.67vw;
+      height: 1.67vw;
+      background: transparent;
+      &:before,
+      &:after {
+        left: 0;
+        content: '';
+        width: 1.67vw;
+        height: 1.5px;
+        position: absolute;
+        left: 0;
+      }
+      &:before {
+        top: 0.56vw;
+      }
+      &:after {
+        bottom: 0.56vw;
+      }
+    }
+  }
+
+  .burger-button.x.close {
+    .lines {
+      transition: top 0.3s 0.1s ease, transform 0.1s ease;
+
+      &:before,
+      &:after {
+        top: 0.83vw;
+      }
+    }
+  }
+}
