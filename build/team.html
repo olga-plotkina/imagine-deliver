@@ -15,9 +15,11 @@
     <script defer src="bundle.js"></script>
   </head>
   <body>
-    <button type="button" class="burger-button x">
-      <span class="lines"></span>
-    </button>
+    <div class="burger-button-wrapper">
+      <button type="button" id="burger" class="burger-button x">
+        <span class="lines"><span></span> <span></span></span>
+      </button>
+    </div>
     <div class="burger-menu">
       <div class="burger-menu__image"></div>
 
@@ -169,7 +171,7 @@
       </section>
       <section class="case-gallery case-gallery--pb-168">
         <div class="case-gallery__container js-team-gallery">
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-0">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Kate.jpg" />
               <button
@@ -196,7 +198,7 @@
               <span>Founder, CEO</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-1">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Taqee.jpg" />
               <button
@@ -223,7 +225,7 @@
               <span>Co-Founder, Advisor</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-2">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Tiffany.jpg" />
               <button
@@ -250,7 +252,7 @@
               <span>Head of Growth & Operations</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-3">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Johnna.jpg" />
               <button
@@ -277,7 +279,7 @@
               <span>Principal Strategist</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-4">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Monica.jpg" />
               <button
@@ -304,7 +306,7 @@
               <span>Principal Strategist</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-5">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Sami.jpg" />
               <button
@@ -331,7 +333,7 @@
               <span>Executive & Special Projects Coordinator</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-6">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Jenny.jpg" />
               <button
@@ -358,7 +360,7 @@
               <span>Strategy Consultant</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-7">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Chiamaka.jpg" />
               <button
@@ -385,7 +387,7 @@
               <span>Associate Strategist</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-8">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Matilda.jpg" />
               <button
@@ -412,7 +414,7 @@
               <span>Digital Strategist</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-9">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Fatima.jpg" />
               <button
@@ -440,7 +442,7 @@
             </p>
           </div>
 
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-10">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Allie.jpg" />
               <button
@@ -467,7 +469,7 @@
               <span>Strategy Consultant</span>
             </p>
           </div>
-          <div class="case-gallery__item">
+          <div class="case-gallery__item" data-id="team-member-card-11">
             <div class="case-gallery__image-wrapper">
               <img src="./images/img/ID-team-Amina.jpg" />
               <button
@@ -940,7 +942,414 @@
               />
             </svg>
           </button>
-          <div class="team-member" id="team-member-card">
+          <div class="team-member" id="team-member-card-0">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="./images/img/ID-team-Kate.jpg" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-1">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Taqueee Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                ggg is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-2">
+            <div class="team-member__top">
+              <h2 class="team-member__name">dfdf Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="./images/img/ID-team-Taqee.jpg" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                hnnvhj is the kind of leader who will believe in you even when
+                you don’t believe in yourself. As a strategist and former
+                community organizer, she’s an expert at listening to teams and
+                leading them in transformative directions. She has the uncanny
+                ability to see beyond the limitations others place on themselves
+                to spot brilliance in the people around her. With nearly two
+                decades of experience in philanthropy, community-based research
+                and human-centered design, Kate knows the best services and
+                products are designed by the people who use them. Named a
+                Minneapolis And Saint Paul Business Journal 40 Under 40 Honoree
+                and Tech 20 in 2022, Kate founded Imagine Deliver because she
+                routinely saw systems operating in ways that excluded people
+                from problem solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-3">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-4">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-5">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-6">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-7">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-8">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-9">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-10">
+            <div class="team-member__top">
+              <h2 class="team-member__name">Kate Downing Khaled</h2>
+              <div>
+                <div class="team-member__position">
+                  Founder, Managing Director
+                </div>
+                <div class="team-member__pronounce">She/Her/Hers</div>
+              </div>
+            </div>
+            <div class="team-member__image-wrapper">
+              <img src="" />
+            </div>
+            <div class="team-member__content">
+              <p>
+                Kate is the kind of leader who will believe in you even when you
+                don’t believe in yourself. As a strategist and former community
+                organizer, she’s an expert at listening to teams and leading
+                them in transformative directions. She has the uncanny ability
+                to see beyond the limitations others place on themselves to spot
+                brilliance in the people around her. With nearly two decades of
+                experience in philanthropy, community-based research and
+                human-centered design, Kate knows the best services and products
+                are designed by the people who use them. Named a Minneapolis And
+                Saint Paul Business Journal 40 Under 40 Honoree and Tech 20 in
+                2022, Kate founded Imagine Deliver because she routinely saw
+                systems operating in ways that excluded people from problem
+                solving rather than meaningfully including them.
+              </p>
+              <p>
+                As Imagine Deliver’s managing director, Kate helps bold,
+                intersectional leaders across healthcare, government,
+                philanthropy, and financial services sectors eliminate that
+                disconnect by showing them how to tap
+              </p>
+            </div>
+          </div>
+          <div class="team-member" id="team-member-card-11">
             <div class="team-member__top">
               <h2 class="team-member__name">Kate Downing Khaled</h2>
               <div>

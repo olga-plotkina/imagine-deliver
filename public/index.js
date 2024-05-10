@@ -790,7 +790,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   ];
   const teamGalleryContainer = document.querySelector('.js-team-gallery');
-  const teamMemberCard = document.getElementById('team-member-card');
 
   const teamMemberModal = document.getElementById('team-memeber-modal');
   const closeModalButtonsArray = document.querySelectorAll(
@@ -817,37 +816,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  if (teamGalleryContainer && teamMemberCard && teamMemberModal) {
-    const memberPicture = teamMemberCard.querySelector(
-      '.team-member__image-wrapper img'
-    );
-    const memberContent = teamMemberCard.querySelector('.team-member__content');
-    const memberName = teamMemberCard.querySelector('.team-member__name');
-    const memberPosition = teamMemberCard.querySelector(
-      '.team-member__position'
-    );
-    const memberPronounce = teamMemberCard.querySelector(
-      '.team-member__pronounce'
-    );
+  if (teamGalleryContainer && teamMemberModal) {
+    // const memberPicture = teamMemberCard.querySelector(
+    //   '.team-member__image-wrapper img'
+    // );
+    // const memberContent = teamMemberCard.querySelector('.team-member__content');
+    // const memberName = teamMemberCard.querySelector('.team-member__name');
+    // const memberPosition = teamMemberCard.querySelector(
+    //   '.team-member__position'
+    // );
+    // const memberPronounce = teamMemberCard.querySelector(
+    //   '.team-member__pronounce'
+    // );
+    const membersCardArray = teamMemberModal.querySelectorAll('.team-member');
     const teamMembersArray = teamGalleryContainer.querySelectorAll(
       '.case-gallery__item'
     );
     if (teamMembersArray.length) {
       teamMembersArray.forEach(member => {
         const openModalButton = member.querySelector('.js-open-modal-button');
-        const teamMemberName = member.querySelector('.js-team-member');
 
         openModalButton.addEventListener('click', e => {
           teamMemberModal.classList.remove('is-hidden');
           document.body.classList.add('modal-open');
-
-          membersData.forEach(infoItem => {
-            if (infoItem.name === teamMemberName.textContent.trim()) {
-              memberName.textContent = infoItem.name;
-              memberPosition.textContent = infoItem.position;
-              memberPronounce.textContent = infoItem.pronounce;
-              memberContent.innerHTML = infoItem.info;
-              memberPicture.src = infoItem.src;
+          membersCardArray.forEach(card => {
+            card.style.display = 'none';
+            if (card.id === member.dataset.id) {
+              card.style.display = 'block';
             }
           });
         });
