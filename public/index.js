@@ -33,40 +33,49 @@ document.addEventListener('DOMContentLoaded', () => {
   //   });
 
   //   lightbox.init();
-  const featuresSwiperContainer = document.querySelector(
-    '.features__images-swiper'
+  const mobileSwiperContainers = document.querySelectorAll(
+    '.features__mobile-swipers'
   );
-  const featuresContentSwiperContainer = document.querySelector(
-    '.features__content-swiper'
-  );
-  const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
-    loop: true,
-    slidesPerView: 1,
-    modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    pagination: {
-      el: '.features__content-swiper .swiper-pagination',
-      clickable: true,
-    },
-    speed: 800,
-    allowTouchMove: false,
-  });
-  const featuresSwiper = new Swiper(featuresSwiperContainer, {
-    loop: true,
-    slidesPerView: 1,
-    modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
-    pagination: {
-      el: '.features__images-swiper .swiper-pagination',
-      clickable: true,
-    },
-    speed: 800,
-    controller: {
-      control: featuresContentSwiper, // Connect featuresSwiper as controller
-    },
-  });
 
-  if (featuresSwiperContainer) featuresSwiper.init();
+  if (mobileSwiperContainers.length) {
+    mobileSwiperContainers.forEach(container => {
+      console.log(container);
+      const featuresSwiperContainer = container.querySelector(
+        '.features__images-swiper'
+      );
+      const featuresContentSwiperContainer = container.querySelector(
+        '.features__content-swiper'
+      );
+      const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
+        loop: true,
+        slidesPerView: 1,
+        modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
+        pagination: {
+          el: '.features__content-swiper .swiper-pagination',
+          clickable: true,
+        },
+        speed: 800,
+        allowTouchMove: false,
+      });
+      const featuresSwiper = new Swiper(featuresSwiperContainer, {
+        loop: true,
+        slidesPerView: 1,
+        modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
+        pagination: {
+          el: '.features__images-swiper .swiper-pagination',
+          clickable: true,
+        },
+        speed: 800,
+        controller: {
+          control: featuresContentSwiper, // Connect featuresSwiper as controller
+        },
+      });
 
-  if (featuresContentSwiperContainer) featuresContentSwiper.init();
+      featuresSwiper.init();
+
+      featuresContentSwiper.init();
+    });
+  }
 
   //feature slider and titles
 
