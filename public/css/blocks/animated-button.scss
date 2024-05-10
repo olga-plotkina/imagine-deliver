@@ -1,6 +1,7 @@
 .animated-button {
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 
   cursor: pointer;
 
@@ -10,12 +11,12 @@
   height: 12vw;
 
   a {
+    border: inherit;
     display: block;
     cursor: pointer;
     font-size: 4.25vw;
     font-weight: 500;
     text-align: center;
-    border: none;
     width: 100%;
   }
 
@@ -50,19 +51,24 @@
   color: $background-yellow;
   position: absolute;
   left: 0;
-  bottom: -100%;
+  bottom: -103%;
   width: 100%;
   height: 100%;
   transition: all 0.5s ease-in-out;
   background-color: $dark-text-color;
+}
+.animated-button:hover,
+.page-header .animated-button:hover {
+  border-color: transparent;
+  transition: border-color 0.5s ease-in-out;
 }
 .animated-button:hover .animated-button__primary {
   top: -100%;
   opacity: 0;
 }
 .animated-button:hover .animated-button__slide {
-  bottom: 50%;
-  transform: translateY(50%);
+  bottom: -1vw;
+  // transform: translateY(50%);
   padding-top: 1.8vw;
 }
 .guides.cases__container .animated-button {
@@ -74,7 +80,7 @@
 }
 @include for-tablet-up {
   .animated-button {
-    // box-sizing: border-box;
+    box-sizing: border-box;
     // max-width: 9.44vw;
     border: $border-desktop-width solid #162e2e66;
     width: 9.93vw;
@@ -92,6 +98,7 @@
 
     a {
       font-size: 1.25vw;
+      border: $border-desktop-width solid transparent;
     }
 
     .page-header & {
@@ -115,6 +122,9 @@
       // .animated-button__primary {
       //   width: 9.44vw;
       // }
+    }
+    .page-header &:hover .animated-button__slide {
+      bottom: -0.9vw;
     }
   }
 
