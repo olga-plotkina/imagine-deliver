@@ -139,7 +139,7 @@ header {
         transition-delay: 0.4s;
       }
     }
-    .submenu-shown:not([data-id='home']) {
+    .submenu-shown {
       height: auto;
       margin-bottom: 0;
       .burger-menu__submenu {
@@ -154,6 +154,10 @@ header {
         // height: 250px;
       }
     }
+  }
+  #menu-item-61 {
+    height: 13.75vw;
+    margin-bottom: 4vw;
   }
 
   .burger-menu__credentials {

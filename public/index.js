@@ -383,20 +383,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const mainMenu = document.querySelector('.burger-menu');
 
-  const menuLinks = document.querySelectorAll('.burger-menu__main  a');
+  const menuLinks = document.querySelectorAll('.burger-menu__main  > li > a');
   if (window.matchMedia('(max-width: 768px)').matches) {
     menuLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        if (e.target === link) {
-          menuLinks.forEach(link => {
+      if (link.parentElement.id !== 'menu-item-61') {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          if (e.target === link) {
+            menuLinks.forEach(link => {
+              link.parentElement.classList.remove('submenu-shown');
+            });
+            link.parentElement.classList.add('submenu-shown');
+          } else {
             link.parentElement.classList.remove('submenu-shown');
-          });
-          link.parentElement.classList.add('submenu-shown');
-        } else {
-          link.parentElement.classList.remove('submenu-shown');
-        }
-      });
+          }
+        });
+      }
     });
   }
   mainMenuItems.forEach(mainItem => {
