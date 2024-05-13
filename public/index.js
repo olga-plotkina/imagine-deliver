@@ -39,13 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileSwiperContainers.length) {
     mobileSwiperContainers.forEach(container => {
-      console.log(container);
       const featuresSwiperContainer = container.querySelector(
         '.features__images-swiper'
       );
       const featuresContentSwiperContainer = container.querySelector(
         '.features__content-swiper'
       );
+      let featuresSwiper;
       const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
         loop: true,
         slidesPerView: 1,
@@ -56,8 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         speed: 800,
         allowTouchMove: false,
+        controller: {
+          control: featuresSwiper,
+        },
       });
-      const featuresSwiper = new Swiper(featuresSwiperContainer, {
+      featuresSwiper = new Swiper(featuresSwiperContainer, {
         loop: true,
         slidesPerView: 1,
         modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
