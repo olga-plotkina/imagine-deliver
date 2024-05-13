@@ -9,9 +9,9 @@
 @import '~nice-select2/src/scss/nice-select2.scss';
 
 @import './utils/visuallyhidden.scss';
+@import './utils/media-mixins.scss';
 
 @import './utils/fonts.scss';
-@import './utils/media-mixins.scss';
 
 body {
   color: $dark-text-color;
