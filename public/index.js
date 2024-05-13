@@ -39,13 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileSwiperContainers.length) {
     mobileSwiperContainers.forEach(container => {
+      console.log(container);
       const featuresSwiperContainer = container.querySelector(
         '.features__images-swiper'
       );
       const featuresContentSwiperContainer = container.querySelector(
         '.features__content-swiper'
       );
-      let featuresSwiper;
       const featuresContentSwiper = new Swiper(featuresContentSwiperContainer, {
         loop: true,
         slidesPerView: 1,
@@ -55,12 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
           clickable: true,
         },
         speed: 800,
-        allowTouchMove: false,
-        controller: {
-          control: featuresSwiper,
-        },
       });
-      featuresSwiper = new Swiper(featuresSwiperContainer, {
+      const featuresSwiper = new Swiper(featuresSwiperContainer, {
         loop: true,
         slidesPerView: 1,
         modules: [Navigation, Pagination, Thumbs, FreeMode, Manipulation],
@@ -69,14 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
           clickable: true,
         },
         speed: 800,
-        controller: {
-          control: featuresContentSwiper, // Connect featuresSwiper as controller
-        },
       });
 
-      featuresSwiper.init();
-
-      featuresContentSwiper.init();
+      featuresContentSwiper.controller.control = featuresSwiper;
+      featuresSwiper.controller.control = featuresContentSwiper;
     });
   }
 
